@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet href="https://S9n3x.github.io/feed_style.xsl" type="text/xsl"?>
+<?xml-stylesheet href="https://synex.space/feed_style.xsl" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
-        <tabi:base_url>https:&#x2F;&#x2F;S9n3x.github.io&#x2F;</tabi:base_url>
+        <tabi:base_url>https:&#x2F;&#x2F;synex.space&#x2F;</tabi:base_url>
         <tabi:separator>
             •
         </tabi:separator>
@@ -13,18 +13,18 @@
         <tabi:default_theme></tabi:default_theme>
         <tabi:post_listing_date>date</tabi:post_listing_date>
         <tabi:current_section>WEB</tabi:current_section>
-    </tabi:metadata><link rel="extra-stylesheet" href="https://S9n3x.github.io/skins/mint.css?h=504215cf6bc10586b487" /><title>~/S9n3x - WEB</title>
-    <link href="https://S9n3x.github.io/tags/web/atom.xml" rel="self" type="application/atom+xml"/>
-    <link href="https://S9n3x.github.io/tags/web/" rel="alternate" type="text/html"/>
-    <generator uri="https://www.getzola.org/">Zola</generator><updated>2025-07-02T20:17:00+00:00</updated><id>https://S9n3x.github.io/tags/web/atom.xml</id><entry xml:lang="en">
+    </tabi:metadata><link rel="extra-stylesheet" href="https://synex.space/skins/mint.css?h=504215cf6bc10586b487" /><title>~/S9n3x - WEB</title>
+    <link href="https://synex.space/tags/web/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://synex.space/tags/web/" rel="alternate" type="text/html"/>
+    <generator uri="https://www.getzola.org/">Zola</generator><updated>2025-07-02T20:17:00+00:00</updated><id>https://synex.space/tags/web/atom.xml</id><entry xml:lang="en">
         <title>WEB-Flask模板注入总结</title>
         <published>2025-07-02T20:17:00+00:00</published>
         <updated>2025-07-02T20:17:00+00:00</updated>
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/web-flaskmo-ban-zhu-ru-zong-jie/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/web-flaskmo-ban-zhu-ru-zong-jie/</id>
+        <link rel="alternate" href="https://synex.space/blog/web-flaskmo-ban-zhu-ru-zong-jie/" type="text/html"/>
+        <id>https://synex.space/blog/web-flaskmo-ban-zhu-ru-zong-jie/</id>
         </entry><entry xml:lang="en">
         <title>WEB-PHP反序列化总结</title>
         <published>2025-06-24T10:47:00+00:00</published>
@@ -32,8 +32,8 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/web-phpfan-xu-lie-hua-zong-jie/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/web-phpfan-xu-lie-hua-zong-jie/</id>
+        <link rel="alternate" href="https://synex.space/blog/web-phpfan-xu-lie-hua-zong-jie/" type="text/html"/>
+        <id>https://synex.space/blog/web-phpfan-xu-lie-hua-zong-jie/</id>
         </entry><entry xml:lang="en">
         <title>WEB-PHP命令执行总结</title>
         <published>2025-06-16T15:17:00+00:00</published>
@@ -41,8 +41,8 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/web-phpming-ling-zhi-xing-zong-jie/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/web-phpming-ling-zhi-xing-zong-jie/</id>
+        <link rel="alternate" href="https://synex.space/blog/web-phpming-ling-zhi-xing-zong-jie/" type="text/html"/>
+        <id>https://synex.space/blog/web-phpming-ling-zhi-xing-zong-jie/</id>
         </entry><entry xml:lang="en">
         <title>2025第一届“启航杯”网络安全挑战赛-WriteUp</title>
         <published>2025-01-26T19:02:00+00:00</published>
@@ -50,8 +50,8 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/2025di-yi-jie-qi-hang-bei-wang-luo-an-quan-tiao-zhan-sai-writeup/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/2025di-yi-jie-qi-hang-bei-wang-luo-an-quan-tiao-zhan-sai-writeup/</id>
+        <link rel="alternate" href="https://synex.space/blog/2025di-yi-jie-qi-hang-bei-wang-luo-an-quan-tiao-zhan-sai-writeup/" type="text/html"/>
+        <id>https://synex.space/blog/2025di-yi-jie-qi-hang-bei-wang-luo-an-quan-tiao-zhan-sai-writeup/</id>
         </entry><entry xml:lang="en">
         <title>2024春秋杯冬季赛-WriteUp</title>
         <published>2025-01-20T12:11:00+00:00</published>
@@ -59,8 +59,8 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/2024chun-qiu-bei-dong-ji-sai-writeup/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/2024chun-qiu-bei-dong-ji-sai-writeup/</id>
+        <link rel="alternate" href="https://synex.space/blog/2024chun-qiu-bei-dong-ji-sai-writeup/" type="text/html"/>
+        <id>https://synex.space/blog/2024chun-qiu-bei-dong-ji-sai-writeup/</id>
         </entry><entry xml:lang="en">
         <title>2024第一届Solar杯应急响应挑战赛-WriteUp</title>
         <published>2024-12-28T18:00:00+00:00</published>
@@ -68,8 +68,8 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/2024di-yi-jie-solarbei-ying-ji-xiang-ying-tiao-zhan-sai-writeup/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/2024di-yi-jie-solarbei-ying-ji-xiang-ying-tiao-zhan-sai-writeup/</id>
+        <link rel="alternate" href="https://synex.space/blog/2024di-yi-jie-solarbei-ying-ji-xiang-ying-tiao-zhan-sai-writeup/" type="text/html"/>
+        <id>https://synex.space/blog/2024di-yi-jie-solarbei-ying-ji-xiang-ying-tiao-zhan-sai-writeup/</id>
         </entry><entry xml:lang="en">
         <title>2024山东省信创大赛-网络安全决赛-WriteUp</title>
         <published>2024-11-16T23:17:00+00:00</published>
@@ -77,7 +77,7 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/2024shan-dong-sheng-xin-chuang-da-sai-wang-luo-an-quan-jue-sai-writeup/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/2024shan-dong-sheng-xin-chuang-da-sai-wang-luo-an-quan-jue-sai-writeup/</id>
+        <link rel="alternate" href="https://synex.space/blog/2024shan-dong-sheng-xin-chuang-da-sai-wang-luo-an-quan-jue-sai-writeup/" type="text/html"/>
+        <id>https://synex.space/blog/2024shan-dong-sheng-xin-chuang-da-sai-wang-luo-an-quan-jue-sai-writeup/</id>
         </entry>
 </feed>

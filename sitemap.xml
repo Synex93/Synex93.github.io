@@ -1,443 +1,443 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="https://S9n3x.github.io/sitemap_style.xsl" type="text/xsl"?>
+<?xml-stylesheet href="https://synex.space/sitemap_style.xsl" type="text/xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://S9n3x.github.io/</loc>
+        <loc>https://synex.space/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/archive/</loc>
+        <loc>https://synex.space/archive/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/</loc>
+        <loc>https://synex.space/blog/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/2024chun-qiu-bei-dong-ji-sai-writeup/</loc>
+        <loc>https://synex.space/blog/2024chun-qiu-bei-dong-ji-sai-writeup/</loc>
         <lastmod>2025-01-20T12:11:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/2024di-yi-jie-solarbei-ying-ji-xiang-ying-tiao-zhan-sai-writeup/</loc>
+        <loc>https://synex.space/blog/2024di-yi-jie-solarbei-ying-ji-xiang-ying-tiao-zhan-sai-writeup/</loc>
         <lastmod>2024-12-28T18:00:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/2024nian-zhong-zong-jie-xi-wang-zhe-shi-yi-qie-de-kai-shi/</loc>
+        <loc>https://synex.space/blog/2024nian-zhong-zong-jie-xi-wang-zhe-shi-yi-qie-de-kai-shi/</loc>
         <lastmod>2025-01-24T21:30:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/2024shan-dong-sheng-xin-chuang-da-sai-wang-luo-an-quan-jue-sai-writeup/</loc>
+        <loc>https://synex.space/blog/2024shan-dong-sheng-xin-chuang-da-sai-wang-luo-an-quan-jue-sai-writeup/</loc>
         <lastmod>2024-11-16T23:17:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/2025di-yi-jie-qi-hang-bei-wang-luo-an-quan-tiao-zhan-sai-writeup/</loc>
+        <loc>https://synex.space/blog/2025di-yi-jie-qi-hang-bei-wang-luo-an-quan-tiao-zhan-sai-writeup/</loc>
         <lastmod>2025-01-26T19:02:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/8086cpuhui-bian-xue-xi/</loc>
+        <loc>https://synex.space/blog/8086cpuhui-bian-xue-xi/</loc>
         <lastmod>2025-03-10T16:01:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/ansible-zi-dong-hua-yun-wei-gong-ju/</loc>
+        <loc>https://synex.space/blog/ansible-zi-dong-hua-yun-wei-gong-ju/</loc>
         <lastmod>2022-03-05T10:02:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/bind9-dnsfu-wu-qi/</loc>
+        <loc>https://synex.space/blog/bind9-dnsfu-wu-qi/</loc>
         <lastmod>2022-01-21T11:07:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/di-er-jie-parloo-ctfying-ji-xiang-ying-tiao-zhan-sai-ying-ji-xiang-ying-fang-xiang-writeup/</loc>
+        <loc>https://synex.space/blog/di-er-jie-parloo-ctfying-ji-xiang-ying-tiao-zhan-sai-ying-ji-xiang-ying-fang-xiang-writeup/</loc>
         <lastmod>2025-05-20T21:34:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/docker-rong-qi-guan-li/</loc>
+        <loc>https://synex.space/blog/docker-rong-qi-guan-li/</loc>
         <lastmod>2022-04-06T14:32:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/fdisk-mbrfen-qu-gong-ju/</loc>
+        <loc>https://synex.space/blog/fdisk-mbrfen-qu-gong-ju/</loc>
         <lastmod>2023-03-30T20:22:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/git-ban-ben-kong-zhi-gong-ju/</loc>
+        <loc>https://synex.space/blog/git-ban-ben-kong-zhi-gong-ju/</loc>
         <lastmod>2022-06-04T23:17:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/git-indexwen-jian-shu-ju-jie-gou/</loc>
+        <loc>https://synex.space/blog/git-indexwen-jian-shu-ju-jie-gou/</loc>
         <lastmod>2024-12-06T13:48:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/gitlabnei-cun-zhan-yong-guo-gao-de-wen-ti/</loc>
+        <loc>https://synex.space/blog/gitlabnei-cun-zhan-yong-guo-gao-de-wen-ti/</loc>
         <lastmod>2024-11-12T10:43:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/hello-world/</loc>
+        <loc>https://synex.space/blog/hello-world/</loc>
         <lastmod>2025-04-28T20:31:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/ingress-nginxchuan-di-yong-hu-zhen-shi-ipwen-ti/</loc>
+        <loc>https://synex.space/blog/ingress-nginxchuan-di-yong-hu-zhen-shi-ipwen-ti/</loc>
         <lastmod>2023-08-25T09:53:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/iptables-fang-huo-qiang/</loc>
+        <loc>https://synex.space/blog/iptables-fang-huo-qiang/</loc>
         <lastmod>2022-05-25T11:40:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/ji-yi-ci-an-zhuo-ni-xiang-xue-xi-shi-jian-qu-chu-yan-gao/</loc>
+        <loc>https://synex.space/blog/ji-yi-ci-an-zhuo-ni-xiang-xue-xi-shi-jian-qu-chu-yan-gao/</loc>
         <lastmod>2025-03-18T17:52:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/kubernetes-an-zhuang-kubeadm-containerd-1-24-0/</loc>
+        <loc>https://synex.space/blog/kubernetes-an-zhuang-kubeadm-containerd-1-24-0/</loc>
         <lastmod>2022-07-31T08:32:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/kubernetes-podkong-zhi-qi-xiang-jie/</loc>
+        <loc>https://synex.space/blog/kubernetes-podkong-zhi-qi-xiang-jie/</loc>
         <lastmod>2022-09-04T14:07:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/kubernetes-podxiang-jie/</loc>
+        <loc>https://synex.space/blog/kubernetes-podxiang-jie/</loc>
         <lastmod>2022-08-29T22:25:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/kubernetes-servicexiang-jie/</loc>
+        <loc>https://synex.space/blog/kubernetes-servicexiang-jie/</loc>
         <lastmod>2022-09-05T13:32:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/kubernetes-shu-ju-cun-chu/</loc>
+        <loc>https://synex.space/blog/kubernetes-shu-ju-cun-chu/</loc>
         <lastmod>2022-09-07T13:32:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/kvm-xu-ni-ji-guan-li/</loc>
+        <loc>https://synex.space/blog/kvm-xu-ni-ji-guan-li/</loc>
         <lastmod>2024-12-27T18:23:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/luaji-chu-yu-fa-xue-xi/</loc>
+        <loc>https://synex.space/blog/luaji-chu-yu-fa-xue-xi/</loc>
         <lastmod>2024-04-17T16:01:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/ngx-luamo-kuai-xue-xi/</loc>
+        <loc>https://synex.space/blog/ngx-luamo-kuai-xue-xi/</loc>
         <lastmod>2024-04-25T20:51:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/openstack-cinderkuai-cun-chu-dui-jie-lvm-nfs-ceph/</loc>
+        <loc>https://synex.space/blog/openstack-cinderkuai-cun-chu-dui-jie-lvm-nfs-ceph/</loc>
         <lastmod>2025-01-11T16:05:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/openstack-ming-ling-kong-zhi/</loc>
+        <loc>https://synex.space/blog/openstack-ming-ling-kong-zhi/</loc>
         <lastmod>2025-02-07T14:26:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/openstack-nei-bu-wang-luo-yuan-li-fen-xi/</loc>
+        <loc>https://synex.space/blog/openstack-nei-bu-wang-luo-yuan-li-fen-xi/</loc>
         <lastmod>2025-02-15T15:05:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/openstack-steinban-da-jian-1kong-zhi-1ji-suan/</loc>
+        <loc>https://synex.space/blog/openstack-steinban-da-jian-1kong-zhi-1ji-suan/</loc>
         <lastmod>2025-01-04T15:39:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/openstack-wang-luo-flatyu-vxlan/</loc>
+        <loc>https://synex.space/blog/openstack-wang-luo-flatyu-vxlan/</loc>
         <lastmod>2025-01-22T13:35:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/openstack-zeng-jia-ji-suan-jie-dian-fu-shelljiao-ben/</loc>
+        <loc>https://synex.space/blog/openstack-zeng-jia-ji-suan-jie-dian-fu-shelljiao-ben/</loc>
         <lastmod>2025-01-05T16:05:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/page/1/</loc>
+        <loc>https://synex.space/blog/page/1/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/page/2/</loc>
+        <loc>https://synex.space/blog/page/2/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/page/3/</loc>
+        <loc>https://synex.space/blog/page/3/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/page/4/</loc>
+        <loc>https://synex.space/blog/page/4/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/page/5/</loc>
+        <loc>https://synex.space/blog/page/5/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/page/6/</loc>
+        <loc>https://synex.space/blog/page/6/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/page/7/</loc>
+        <loc>https://synex.space/blog/page/7/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/page/8/</loc>
+        <loc>https://synex.space/blog/page/8/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/page/9/</loc>
+        <loc>https://synex.space/blog/page/9/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/pwn-zhan-xi-lie-zong-jie/</loc>
+        <loc>https://synex.space/blog/pwn-zhan-xi-lie-zong-jie/</loc>
         <lastmod>2025-05-11T19:34:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/rao-guo-xiao-yuan-wang-webren-zheng-jie-jue-fang-an/</loc>
+        <loc>https://synex.space/blog/rao-guo-xiao-yuan-wang-webren-zheng-jie-jue-fang-an/</loc>
         <lastmod>2023-03-07T12:05:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/systemctl-xi-tong-fu-wu-guan-li/</loc>
+        <loc>https://synex.space/blog/systemctl-xi-tong-fu-wu-guan-li/</loc>
         <lastmod>2022-05-03T14:45:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/tekton-bao-cuo-more-than-one-persistentvolumeclaim-is-bound/</loc>
+        <loc>https://synex.space/blog/tekton-bao-cuo-more-than-one-persistentvolumeclaim-is-bound/</loc>
         <lastmod>2024-04-24T19:45:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/typechoshu-ju-qian-yi/</loc>
+        <loc>https://synex.space/blog/typechoshu-ju-qian-yi/</loc>
         <lastmod>2022-06-19T15:07:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/vsftpd-ftpfu-wu-qi/</loc>
+        <loc>https://synex.space/blog/vsftpd-ftpfu-wu-qi/</loc>
         <lastmod>2022-08-05T15:23:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/vue3-electrongou-jian-bao-cuo/</loc>
+        <loc>https://synex.space/blog/vue3-electrongou-jian-bao-cuo/</loc>
         <lastmod>2024-02-19T11:25:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/web-flaskmo-ban-zhu-ru-zong-jie/</loc>
+        <loc>https://synex.space/blog/web-flaskmo-ban-zhu-ru-zong-jie/</loc>
         <lastmod>2025-07-02T20:17:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/web-phpfan-xu-lie-hua-zong-jie/</loc>
+        <loc>https://synex.space/blog/web-phpfan-xu-lie-hua-zong-jie/</loc>
         <lastmod>2025-06-24T10:47:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/web-phpming-ling-zhi-xing-zong-jie/</loc>
+        <loc>https://synex.space/blog/web-phpming-ling-zhi-xing-zong-jie/</loc>
         <lastmod>2025-06-16T15:17:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/blog/xu-ji-adblian-jie-an-zhuo-mo-ni-qi/</loc>
+        <loc>https://synex.space/blog/xu-ji-adblian-jie-an-zhuo-mo-ni-qi/</loc>
         <lastmod>2025-03-20T17:04:00</lastmod>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/friends/</loc>
+        <loc>https://synex.space/friends/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/projects/</loc>
+        <loc>https://synex.space/projects/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/</loc>
+        <loc>https://synex.space/tags/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/adb/</loc>
+        <loc>https://synex.space/tags/adb/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/android/</loc>
+        <loc>https://synex.space/tags/android/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/ansible/</loc>
+        <loc>https://synex.space/tags/ansible/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/asm/</loc>
+        <loc>https://synex.space/tags/asm/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/ban-ben-kong-zhi/</loc>
+        <loc>https://synex.space/tags/ban-ben-kong-zhi/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/bind9/</loc>
+        <loc>https://synex.space/tags/bind9/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/ceph/</loc>
+        <loc>https://synex.space/tags/ceph/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/cicd/</loc>
+        <loc>https://synex.space/tags/cicd/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/cinder/</loc>
+        <loc>https://synex.space/tags/cinder/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/containerd/</loc>
+        <loc>https://synex.space/tags/containerd/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/crypto/</loc>
+        <loc>https://synex.space/tags/crypto/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/ctf/</loc>
+        <loc>https://synex.space/tags/ctf/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/diao-hua/</loc>
+        <loc>https://synex.space/tags/diao-hua/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/dns/</loc>
+        <loc>https://synex.space/tags/dns/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/docker/</loc>
+        <loc>https://synex.space/tags/docker/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/electron/</loc>
+        <loc>https://synex.space/tags/electron/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/fan-xu-lie-hua/</loc>
+        <loc>https://synex.space/tags/fan-xu-lie-hua/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/fdisk/</loc>
+        <loc>https://synex.space/tags/fdisk/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/flask/</loc>
+        <loc>https://synex.space/tags/flask/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/flat/</loc>
+        <loc>https://synex.space/tags/flat/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/forensics/</loc>
+        <loc>https://synex.space/tags/forensics/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/ftp/</loc>
+        <loc>https://synex.space/tags/ftp/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/git/</loc>
+        <loc>https://synex.space/tags/git/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/gitlab/</loc>
+        <loc>https://synex.space/tags/gitlab/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/ingress-nginx/</loc>
+        <loc>https://synex.space/tags/ingress-nginx/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/iptables/</loc>
+        <loc>https://synex.space/tags/iptables/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/kai-yuan-gong-ju/</loc>
+        <loc>https://synex.space/tags/kai-yuan-gong-ju/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/kubeadm/</loc>
+        <loc>https://synex.space/tags/kubeadm/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/kubernetes/</loc>
+        <loc>https://synex.space/tags/kubernetes/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/kvm/</loc>
+        <loc>https://synex.space/tags/kvm/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/lua/</loc>
+        <loc>https://synex.space/tags/lua/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/lvm/</loc>
+        <loc>https://synex.space/tags/lvm/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/misc/</loc>
+        <loc>https://synex.space/tags/misc/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/mysql/</loc>
+        <loc>https://synex.space/tags/mysql/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/nei-cun-zhan-yong/</loc>
+        <loc>https://synex.space/tags/nei-cun-zhan-yong/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/nfs/</loc>
+        <loc>https://synex.space/tags/nfs/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/nginx/</loc>
+        <loc>https://synex.space/tags/nginx/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/ngx-lua/</loc>
+        <loc>https://synex.space/tags/ngx-lua/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/nian-zhong-zong-jie/</loc>
+        <loc>https://synex.space/tags/nian-zhong-zong-jie/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/openstack/</loc>
+        <loc>https://synex.space/tags/openstack/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/php/</loc>
+        <loc>https://synex.space/tags/php/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/pod/</loc>
+        <loc>https://synex.space/tags/pod/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/podkong-zhi-qi/</loc>
+        <loc>https://synex.space/tags/podkong-zhi-qi/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/provider/</loc>
+        <loc>https://synex.space/tags/provider/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/pwn/</loc>
+        <loc>https://synex.space/tags/pwn/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/python/</loc>
+        <loc>https://synex.space/tags/python/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/qemu/</loc>
+        <loc>https://synex.space/tags/qemu/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/rce/</loc>
+        <loc>https://synex.space/tags/rce/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/reverse/</loc>
+        <loc>https://synex.space/tags/reverse/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/rop/</loc>
+        <loc>https://synex.space/tags/rop/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/service/</loc>
+        <loc>https://synex.space/tags/service/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/shu-ju-bei-fen/</loc>
+        <loc>https://synex.space/tags/shu-ju-bei-fen/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/shu-ju-cun-chu/</loc>
+        <loc>https://synex.space/tags/shu-ju-cun-chu/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/shu-ju-jie-gou/</loc>
+        <loc>https://synex.space/tags/shu-ju-jie-gou/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/shu-ju-qian-yi/</loc>
+        <loc>https://synex.space/tags/shu-ju-qian-yi/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/smali/</loc>
+        <loc>https://synex.space/tags/smali/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/ssti/</loc>
+        <loc>https://synex.space/tags/ssti/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/stein/</loc>
+        <loc>https://synex.space/tags/stein/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/systemd/</loc>
+        <loc>https://synex.space/tags/systemd/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/tekton/</loc>
+        <loc>https://synex.space/tags/tekton/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/typecho/</loc>
+        <loc>https://synex.space/tags/typecho/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/v2ray/</loc>
+        <loc>https://synex.space/tags/v2ray/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/vsftpd/</loc>
+        <loc>https://synex.space/tags/vsftpd/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/vue3/</loc>
+        <loc>https://synex.space/tags/vue3/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/vxlan/</loc>
+        <loc>https://synex.space/tags/vxlan/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/wang-luo-fu-wu/</loc>
+        <loc>https://synex.space/tags/wang-luo-fu-wu/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/web/</loc>
+        <loc>https://synex.space/tags/web/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/wen-ti-jie-jue/</loc>
+        <loc>https://synex.space/tags/wen-ti-jie-jue/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/writeup/</loc>
+        <loc>https://synex.space/tags/writeup/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/xi-tong-guan-li/</loc>
+        <loc>https://synex.space/tags/xi-tong-guan-li/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/xiao-yuan-wang/</loc>
+        <loc>https://synex.space/tags/xiao-yuan-wang/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/zhan-lou-dong/</loc>
+        <loc>https://synex.space/tags/zhan-lou-dong/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/zhan-yi-chu/</loc>
+        <loc>https://synex.space/tags/zhan-yi-chu/</loc>
     </url>
     <url>
-        <loc>https://S9n3x.github.io/tags/zi-dong-hua/</loc>
+        <loc>https://synex.space/tags/zi-dong-hua/</loc>
     </url>
 </urlset>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet href="https://S9n3x.github.io/feed_style.xsl" type="text/xsl"?>
+<?xml-stylesheet href="https://synex.space/feed_style.xsl" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
-        <tabi:base_url>https:&#x2F;&#x2F;S9n3x.github.io&#x2F;</tabi:base_url>
+        <tabi:base_url>https:&#x2F;&#x2F;synex.space&#x2F;</tabi:base_url>
         <tabi:separator>
             •
         </tabi:separator>
@@ -13,17 +13,17 @@
         <tabi:default_theme></tabi:default_theme>
         <tabi:post_listing_date>date</tabi:post_listing_date>
         <tabi:current_section>Containerd</tabi:current_section>
-    </tabi:metadata><link rel="extra-stylesheet" href="https://S9n3x.github.io/skins/mint.css?h=504215cf6bc10586b487" /><title>~/S9n3x - Containerd</title>
-    <link href="https://S9n3x.github.io/tags/containerd/atom.xml" rel="self" type="application/atom+xml"/>
-    <link href="https://S9n3x.github.io/tags/containerd/" rel="alternate" type="text/html"/>
-    <generator uri="https://www.getzola.org/">Zola</generator><updated>2022-07-31T08:32:00+00:00</updated><id>https://S9n3x.github.io/tags/containerd/atom.xml</id><entry xml:lang="en">
+    </tabi:metadata><link rel="extra-stylesheet" href="https://synex.space/skins/mint.css?h=504215cf6bc10586b487" /><title>~/S9n3x - Containerd</title>
+    <link href="https://synex.space/tags/containerd/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://synex.space/tags/containerd/" rel="alternate" type="text/html"/>
+    <generator uri="https://www.getzola.org/">Zola</generator><updated>2022-07-31T08:32:00+00:00</updated><id>https://synex.space/tags/containerd/atom.xml</id><entry xml:lang="en">
         <title>Kubernetes-安装-Kubeadm-Containerd-1.24.0</title>
         <published>2022-07-31T08:32:00+00:00</published>
         <updated>2022-07-31T08:32:00+00:00</updated>
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/kubernetes-an-zhuang-kubeadm-containerd-1-24-0/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/kubernetes-an-zhuang-kubeadm-containerd-1-24-0/</id>
+        <link rel="alternate" href="https://synex.space/blog/kubernetes-an-zhuang-kubeadm-containerd-1-24-0/" type="text/html"/>
+        <id>https://synex.space/blog/kubernetes-an-zhuang-kubeadm-containerd-1-24-0/</id>
         </entry>
 </feed>

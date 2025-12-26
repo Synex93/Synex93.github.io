@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet href="https://S9n3x.github.io/feed_style.xsl" type="text/xsl"?>
+<?xml-stylesheet href="https://synex.space/feed_style.xsl" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
-        <tabi:base_url>https:&#x2F;&#x2F;S9n3x.github.io&#x2F;</tabi:base_url>
+        <tabi:base_url>https:&#x2F;&#x2F;synex.space&#x2F;</tabi:base_url>
         <tabi:separator>
             •
         </tabi:separator>
@@ -13,18 +13,18 @@
         <tabi:default_theme></tabi:default_theme>
         <tabi:post_listing_date>date</tabi:post_listing_date>
         <tabi:current_section>开源工具</tabi:current_section>
-    </tabi:metadata><link rel="extra-stylesheet" href="https://S9n3x.github.io/skins/mint.css?h=504215cf6bc10586b487" /><title>~/S9n3x - 开源工具</title>
-    <link href="https://S9n3x.github.io/tags/kai-yuan-gong-ju/atom.xml" rel="self" type="application/atom+xml"/>
-    <link href="https://S9n3x.github.io/tags/kai-yuan-gong-ju/" rel="alternate" type="text/html"/>
-    <generator uri="https://www.getzola.org/">Zola</generator><updated>2025-02-15T15:05:00+00:00</updated><id>https://S9n3x.github.io/tags/kai-yuan-gong-ju/atom.xml</id><entry xml:lang="en">
+    </tabi:metadata><link rel="extra-stylesheet" href="https://synex.space/skins/mint.css?h=504215cf6bc10586b487" /><title>~/S9n3x - 开源工具</title>
+    <link href="https://synex.space/tags/kai-yuan-gong-ju/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://synex.space/tags/kai-yuan-gong-ju/" rel="alternate" type="text/html"/>
+    <generator uri="https://www.getzola.org/">Zola</generator><updated>2025-02-15T15:05:00+00:00</updated><id>https://synex.space/tags/kai-yuan-gong-ju/atom.xml</id><entry xml:lang="en">
         <title>OpenStack-内部网络原理分析</title>
         <published>2025-02-15T15:05:00+00:00</published>
         <updated>2025-02-15T15:05:00+00:00</updated>
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/openstack-nei-bu-wang-luo-yuan-li-fen-xi/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/openstack-nei-bu-wang-luo-yuan-li-fen-xi/</id>
+        <link rel="alternate" href="https://synex.space/blog/openstack-nei-bu-wang-luo-yuan-li-fen-xi/" type="text/html"/>
+        <id>https://synex.space/blog/openstack-nei-bu-wang-luo-yuan-li-fen-xi/</id>
         </entry><entry xml:lang="en">
         <title>OpenStack-命令控制</title>
         <published>2025-02-07T14:26:00+00:00</published>
@@ -32,8 +32,8 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/openstack-ming-ling-kong-zhi/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/openstack-ming-ling-kong-zhi/</id>
+        <link rel="alternate" href="https://synex.space/blog/openstack-ming-ling-kong-zhi/" type="text/html"/>
+        <id>https://synex.space/blog/openstack-ming-ling-kong-zhi/</id>
         </entry><entry xml:lang="en">
         <title>OpenStack-网络-FLAT与VXLAN</title>
         <published>2025-01-22T13:35:00+00:00</published>
@@ -41,8 +41,8 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/openstack-wang-luo-flatyu-vxlan/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/openstack-wang-luo-flatyu-vxlan/</id>
+        <link rel="alternate" href="https://synex.space/blog/openstack-wang-luo-flatyu-vxlan/" type="text/html"/>
+        <id>https://synex.space/blog/openstack-wang-luo-flatyu-vxlan/</id>
         </entry><entry xml:lang="en">
         <title>OpenStack-Cinder块存储-对接LVM、NFS、CEPH</title>
         <published>2025-01-11T16:05:00+00:00</published>
@@ -50,8 +50,8 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/openstack-cinderkuai-cun-chu-dui-jie-lvm-nfs-ceph/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/openstack-cinderkuai-cun-chu-dui-jie-lvm-nfs-ceph/</id>
+        <link rel="alternate" href="https://synex.space/blog/openstack-cinderkuai-cun-chu-dui-jie-lvm-nfs-ceph/" type="text/html"/>
+        <id>https://synex.space/blog/openstack-cinderkuai-cun-chu-dui-jie-lvm-nfs-ceph/</id>
         </entry><entry xml:lang="en">
         <title>OpenStack-增加计算节点(附shell脚本)</title>
         <published>2025-01-05T16:05:00+00:00</published>
@@ -59,8 +59,8 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/openstack-zeng-jia-ji-suan-jie-dian-fu-shelljiao-ben/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/openstack-zeng-jia-ji-suan-jie-dian-fu-shelljiao-ben/</id>
+        <link rel="alternate" href="https://synex.space/blog/openstack-zeng-jia-ji-suan-jie-dian-fu-shelljiao-ben/" type="text/html"/>
+        <id>https://synex.space/blog/openstack-zeng-jia-ji-suan-jie-dian-fu-shelljiao-ben/</id>
         </entry><entry xml:lang="en">
         <title>OpenStack-Stein版搭建-1控制1计算</title>
         <published>2025-01-04T15:39:00+00:00</published>
@@ -68,8 +68,8 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/openstack-steinban-da-jian-1kong-zhi-1ji-suan/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/openstack-steinban-da-jian-1kong-zhi-1ji-suan/</id>
+        <link rel="alternate" href="https://synex.space/blog/openstack-steinban-da-jian-1kong-zhi-1ji-suan/" type="text/html"/>
+        <id>https://synex.space/blog/openstack-steinban-da-jian-1kong-zhi-1ji-suan/</id>
         </entry><entry xml:lang="en">
         <title>KVM-虚拟机管理</title>
         <published>2024-12-27T18:23:00+00:00</published>
@@ -77,8 +77,8 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/kvm-xu-ni-ji-guan-li/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/kvm-xu-ni-ji-guan-li/</id>
+        <link rel="alternate" href="https://synex.space/blog/kvm-xu-ni-ji-guan-li/" type="text/html"/>
+        <id>https://synex.space/blog/kvm-xu-ni-ji-guan-li/</id>
         </entry><entry xml:lang="en">
         <title>Fdisk-MBR分区工具</title>
         <published>2023-03-30T20:22:00+00:00</published>
@@ -86,8 +86,8 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/fdisk-mbrfen-qu-gong-ju/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/fdisk-mbrfen-qu-gong-ju/</id>
+        <link rel="alternate" href="https://synex.space/blog/fdisk-mbrfen-qu-gong-ju/" type="text/html"/>
+        <id>https://synex.space/blog/fdisk-mbrfen-qu-gong-ju/</id>
         </entry><entry xml:lang="en">
         <title>绕过校园网WEB认证解决方案</title>
         <published>2023-03-07T12:05:00+00:00</published>
@@ -95,8 +95,8 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/rao-guo-xiao-yuan-wang-webren-zheng-jie-jue-fang-an/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/rao-guo-xiao-yuan-wang-webren-zheng-jie-jue-fang-an/</id>
+        <link rel="alternate" href="https://synex.space/blog/rao-guo-xiao-yuan-wang-webren-zheng-jie-jue-fang-an/" type="text/html"/>
+        <id>https://synex.space/blog/rao-guo-xiao-yuan-wang-webren-zheng-jie-jue-fang-an/</id>
         </entry><entry xml:lang="en">
         <title>Kubernetes-数据存储</title>
         <published>2022-09-07T13:32:00+00:00</published>
@@ -104,8 +104,8 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/kubernetes-shu-ju-cun-chu/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/kubernetes-shu-ju-cun-chu/</id>
+        <link rel="alternate" href="https://synex.space/blog/kubernetes-shu-ju-cun-chu/" type="text/html"/>
+        <id>https://synex.space/blog/kubernetes-shu-ju-cun-chu/</id>
         </entry><entry xml:lang="en">
         <title>Kubernetes-Service详解</title>
         <published>2022-09-05T13:32:00+00:00</published>
@@ -113,8 +113,8 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/kubernetes-servicexiang-jie/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/kubernetes-servicexiang-jie/</id>
+        <link rel="alternate" href="https://synex.space/blog/kubernetes-servicexiang-jie/" type="text/html"/>
+        <id>https://synex.space/blog/kubernetes-servicexiang-jie/</id>
         </entry><entry xml:lang="en">
         <title>Kubernetes-Pod控制器详解</title>
         <published>2022-09-04T14:07:00+00:00</published>
@@ -122,8 +122,8 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/kubernetes-podkong-zhi-qi-xiang-jie/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/kubernetes-podkong-zhi-qi-xiang-jie/</id>
+        <link rel="alternate" href="https://synex.space/blog/kubernetes-podkong-zhi-qi-xiang-jie/" type="text/html"/>
+        <id>https://synex.space/blog/kubernetes-podkong-zhi-qi-xiang-jie/</id>
         </entry><entry xml:lang="en">
         <title>Kubernetes-Pod详解</title>
         <published>2022-08-29T22:25:00+00:00</published>
@@ -131,8 +131,8 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/kubernetes-podxiang-jie/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/kubernetes-podxiang-jie/</id>
+        <link rel="alternate" href="https://synex.space/blog/kubernetes-podxiang-jie/" type="text/html"/>
+        <id>https://synex.space/blog/kubernetes-podxiang-jie/</id>
         </entry><entry xml:lang="en">
         <title>Kubernetes-安装-Kubeadm-Containerd-1.24.0</title>
         <published>2022-07-31T08:32:00+00:00</published>
@@ -140,8 +140,8 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/kubernetes-an-zhuang-kubeadm-containerd-1-24-0/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/kubernetes-an-zhuang-kubeadm-containerd-1-24-0/</id>
+        <link rel="alternate" href="https://synex.space/blog/kubernetes-an-zhuang-kubeadm-containerd-1-24-0/" type="text/html"/>
+        <id>https://synex.space/blog/kubernetes-an-zhuang-kubeadm-containerd-1-24-0/</id>
         </entry><entry xml:lang="en">
         <title>Git-版本控制工具</title>
         <published>2022-06-04T23:17:00+00:00</published>
@@ -149,8 +149,8 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/git-ban-ben-kong-zhi-gong-ju/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/git-ban-ben-kong-zhi-gong-ju/</id>
+        <link rel="alternate" href="https://synex.space/blog/git-ban-ben-kong-zhi-gong-ju/" type="text/html"/>
+        <id>https://synex.space/blog/git-ban-ben-kong-zhi-gong-ju/</id>
         </entry><entry xml:lang="en">
         <title>IPTABLES-防火墙管理</title>
         <published>2022-05-25T11:40:00+00:00</published>
@@ -158,8 +158,8 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/iptables-fang-huo-qiang/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/iptables-fang-huo-qiang/</id>
+        <link rel="alternate" href="https://synex.space/blog/iptables-fang-huo-qiang/" type="text/html"/>
+        <id>https://synex.space/blog/iptables-fang-huo-qiang/</id>
         </entry><entry xml:lang="en">
         <title>SYSTEMCTL-系统服务管理</title>
         <published>2022-05-03T14:45:00+00:00</published>
@@ -167,8 +167,8 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/systemctl-xi-tong-fu-wu-guan-li/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/systemctl-xi-tong-fu-wu-guan-li/</id>
+        <link rel="alternate" href="https://synex.space/blog/systemctl-xi-tong-fu-wu-guan-li/" type="text/html"/>
+        <id>https://synex.space/blog/systemctl-xi-tong-fu-wu-guan-li/</id>
         </entry><entry xml:lang="en">
         <title>Docker-容器管理</title>
         <published>2022-04-06T14:32:00+00:00</published>
@@ -176,8 +176,8 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/docker-rong-qi-guan-li/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/docker-rong-qi-guan-li/</id>
+        <link rel="alternate" href="https://synex.space/blog/docker-rong-qi-guan-li/" type="text/html"/>
+        <id>https://synex.space/blog/docker-rong-qi-guan-li/</id>
         </entry><entry xml:lang="en">
         <title>Ansible-自动化运维工具</title>
         <published>2022-03-05T10:02:00+00:00</published>
@@ -185,7 +185,7 @@
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://S9n3x.github.io/blog/ansible-zi-dong-hua-yun-wei-gong-ju/" type="text/html"/>
-        <id>https://S9n3x.github.io/blog/ansible-zi-dong-hua-yun-wei-gong-ju/</id>
+        <link rel="alternate" href="https://synex.space/blog/ansible-zi-dong-hua-yun-wei-gong-ju/" type="text/html"/>
+        <id>https://synex.space/blog/ansible-zi-dong-hua-yun-wei-gong-ju/</id>
         </entry>
 </feed>
