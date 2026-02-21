@@ -12,11 +12,11 @@
         <tabi:last_updated_on>Updated on $DATE</tabi:last_updated_on>
         <tabi:default_theme></tabi:default_theme>
         <tabi:post_listing_date>date</tabi:post_listing_date>
-        <tabi:current_section>asm</tabi:current_section>
-    </tabi:metadata><link rel="extra-stylesheet" href="https://synex.space/skins/mint.css?h=504215cf6bc10586b487" /><title>~/Syn3x - asm</title>
-    <link href="https://synex.space/tags/asm/atom.xml" rel="self" type="application/atom+xml"/>
-    <link href="https://synex.space/tags/asm/" rel="alternate" type="text/html"/>
-    <generator uri="https://www.getzola.org/">Zola</generator><updated>2026-02-21T16:36:00+00:00</updated><id>https://synex.space/tags/asm/atom.xml</id><entry xml:lang="en">
+        <tabi:current_section>壳</tabi:current_section>
+    </tabi:metadata><link rel="extra-stylesheet" href="https://synex.space/skins/mint.css?h=504215cf6bc10586b487" /><title>~/Syn3x - 壳</title>
+    <link href="https://synex.space/tags/ke/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://synex.space/tags/ke/" rel="alternate" type="text/html"/>
+    <generator uri="https://www.getzola.org/">Zola</generator><updated>2026-02-21T16:36:00+00:00</updated><id>https://synex.space/tags/ke/atom.xml</id><entry xml:lang="en">
         <title>Reverse-自写壳学习与加密壳实现</title>
         <published>2026-02-21T16:36:00+00:00</published>
         <updated>2026-02-21T16:36:00+00:00</updated>
@@ -25,14 +25,5 @@
         </author>
         <link rel="alternate" href="https://synex.space/blog/reverse-zi-xie-ke-xue-xi-yu-jia-mi-ke-shi-xian/" type="text/html"/>
         <id>https://synex.space/blog/reverse-zi-xie-ke-xue-xi-yu-jia-mi-ke-shi-xian/</id>
-        </entry><entry xml:lang="en">
-        <title>8086CPU汇编学习</title>
-        <published>2025-03-10T16:01:00+00:00</published>
-        <updated>2025-03-10T16:01:00+00:00</updated>
-        <author>
-            <name>Unknown</name>
-        </author>
-        <link rel="alternate" href="https://synex.space/blog/8086cpuhui-bian-xue-xi/" type="text/html"/>
-        <id>https://synex.space/blog/8086cpuhui-bian-xue-xi/</id>
         </entry>
 </feed>
