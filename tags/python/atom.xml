@@ -17,13 +17,13 @@
     <link href="https://synex.space/tags/python/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://synex.space/tags/python/" rel="alternate" type="text/html"/>
     <generator uri="https://www.getzola.org/">Zola</generator><updated>2025-07-02T20:17:00+00:00</updated><id>https://synex.space/tags/python/atom.xml</id><entry xml:lang="en">
-        <title>WEB-Flask模板注入总结</title>
+        <title>Flask模板注入总结</title>
         <published>2025-07-02T20:17:00+00:00</published>
         <updated>2025-07-02T20:17:00+00:00</updated>
         <author>
             <name>Unknown</name>
         </author>
-        <link rel="alternate" href="https://synex.space/blog/web-flaskmo-ban-zhu-ru-zong-jie/" type="text/html"/>
-        <id>https://synex.space/blog/web-flaskmo-ban-zhu-ru-zong-jie/</id>
+        <link rel="alternate" href="https://synex.space/blog/flaskmo-ban-zhu-ru-zong-jie/" type="text/html"/>
+        <id>https://synex.space/blog/flaskmo-ban-zhu-ru-zong-jie/</id>
         </entry>
 </feed>

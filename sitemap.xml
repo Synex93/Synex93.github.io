@@ -55,6 +55,10 @@
         <lastmod>2023-03-30T20:22:00</lastmod>
     </url>
     <url>
+        <loc>https://synex.space/blog/flaskmo-ban-zhu-ru-zong-jie/</loc>
+        <lastmod>2025-07-02T20:17:00</lastmod>
+    </url>
+    <url>
         <loc>https://synex.space/blog/git-ban-ben-kong-zhi-gong-ju/</loc>
         <lastmod>2022-06-04T23:17:00</lastmod>
     </url>
@@ -166,16 +170,20 @@
         <loc>https://synex.space/blog/page/9/</loc>
     </url>
     <url>
+        <loc>https://synex.space/blog/phpfan-xu-lie-hua-zong-jie/</loc>
+        <lastmod>2025-06-24T10:47:00</lastmod>
+    </url>
+    <url>
+        <loc>https://synex.space/blog/phpming-ling-zhi-xing-zong-jie/</loc>
+        <lastmod>2025-06-16T15:17:00</lastmod>
+    </url>
+    <url>
         <loc>https://synex.space/blog/pwn-zhan-xi-lie-zong-jie/</loc>
         <lastmod>2025-05-11T19:34:00</lastmod>
     </url>
     <url>
         <loc>https://synex.space/blog/rao-guo-xiao-yuan-wang-webren-zheng-jie-jue-fang-an/</loc>
         <lastmod>2023-03-07T12:05:00</lastmod>
-    </url>
-    <url>
-        <loc>https://synex.space/blog/reverse-zi-xie-ke-xue-xi-yu-jia-mi-ke-shi-xian/</loc>
-        <lastmod>2026-02-21T16:36:00</lastmod>
     </url>
     <url>
         <loc>https://synex.space/blog/systemctl-xi-tong-fu-wu-guan-li/</loc>
@@ -198,20 +206,12 @@
         <lastmod>2024-02-19T11:25:00</lastmod>
     </url>
     <url>
-        <loc>https://synex.space/blog/web-flaskmo-ban-zhu-ru-zong-jie/</loc>
-        <lastmod>2025-07-02T20:17:00</lastmod>
-    </url>
-    <url>
-        <loc>https://synex.space/blog/web-phpfan-xu-lie-hua-zong-jie/</loc>
-        <lastmod>2025-06-24T10:47:00</lastmod>
-    </url>
-    <url>
-        <loc>https://synex.space/blog/web-phpming-ling-zhi-xing-zong-jie/</loc>
-        <lastmod>2025-06-16T15:17:00</lastmod>
-    </url>
-    <url>
         <loc>https://synex.space/blog/xu-ji-adblian-jie-an-zhuo-mo-ni-qi/</loc>
         <lastmod>2025-03-20T17:04:00</lastmod>
+    </url>
+    <url>
+        <loc>https://synex.space/blog/zi-xie-ke-xue-xi-yu-jia-mi-ke-shi-xian/</loc>
+        <lastmod>2026-02-21T16:36:00</lastmod>
     </url>
     <url>
         <loc>https://synex.space/friends/</loc>
