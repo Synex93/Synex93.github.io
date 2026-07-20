@@ -1,0 +1,784 @@
+<!DOCTYPE html><html dir="ltr" lang="en" class="overflow-y-scroll scroll-smooth"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.png"><link rel="icon" href="/favicon.png"><link rel="canonical" href="https://synex.space/posts/kvm-%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%AE%A1%E7%90%86/"><meta name="generator" content="Astro v7.0.3"><!-- Font --><style>@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/02154cca78ac33f2.woff") format("woff"), url("/_astro/fonts/478e42e4694872ef.ttf") format("truetype");font-display:swap;font-weight:300;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/3a32a7a7a67f4f58.woff") format("woff"), url("/_astro/fonts/0863f4f6964aa89c.ttf") format("truetype");font-display:swap;font-weight:400;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/a5c5808c25effec9.woff") format("woff"), url("/_astro/fonts/792eded6cb3f0350.ttf") format("truetype");font-display:swap;font-weight:500;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/14314705006234cb.woff") format("woff"), url("/_astro/fonts/87d8fc1072d4917b.ttf") format("truetype");font-display:swap;font-weight:600;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/c33265ba093eb291.woff") format("woff"), url("/_astro/fonts/ec883ed4db81a7d9.ttf") format("truetype");font-display:swap;font-weight:700;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/c26ad40d3b1d9169.woff") format("woff"), url("/_astro/fonts/7a5ee0cfcde31b81.ttf") format("truetype");font-display:swap;font-weight:300;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/87ca066ba5b2c7cf.woff") format("woff"), url("/_astro/fonts/f4e25dfe9d6152ec.ttf") format("truetype");font-display:swap;font-weight:400;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/a9a0e80c053be3d5.woff") format("woff"), url("/_astro/fonts/a9df48ecd03749e4.ttf") format("truetype");font-display:swap;font-weight:500;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/da468df88542c99b.woff") format("woff"), url("/_astro/fonts/90f9809471092714.ttf") format("truetype");font-display:swap;font-weight:600;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/f914de358bc554f6.woff") format("woff"), url("/_astro/fonts/dbc9996f99c63e07.ttf") format("truetype");font-display:swap;font-weight:700;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:300;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:400;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:500;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:600;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:700;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:300;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:400;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:500;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:600;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:700;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}:root{--font-google-sans-code:"Google Sans Code-1a30c214885cb404","Google Sans Code-1a30c214885cb404 fallback: Courier New",monospace;}</style><!-- Primary meta --><title>KVM-虚拟机管理 | Syn3x&#39;s Blog</title><meta name="title" content="KVM-虚拟机管理 | Syn3x's Blog"><meta name="description" content="KVM 虚拟化管理指南，包含虚机创建与生命周期管理、磁盘、快照、克隆及网络配置。"><meta name="author" content="Syn3x"><link rel="sitemap" href="/sitemap-index.xml"><!-- Open Graph --><meta property="og:type" content="website"><meta property="og:site_name" content="Syn3x's Blog"><meta property="og:title" content="KVM-虚拟机管理 | Syn3x's Blog"><meta property="og:description" content="KVM 虚拟化管理指南，包含虚机创建与生命周期管理、磁盘、快照、克隆及网络配置。"><meta property="og:url" content="https://synex.space/posts/kvm-%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%AE%A1%E7%90%86/"><meta property="og:image" content="https://synex.space/posts/kvm-%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%AE%A1%E7%90%86/index.png"><!-- Twitter / X --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://synex.space/posts/kvm-%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%AE%A1%E7%90%86/"><meta property="twitter:title" content="KVM-虚拟机管理 | Syn3x's Blog"><meta property="twitter:description" content="KVM 虚拟化管理指南，包含虚机创建与生命周期管理、磁盘、快照、克隆及网络配置。"><meta property="twitter:image" content="https://synex.space/posts/kvm-%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%AE%A1%E7%90%86/index.png"><!-- RSS autodiscovery --><link rel="alternate" type="application/rss+xml" title="Syn3x's Blog" href="https://synex.space/rss.xml/"><!-- Filled at runtime by theme.ts to match the current background colour --><meta name="theme-color" content=""><!-- Extra head content injected by child layouts (e.g. JSON-LD, article meta) --><meta property="og:type" content="article"><meta property="article:published_time" content="2024-12-27T10:23:00.000Z"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"KVM-虚拟机管理 | Syn3x's Blog","image":"https://synex.space/posts/kvm-%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%AE%A1%E7%90%86/index.png","datePublished":"2024-12-27T10:23:00.000Z","author":[{"@type":"Person","name":"Syn3x","url":"https://synex.space"}]}</script><!--
+      Inline FOUC-prevention script: sets data-theme on <html> before
+      the browser paints. Runs synchronously, no defer/async.
+    --><script>
+      (function () {
+        const stored = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const theme = stored ?? (prefersDark ? "dark" : "light");
+        const root = document.firstElementChild;
+        root?.setAttribute("data-theme", theme);
+        root?.classList.toggle("dark", theme === "dark");
+        // Expose value so theme.ts can skip re-detection.
+        window.__theme = { value: theme };
+      })();
+    </script><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.2i1RQzKf.js"></script><link rel="stylesheet" href="/_astro/Footer.ChjHkc0Z.css"><style>@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media (prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*),[data-astro-transition-scope]{animation:none!important}}
+</style><style>[data-astro-transition-scope="astro-bztu2lml-1"] { view-transition-name: \5F00\6E90\5DE5\5177; }@layer astro { ::view-transition-old(\5F00\6E90\5DE5\5177) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(\5F00\6E90\5DE5\5177) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(\5F00\6E90\5DE5\5177) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(\5F00\6E90\5DE5\5177) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-bztu2lml-2"] { view-transition-name: kvm; }@layer astro { ::view-transition-old(kvm) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(kvm) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(kvm) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(kvm) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-2"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-2"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-bztu2lml-3"] { view-transition-name: qemu; }@layer astro { ::view-transition-old(qemu) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(qemu) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(qemu) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(qemu) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-3"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-3"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head><body class="bg-background font-app text-foreground selection:bg-accent/75 selection:text-accent-foreground flex min-h-svh flex-col"><a id="skip-to-content" href="#main-content" class="bg-background text-accent absolute inset-s-16 -top-full z-50 px-3 py-2 backdrop-blur-lg transition-all focus:top-4">Skip to content</a><header class="app-layout flex flex-col items-center justify-between sm:flex-row"><div class="border-border bg-background relative flex w-full items-baseline justify-between border-b py-4 sm:items-center sm:py-6"><a href="/" class="absolute py-1 text-xl leading-8 font-semibold whitespace-nowrap sm:static sm:my-auto sm:text-2xl sm:leading-none">Syn3x&#39;s Blog</a><nav id="nav-menu" class="flex w-full flex-col items-center sm:ms-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0"><button id="menu-btn" class="focus-outline self-end p-2 sm:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="menu-items" data-label-open="Open menu" data-label-close="Close menu"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="hidden" viewBox="0 0 24 24" id="close-icon"><path stroke="none" d="M0 0h24v24H0z" /><path d="M18 6 6 18M6 6l12 12" /></svg><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep" viewBox="0 0 24 24" id="menu-icon"><path stroke="none" d="M0 0h24v24H0z" /><path d="M4 6h16M7 12h13M10 18h10" /></svg></button><ul id="menu-items" class="[&amp;&gt;li&gt;a]:hover:text-accent mt-4 hidden w-44 grid-cols-2 place-content-center gap-2 sm:mt-0 sm:flex sm:w-auto sm:gap-x-5 sm:gap-y-0 sm:[&amp;&gt;li]:h-8 [&amp;&gt;li&gt;a]:block [&amp;&gt;li&gt;a]:px-4 [&amp;&gt;li&gt;a]:py-3 [&amp;&gt;li&gt;a]:text-center [&amp;&gt;li&gt;a]:font-medium sm:[&amp;&gt;li&gt;a]:px-2 sm:[&amp;&gt;li&gt;a]:py-1"><li class="col-span-2"><a href="/posts/" class="active-nav">Posts</a></li><li class="col-span-2"><a href="/tags/">Tags</a></li><li class="col-span-2"><a href="/friends/">Friends</a></li><li class="col-span-2"><a href="/about/">About</a></li><li class="col-span-2"><a href="/archives/" title="Archives" aria-label="Archives" class="group inline-flex items-center gap-1 hover:text-accent focus-outline flex size-full justify-center p-3 sm:relative sm:size-8 sm:p-0"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="hidden sm:absolute sm:top-1/2 sm:left-1/2 sm:block sm:size-6 sm:-translate-x-1/2 sm:-translate-y-1/2" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8M10 12h4" /></svg><span class="sm:sr-only">Archives</span></a></li><li class="col-span-1 flex items-center justify-center"><a href="/search/" title="Search" aria-label="Search" class="group inline-flex items-center gap-1 hover:text-accent focus-outline relative size-8"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-1/2 left-1/2 size-6 -translate-x-1/2 -translate-y-1/2" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 10a7 7 0 1 0 14 0 7 7 0 1 0-14 0M21 21l-6-6" /></svg><span class="sr-only">Search</span></a></li><li class="col-span-1 flex items-center justify-center"><button id="theme-btn" class="focus-outline hover:[&amp;&gt;svg]:stroke-accent relative size-12 p-4 sm:size-8" title="Toggle theme" aria-label="auto" aria-live="polite"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-[50%] left-[50%] translate-[-50%] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M12 3h.393a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 2.992z" /></svg><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-[50%] left-[50%] translate-[-50%] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M14.828 14.828a4 4 0 1 0-5.656-5.656 4 4 0 0 0 5.656 5.656M6.343 17.657l-1.414 1.414M6.343 6.343 4.929 4.929M17.657 6.343l1.414-1.414M17.657 17.657l1.414 1.414M4 12H2M12 4V2M20 12h2M12 20v2" /></svg></button></li></ul></nav></div></header><script type="module">function e(){let e=document.querySelector(`#menu-btn`),t=document.querySelector(`#menu-items`),n=document.querySelector(`#menu-icon`),r=document.querySelector(`#close-icon`);if(!e||!t||!n||!r)return;let i=e.dataset.labelOpen??`Open menu`,a=e.dataset.labelClose??`Close menu`;e.addEventListener(`click`,()=>{let o=e.getAttribute(`aria-expanded`)===`true`;e.setAttribute(`aria-expanded`,o?`false`:`true`),e.setAttribute(`aria-label`,o?i:a),t.classList.toggle(`hidden`),t.classList.toggle(`grid`),n.classList.toggle(`hidden`),r.classList.toggle(`hidden`)})}e(),document.addEventListener(`astro:after-swap`,e);</script><div class="app-layout flex items-center justify-start"><a id="back-button" href="/" class="group inline-flex items-center gap-1 hover:text-accent focus-outline hover:text-foreground/75 -ms-2 mt-8 mb-2"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 rtl:rotate-180" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m15 6-6 6 6 6" /></svg><span>Go back</span></a></div><script type="module">function e(){let e=document.querySelector(`#back-button`),t=sessionStorage.getItem(`backUrl`);t&&e&&(e.href=t)}document.addEventListener(`astro:page-load`,e),e();</script><main id="main-content" class="app-layout" data-pagefind-body><div class="xl:grid xl:grid-cols-[minmax(0,1fr)_13rem] xl:gap-x-10"><div><h1 style="view-transition-name:kvm-u00865au0062dfu00673au007ba1u007406" class="text-accent inline-block text-2xl font-bold sm:text-3xl">KVM-虚拟机管理</h1><div class="my-2 flex items-center gap-2"><div class="text-muted-foreground flex items-center gap-x-2"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 min-w-5.5" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zM16 3v4M8 3v4M4 11h16M7 14h.013M10.01 14h.005M13.01 14h.005M16.015 14h.005M13.015 17h.005M7.01 17h.005M10.01 17h.005" /></svg><time class="text-sm sm:text-base" datetime="2024-12-27T10:23:00.000Z">27 Dec, 2024</time></div><span aria-hidden="true" class="text-muted-foreground max-sm:hidden hidden">|</span></div><article id="article" class="app-prose max-w-app prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg) mt-8 w-full"><h1 id="关于虚拟化技术">关于虚拟化技术</h1>
+<p>虚拟化是一种通过模拟计算机硬件，使一台计算机可以同时运行多个不同操作系统的技术。虚拟化极大地提高了硬件资源的利用率，同时降低了物理设备的成本和管理复杂性。</p>
+<h1 id="虚拟化软件的差别">虚拟化软件的差别</h1>
+<p>qume 全虚拟化软件，特别慢但是兼容性特别好。
+xen     半虚拟化软件，需要使用专门修改之后的内核，性能很高，兼容性很差。redhat在5.5的版本将xen替换成kvm
+kvm    全虚拟化软件，它具有硬件支持cpu，内置在linux内核模块中，不需要使用专门的内核。性能好，兼容性好。
+kvm的兼容性没有qume好，但是他比qume的性能好太多了
+kvm的性能没有xen好，但是他比xen的兼容性好太多了</p>
+<h1 id="安装kvm">安装KVM</h1>
+<p>KVM全称：Kernel-based Virtual Machine
+libvirt：因为KVM是基于内核的，linux用户是没办法直接操作内核的，这个软件包就是一个操作的工具。
+virt-install：安装虚拟机用的。
+qume-kvm：kvm是没有自己的虚拟磁盘技术的，所以直接兼容了qume的虚拟磁盘，这个包即兼容并优化了qume的磁盘。</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">yum</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> install</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> libvirt</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> virt-install</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> qemu-kvm</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -y</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">systemctl</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> enable</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --now</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> libvirtd</span></span></code></pre>
+<h1 id="虚机管理">虚机管理</h1>
+<h2 id="创建一个虚拟机">创建一个虚拟机</h2>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">root@template </span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">~</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># virt-install --virt-type kvm </span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">--os-type</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">linux</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> --os-variant</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> rhel7</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --name</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> centos7</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --memory</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 1024</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --vcpus</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 1</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --disk</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /opt/centos.raw,format=raw,size=</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">10</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --cdrom</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /opt/CentOS-7-x86_64-Minimal-1511.iso</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --network</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> network=default</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --graphics</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> vnc,listen=</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">0.0.0.0</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --noautoconsole</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">Starting</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> install...</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">Allocating</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> '</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">centos.raw</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">                   |</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">  10</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> GB</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">  00:00:00</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">Domain</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> installation</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> still</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> in</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> progress.</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> You</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> can</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> reconnect</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> to</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">the</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> console</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> to</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> complete</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> the</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> installation</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> process.</span></span></code></pre>
+<p>要注意的是—cdrom参数，镜像不要放在root目录下会报权限相关的问题，建议丢到一个公共的位置，例如/opt下，然后操控的用户和用户组都是qemu
+创建好之后可以通过vnc来连接，这里设置离连接方式是vnc，并且监听的位置是0.0.0.0
+<img src="https://static.synex.space/article/Pasted%20image%2020241226152259.png" alt="VNC"></p>
+<h2 id="管理命令">管理命令</h2>
+<p>主要使用<code>virsh</code>来管理KVM虚拟机</p>
+<h2 id="列出虚机">列出虚机</h2>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virsh</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> list</span></span></code></pre>
+<p>这条命令默认是列出所有运行的虚机，如果虚机在关闭状态则不会列出，想要列出所有状态的虚机需要添加<code>--all</code>参数</p>
+<h2 id="关机">关机</h2>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virsh</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> shutdown</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> 虚机名</span></span></code></pre>
+<p>关机的话系统必须装好，否则没用</p>
+<h2 id="开机">开机</h2>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>virsh start 虚机名</span></span></code></pre>
+<h2 id="强制关机">强制关机</h2>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virsh</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> destroy</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> 虚机名</span></span></code></pre>
+<p>这相当于拔掉虚机的电源</p>
+<h2 id="重启">重启</h2>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virsh</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> reboot</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> 虚机名</span></span></code></pre>
+<p>重启的话系统必须装好，否则没用</p>
+<h2 id="导出配置">导出配置</h2>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virsh</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> dumpxml</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> 虚机名</span></span></code></pre>
+<p>导出对应虚机的配置文件</p>
+<h2 id="取消定义">取消定义</h2>
+<p>这里是把对应的虚拟机移除kvm的管理里，相当于从kvm中删除，配置文件也会被删除，但是实际的镜像文件还是会保留。</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virsh</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> undefine</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> 虚机名</span></span></code></pre>
+<h2 id="导入配置">导入配置</h2>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virsh</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> define</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> xml配置文件</span></span></code></pre>
+<h2 id="修改配置">修改配置</h2>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virsh</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> edit</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> 虚机名</span></span></code></pre>
+<h2 id="挂起">挂起</h2>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virsh</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> suspend</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> 虚机名</span></span></code></pre>
+<p>锁定当前状态</p>
+<h2 id="恢复">恢复</h2>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virsh</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> resume</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> 虚机名</span></span></code></pre>
+<h2 id="开机自启">开机自启</h2>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virsh</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> autostart</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> 虚机名</span></span></code></pre>
+<p>可以添加参数<code>--disable</code>来取消开机自启</p>
+<h2 id="列出所有开机自启主机">列出所有开机自启主机</h2>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virsh</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> list</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --autostart</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --all</span></span></code></pre>
+<p>不加参数<code>--all</code>参数的话，只会列出开机的主机。</p>
+<h2 id="控制台">控制台</h2>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virsh</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> console</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> 虚机名</span></span></code></pre>
+<p>想要通过<code>console</code>直接连接控制虚机，需要提前在虚拟机中执行下面命令让其支持(执行完请重启虚机)</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">grubby</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --update-kernel=ALL</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --args=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">console=ttyS0,115200n8</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span></span></code></pre>
+<h1 id="磁盘管理">磁盘管理</h1>
+<h2 id="关于磁盘格式">关于磁盘格式</h2>
+<ul>
+<li>RAW：原始格式，也叫野格式，不支持快照功能，不方便传输，读写性能较好。</li>
+<li>qcow2：qcow2(copy on write)写时复制(动态占用空间)，占用空间小，支持快照，性能比raw差一点，方便传输。</li>
+</ul>
+<h2 id="管理命令-1">管理命令</h2>
+<p>主要使用<code>qemu-img</code>来管理KVM虚拟机</p>
+<h2 id="磁盘信息">磁盘信息</h2>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">qemu-img</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> info</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> 虚拟磁盘</span></span></code></pre>
+<h2 id="创建磁盘">创建磁盘</h2>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">qemu-img</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> create</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -f</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> qcow2</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> 位置</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> 大小</span></span></code></pre>
+<p>例如</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">qemu-img</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> create</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -f</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> qcow2</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /opt/test.qcow2</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> 1G</span></span></code></pre>
+<p>在<code>/opt/test.qcow2</code>位置创建一个1G大小的磁盘</p>
+<h2 id="调整容量">调整容量</h2>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">qemu-img</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> resize</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /opt/test.qcow2</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> +1G</span></span></code></pre>
+<p>给test.qcow2添加1G
+后面是容量指令，具体格式参考如下</p>
+<ul>
+<li>5G    大小调整到5G</li>
+<li>+1G 大小增加1G</li>
+<li>-1G 大小减小1G</li>
+</ul>
+<h2 id="raw转换qcow2">RAW转换QCOW2</h2>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">qemu-img</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> convert</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -f</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> raw</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -O</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> qcow2</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> xxx.raw</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> xxx.qcow2</span></span></code></pre>
+<p>这个操作请在虚拟机关闭的状态下执行，执行之后会保留之前的文件然后生成新的qcow2文件。
+然后转换之后如果想开机时使用QCOW2的镜像需要edit一下虚机的配置文件</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">qemu-img</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> convert</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -f</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> raw</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -O</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> qcow2</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> centos.raw</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> centos.qcow2</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virsh</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> edit</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> centos7</span></span></code></pre>
+<p>大概在35行左右,原文如下</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="xml"><code><span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">    &#x3C;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">disk</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> type</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">file</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> device</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">disk</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span>
+<span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">      &#x3C;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">driver</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> name</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">qemu</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> type</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">raw</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">>&#x3C;/</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">driver</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span>
+<span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">      &#x3C;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">source</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> file</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">/opt/centos.raw</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">>&#x3C;/</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">source</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span>
+<span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">      &#x3C;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">target</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> dev</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">vda</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> bus</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">virtio</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">>&#x3C;/</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">target</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span>
+<span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">      &#x3C;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">address</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> type</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">pci</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> domain</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">0x0000</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> bus</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">0x00</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> slot</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">0x06</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> function</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">0x0</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">>&#x3C;/</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">address</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span>
+<span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">    &#x3C;/</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">disk</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span></code></pre>
+<p>修改成下面这种效果</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="xml"><code><span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">    &#x3C;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">disk</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> type</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">file</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> device</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">disk</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span>
+<span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">      &#x3C;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">driver</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> name</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">qemu</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> type</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">qcow2</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">>&#x3C;/</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">driver</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span>
+<span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">      &#x3C;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">source</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> file</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">/opt/centos.qcow2</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">>&#x3C;/</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">source</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span>
+<span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">      &#x3C;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">target</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> dev</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">vda</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> bus</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">virtio</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">>&#x3C;/</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">target</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span>
+<span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">      &#x3C;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">address</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> type</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">pci</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> domain</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">0x0000</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> bus</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">0x00</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> slot</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">0x06</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> function</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">0x0</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">>&#x3C;/</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">address</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span>
+<span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">    &#x3C;/</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">disk</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span></code></pre>
+<h1 id="其他功能">其他功能</h1>
+<h2 id="快照">快照</h2>
+<h3 id="创建快照">创建快照</h3>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virsh</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> snapshot-create</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> centos7</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --atomic</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --disk-only</span></span></code></pre>
+<p>这里我们为虚拟机 centos7 创建了一个快照,使用了 <code>--atomic</code>表示如果失败则完全回滚,<code>--disk-only</code> 表示仅对磁盘创建快照。</p>
+<h3 id="查看快照">查看快照</h3>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virsh</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> snapshot-list</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> centos7</span></span></code></pre>
+<h3 id="恢复快照">恢复快照</h3>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virsh</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> snapshot-revert</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> centos7</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> snapshot1</span></span></code></pre>
+<h3 id="删除快照">删除快照</h3>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virsh</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> snapshot-delete</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> centos7</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> snapshot1</span></span></code></pre>
+<h3 id="其他">其他</h3>
+<p>在创建和管理快照时,可以添加选项控制快照类型(disk-only、system-checkpoint等)、是否包含内存状态等,灵活控制快照行为。</p>
+<h2 id="克隆">克隆</h2>
+<h3 id="完整克隆">完整克隆</h3>
+<p>被克隆的主机一定要处于被挂起或者关闭的状态下
+使用virt-clone工具</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">root@template opt</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># virt-clone --auto-clone -o centos7 -n centos7-2</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">Allocating</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> '</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">centos-clone.qcow2</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">                      |</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">  10</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> GB</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">  00:00:09</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">     </span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">Clone</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> '</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">centos7-2</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> created</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> successfully.</span></span></code></pre>
+<p>手动克隆</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">qemu-img</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> convert</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -f</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> qcow2</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -O</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> qcow2</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -c</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> centos.qcow2</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> centos2.qcow2</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virsh</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> dumpxml</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> centos7</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> ></span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> centos7-2.xml</span></span></code></pre>
+<p>编辑导出的xml,主要修改下面几个字段</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="text"><code><span class="line"><span>修改 domain.name # 名字</span></span>
+<span class="line"><span>删除 domain.uuid # uuid</span></span>
+<span class="line"><span>删除 domain.devices.interface.mac # mac地址</span></span>
+<span class="line"><span>修改 domain.devices.disk.source-file # 虚拟磁盘文件指定为新手动复制的。</span></span></code></pre>
+<p>编辑好之后导入虚机</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virsh</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> define</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> centos7-2.xml</span></span></code></pre>
+<h3 id="链接克隆">链接克隆</h3>
+<p>连接克隆要注意的是不能使用RAW格式的磁盘，他是不支持的。
+创建引用磁盘</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">qemu-img</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> create</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -f</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> qcow2</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -b</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> centos.qcow2</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> centos3.qcow2</span></span></code></pre>
+<p>此时去查看centos3.qcow2的信息如下</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">root@template opt</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># qemu-img info centos3.qcow2              </span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">image:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> centos3.qcow2</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">                                          file</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> format:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> qcow2</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">                                            virtual</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> size:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> 10G</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> (10737418240 </span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">bytes</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">)                         disk size: 196K                                               cluster_size: 65536                                           backing file: centos.qcow2                                    </span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">Format</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> specific</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> information:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">                                      compat:</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 1.1</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">                                                   lazy</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> refcounts:</span><span style="--shiki-light:#FE640B;--shiki-dark:#82AAFF"> false</span></span></code></pre>
+<p>会发现这个字段<code>backing file: centos.qcow2</code>
+导出xml</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virsh</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> dumpxml</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> centos7</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> ></span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> centos7-3.xml</span></span></code></pre>
+<p>编辑导出的xml,主要修改下面几个字段</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="text"><code><span class="line"><span>修改 domain.name # 名字</span></span>
+<span class="line"><span>删除 domain.uuid # uuid</span></span>
+<span class="line"><span>删除 domain.devices.interface.mac # mac地址</span></span>
+<span class="line"><span>修改 domain.devices.disk.source-file # 虚拟磁盘文件指定为新手动复制的。</span></span></code></pre>
+<p>编辑好之后导入虚机</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virsh</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> define</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> centos7-3.xml</span></span></code></pre>
+<h2 id="网络">网络</h2>
+<h3 id="桥接网卡">桥接网卡</h3>
+<p>如果想要将主机桥接到某个网络中则需要搞一个桥接网卡，可以通过下面命令进行桥接</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virsh</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> iface-bridge</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> ens33</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> br0</span></span></code></pre>
+<p>ens33是被桥接的网卡，br0是桥接之后的网卡，桥接的过程中可能会出现很多问题，我出现的问题是断网，然后开启网卡开启失败具体可以参考<a href="https://blog.csdn.net/m0_57949020/article/details/119984635">文章</a></p>
+<h3 id="取消桥接">取消桥接</h3>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virsh</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> iface-unbridge</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> br0</span></span></code></pre>
+<h3 id="创建虚机指定网卡">创建虚机指定网卡</h3>
+<p>参数<code>--network network=default</code>是NAT模式，全部参数可以参考下面</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virt-install</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --virt-type</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> kvm</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --os-type=linux</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --os-variant</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> rhel7</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --name</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> centos7</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --memory</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 1024</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --vcpus</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 1</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --disk</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /opt/centos.raw,format=raw,size=</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">10</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --cdrom</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /opt/CentOS-7-x86_64-Minimal-1511.iso</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --network</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> network=default</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --graphics</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> vnc,listen=</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">0.0.0.0</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --noautoconsole</span></span></code></pre>
+<p>参数<code>--network bridge=br0</code>是桥接模式，全部参数可以参考下面</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virt-install</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --virt-type</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> kvm</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --os-type=linux</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --os-variant</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> rhel7</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --name</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> centos7</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --memory</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 1024</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --vcpus</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 1</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --disk</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /opt/centos.raw,format=raw,size=</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">10</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --cdrom</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /opt/CentOS-7-x86_64-Minimal-1511.iso</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --network</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> bridge=br0</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --graphics</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> vnc,listen=</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">0.0.0.0</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --noautoconsole</span></span></code></pre>
+<h3 id="已有虚机更换网卡">已有虚机更换网卡</h3>
+<p>通过下面命令编辑配置</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">virsh</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> edit</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> 虚机名</span></span></code></pre>
+<p>修改<code>domain.devices.interface</code>字段，默认值如下</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="xml"><code><span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">    &#x3C;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">interface</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> type</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">network</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span>
+<span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">      &#x3C;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">mac</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> address</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">52:54:00:25:a6:67</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">>&#x3C;/</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">mac</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span>
+<span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">      &#x3C;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">source</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> network</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">default</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">>&#x3C;/</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">source</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span>
+<span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">      &#x3C;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">model</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> type</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">virtio</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">>&#x3C;/</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">model</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span>
+<span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">      &#x3C;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">address</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> type</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">pci</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> domain</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">0x0000</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> bus</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">0x00</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> slot</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">0x03</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> function</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">0x0</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">>&#x3C;/</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">address</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span>
+<span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">    &#x3C;/</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">interface</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span></code></pre>
+<p>修改成下面这样</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="xml"><code><span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">    &#x3C;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">interface</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> type</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">bridge</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span>
+<span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">      &#x3C;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">mac</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> address</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">52:54:00:25:a6:67</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">>&#x3C;/</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">mac</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span>
+<span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">      &#x3C;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">source</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> bridge</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">br0</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">>&#x3C;/</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">source</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span>
+<span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">      &#x3C;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">model</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> type</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">virtio</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">>&#x3C;/</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">model</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span>
+<span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">      &#x3C;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">address</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> type</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">pci</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> domain</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">0x0000</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> bus</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">0x00</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> slot</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">0x03</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#DF8E1D;--shiki-light-font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic"> function</span><span style="--shiki-light:#4C4F69;--shiki-dark:#7FDBCA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">0x0</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">>&#x3C;/</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">address</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span>
+<span class="line"><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">    &#x3C;/</span><span style="--shiki-light:#1E66F5;--shiki-dark:#CAECE6">interface</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span></code></pre>
+<p>主要是<code>interface</code>的<code>type</code>字段和<code>interface.source</code>的字段。</p>
+<h3 id="注意">注意</h3>
+<p>每次桥接和取消桥接都会永久性的修改网卡的配置文件，这个需要注意。</p>
+<h1 id="关于kvm创建的虚拟机">关于KVM创建的虚拟机</h1>
+<p>KVM虚拟机主要有两部分组成，一部分是磁盘文件，在创建的时候通过下面命令已经指定
+<code>--disk /opt/centos.raw,format=raw,size=10</code>
+另外一部分是配置文件，配置文件默认位置在<code>/etc/libvirt/qemu</code>中，一般采用dumpxml来导出，只要拥有xml和镜像文件就可以恢复虚机。</p></article></div><aside class="border-border sticky top-8 hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-l pl-5 xl:block" aria-label="文章目录" data-pagefind-ignore><nav class="pb-4"><p class="text-foreground mb-3 text-base font-semibold tracking-wide">Catalogue</p><ol class="space-y-1 text-sm"><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#创建一个虚拟机" data-toc-link data-toc-slug="创建一个虚拟机">创建一个虚拟机</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#管理命令" data-toc-link data-toc-slug="管理命令">管理命令</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#列出虚机" data-toc-link data-toc-slug="列出虚机">列出虚机</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#关机" data-toc-link data-toc-slug="关机">关机</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#开机" data-toc-link data-toc-slug="开机">开机</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#强制关机" data-toc-link data-toc-slug="强制关机">强制关机</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#重启" data-toc-link data-toc-slug="重启">重启</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#导出配置" data-toc-link data-toc-slug="导出配置">导出配置</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#取消定义" data-toc-link data-toc-slug="取消定义">取消定义</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#导入配置" data-toc-link data-toc-slug="导入配置">导入配置</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#修改配置" data-toc-link data-toc-slug="修改配置">修改配置</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#挂起" data-toc-link data-toc-slug="挂起">挂起</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#恢复" data-toc-link data-toc-slug="恢复">恢复</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#开机自启" data-toc-link data-toc-slug="开机自启">开机自启</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#列出所有开机自启主机" data-toc-link data-toc-slug="列出所有开机自启主机">列出所有开机自启主机</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#控制台" data-toc-link data-toc-slug="控制台">控制台</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#关于磁盘格式" data-toc-link data-toc-slug="关于磁盘格式">关于磁盘格式</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#管理命令-1" data-toc-link data-toc-slug="管理命令-1">管理命令</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#磁盘信息" data-toc-link data-toc-slug="磁盘信息">磁盘信息</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#创建磁盘" data-toc-link data-toc-slug="创建磁盘">创建磁盘</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#调整容量" data-toc-link data-toc-slug="调整容量">调整容量</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#raw转换qcow2" data-toc-link data-toc-slug="raw转换qcow2">RAW转换QCOW2</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#快照" data-toc-link data-toc-slug="快照">快照</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#创建快照" data-toc-link data-toc-slug="创建快照">创建快照</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#查看快照" data-toc-link data-toc-slug="查看快照">查看快照</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#恢复快照" data-toc-link data-toc-slug="恢复快照">恢复快照</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#删除快照" data-toc-link data-toc-slug="删除快照">删除快照</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#其他" data-toc-link data-toc-slug="其他">其他</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#克隆" data-toc-link data-toc-slug="克隆">克隆</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#完整克隆" data-toc-link data-toc-slug="完整克隆">完整克隆</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#链接克隆" data-toc-link data-toc-slug="链接克隆">链接克隆</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#网络" data-toc-link data-toc-slug="网络">网络</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#桥接网卡" data-toc-link data-toc-slug="桥接网卡">桥接网卡</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#取消桥接" data-toc-link data-toc-slug="取消桥接">取消桥接</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#创建虚机指定网卡" data-toc-link data-toc-slug="创建虚机指定网卡">创建虚机指定网卡</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#已有虚机更换网卡" data-toc-link data-toc-slug="已有虚机更换网卡">已有虚机更换网卡</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#注意" data-toc-link data-toc-slug="注意">注意</a></li></ol></nav></aside><script data-astro-rerun>
+  function initTableOfContents() {
+    const toc = document.querySelector("[aria-label='文章目录']");
+    const article = document.getElementById("article");
+    if (!toc || !article) return;
+
+    const links = Array.from(toc.querySelectorAll("[data-toc-link]"));
+    const headingElements = links
+      .map(link => document.getElementById(link.dataset.tocSlug ?? ""))
+      .filter(Boolean);
+
+    if (headingElements.length === 0) return;
+
+    function updateActiveLink() {
+      let activeHeading = headingElements[0];
+
+      for (const heading of headingElements) {
+        if (heading.getBoundingClientRect().top <= 128) {
+          activeHeading = heading;
+        } else {
+          break;
+        }
+      }
+
+      for (const link of links) {
+        const isActive = link.dataset.tocSlug === activeHeading.id;
+        link.classList.toggle("border-accent", isActive);
+        link.classList.toggle("text-accent", isActive);
+        link.classList.toggle("font-medium", isActive);
+        link.classList.toggle("text-muted-foreground", !isActive);
+        link.toggleAttribute("aria-current", isActive);
+      }
+    }
+
+    updateActiveLink();
+    window.addEventListener("scroll", updateActiveLink, { passive: true });
+    window.addEventListener("resize", updateActiveLink);
+
+    document.addEventListener(
+      "astro:before-swap",
+      () => {
+        window.removeEventListener("scroll", updateActiveLink);
+        window.removeEventListener("resize", updateActiveLink);
+      },
+      { once: true }
+    );
+  }
+
+  initTableOfContents();
+</script></div><hr class="my-8 border-dashed"><div id="btt-btn-container" class="fixed inset-e-4 bottom-8 z-50 md:sticky md:inset-e-auto md:float-end md:me-1 translate-y-14 opacity-0 transition duration-500"><button data-button="back-to-top" class="group bg-background relative px-2 py-1 size-14 rounded-full shadow-xl md:h-8 md:w-fit md:rounded-md md:shadow-none md:focus-visible:rounded-none md:bg-background/35 md:bg-clip-padding md:backdrop-blur-lg"><span id="progress-indicator" class="absolute inset-0 -z-10 block size-14 scale-110 rounded-full bg-transparent md:hidden md:h-8 md:rounded-md"></span><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block rotate-90 md:hidden" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 12h14M5 12l6 6M5 12l6-6" /></svg><span class="group-hover:text-accent sr-only text-sm md:not-sr-only"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M12 5v14M16 9l-4-4M8 9l4-4" /></svg>Back to top</span></button></div><script data-astro-rerun>
+  function backToTop() {
+    const rootElement = document.documentElement;
+    const btnContainer = document.querySelector("#btt-btn-container");
+    const backToTopBtn = document.querySelector("[data-button='back-to-top']");
+    const progressIndicator = document.querySelector("#progress-indicator");
+
+    if (!rootElement || !btnContainer || !backToTopBtn || !progressIndicator)
+      return;
+
+    backToTopBtn.addEventListener("click", () => {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    });
+
+    let lastVisible = null;
+    function handleScroll() {
+      const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+      const scrollTop = rootElement.scrollTop;
+      const scrollPercent = Math.floor((scrollTop / scrollTotal) * 100);
+
+      progressIndicator.style.setProperty(
+        "background-image",
+        `conic-gradient(var(--accent), var(--accent) ${scrollPercent}%, transparent ${scrollPercent}%)`
+      );
+
+      const isVisible = scrollTop / scrollTotal > 0.3;
+
+      if (isVisible !== lastVisible) {
+        btnContainer.classList.toggle("opacity-100", isVisible);
+        btnContainer.classList.toggle("translate-y-0", isVisible);
+        btnContainer.classList.toggle("opacity-0", !isVisible);
+        btnContainer.classList.toggle("translate-y-14", !isVisible);
+        lastVisible = isVisible;
+      }
+    }
+
+    let ticking = false;
+    document.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  }
+  backToTop();
+</script><ul class="mt-4 mb-8 flex flex-wrap gap-4 sm:my-8"><li><a data-astro-transition-scope="astro-bztu2lml-1" href="/tags/开源工具/" class="flex items-center gap-0.5 border-foreground border-b-2 border-dashed hover:border-accent hover:text-accent hover:-mt-0.5 focus-visible:text-accent focus-visible:border-none text-sm"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="opacity-80 size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 9h14M5 15h14M11 4 7 20M17 4l-4 16" /></svg>开源工具</a></li><li><a data-astro-transition-scope="astro-bztu2lml-2" href="/tags/kvm/" class="flex items-center gap-0.5 border-foreground border-b-2 border-dashed hover:border-accent hover:text-accent hover:-mt-0.5 focus-visible:text-accent focus-visible:border-none text-sm"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="opacity-80 size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 9h14M5 15h14M11 4 7 20M17 4l-4 16" /></svg>kvm</a></li><li><a data-astro-transition-scope="astro-bztu2lml-3" href="/tags/qemu/" class="flex items-center gap-0.5 border-foreground border-b-2 border-dashed hover:border-accent hover:text-accent hover:-mt-0.5 focus-visible:text-accent focus-visible:border-none text-sm"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="opacity-80 size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 9h14M5 15h14M11 4 7 20M17 4l-4 16" /></svg>qemu</a></li></ul><div class="flex flex-none flex-col items-center justify-center gap-1 md:items-start"><span class="italic">Share this post:</span><div class="text-center"><a href="https://wa.me/?text=https://synex.space/posts/kvm-%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%AE%A1%E7%90%86/" title="Share this post on Whatsapp" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m3 21 1.65-3.8a9 9 0 1 1 3.4 2.9z" /><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0za5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" /></svg><span class="sr-only">Share this post on Whatsapp</span></a><a href="https://www.facebook.com/sharer.php?u=https://synex.space/posts/kvm-%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%AE%A1%E7%90%86/" title="Share this post on Facebook" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3V3h-3a5 5 0 0 0-5 5v2z" /></svg><span class="sr-only">Share this post on Facebook</span></a><a href="https://x.com/intent/post?url=https://synex.space/posts/kvm-%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%AE%A1%E7%90%86/" title="Share this post on X" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m4 4 11.733 16H20L8.267 4zM4 20l6.768-6.768m2.46-2.46L20 4" /></svg><span class="sr-only">Share this post on X</span></a><a href="https://t.me/share/url?url=https://synex.space/posts/kvm-%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%AE%A1%E7%90%86/" title="Share this post on Telegram" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m15 10-4 4 6 6 4-16-18 7 4 2 2 6 3-4" /></svg><span class="sr-only">Share this post on Telegram</span></a><a href="https://pinterest.com/pin/create/button/?url=https://synex.space/posts/kvm-%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%AE%A1%E7%90%86/" title="Share this post on Pinterest" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m8 20 4-9M10.7 14c.437 1.263 1.43 2 2.55 2 2.071 0 3.75-1.554 3.75-4a5 5 0 1 0-9.7 1.7" /><path d="M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0" /></svg><span class="sr-only">Share this post on Pinterest</span></a><a href="mailto:?subject=See%20this%20post&amp;body=https://synex.space/posts/kvm-%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%AE%A1%E7%90%86/" title="Share this post via email" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><path d="m3 7 9 6 9-6" /></svg><span class="sr-only">Share this post via email</span></a></div></div><hr class="my-8 border-dashed"><div data-pagefind-ignore class="my-8 grid grid-cols-1 gap-6 sm:grid-cols-2"><a href="/posts/2024第一届solar杯应急响应挑战赛-writeup/" class="flex w-full gap-1 hover:opacity-75"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block flex-none rtl:rotate-180" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 12h14M5 12l6 6M5 12l6-6" /></svg><div><span>Previous Post</span><div class="text-accent/85 text-sm">2024第一届Solar杯应急响应挑战赛-WriteUp</div></div></a><a href="/posts/git-index文件数据结构/" class="flex w-full justify-end gap-1 text-end hover:opacity-75 sm:col-start-2"><div><span>Next Post</span><div class="text-accent/85 text-sm">Git Index文件数据结构</div></div><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block flex-none rtl:rotate-180" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 12h14M13 18l6-6M13 6l6 6" /></svg></a></div></main><footer class="app-layout mt-auto"><div class="border-border flex flex-col items-center justify-between border-t py-6 sm:flex-row-reverse sm:py-4"><div class="flex flex-wrap items-center gap-1"><a href="https://github.com/Synex93" title="Syn3x's Blog on Github" class="group inline-flex items-center gap-1 hover:text-accent p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" /></svg><span class="sr-only">Syn3x&#39;s Blog on Github</span></a><a href="mailto:me@synex.space" title="Send an email to Syn3x's Blog" class="group inline-flex items-center gap-1 hover:text-accent p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><path d="m3 7 9 6 9-6" /></svg><span class="sr-only">Send an email to Syn3x&#39;s Blog</span></a></div><div class="my-2 whitespace-nowrap"><span>Copyright &#169; 2026 Syn3x. All rights reserved.</span></div></div></footer><script type="module">var e=`theme`,t=`light`,n=`dark`;function r(){return localStorage.getItem(e)||(window.matchMedia(`(prefers-color-scheme: dark)`).matches?n:t)}var i=window.__theme?.value??r();function a(){localStorage.setItem(e,i),o()}function o(){let e=document.firstElementChild;e?.setAttribute(`data-theme`,i),e?.classList.toggle(`dark`,i===n),document.querySelector(`#theme-btn`)?.setAttribute(`aria-label`,i);let t=window.getComputedStyle(document.body).backgroundColor;document.querySelector(`meta[name='theme-color']`)?.setAttribute(`content`,t)}function s(){o(),document.querySelector(`#theme-btn`)?.addEventListener(`click`,()=>{i=i===t?n:t,a()})}s(),document.addEventListener(`astro:after-swap`,s),document.addEventListener(`astro:before-swap`,e=>{let t=document.querySelector(`meta[name='theme-color']`)?.getAttribute(`content`);t&&e.newDocument.querySelector(`meta[name='theme-color']`)?.setAttribute(`content`,t)}),window.matchMedia(`(prefers-color-scheme: dark)`).addEventListener(`change`,({matches:e})=>{i=e?n:t,a()});</script></body></html><script data-astro-rerun>
+  function createProgressBar() {
+    const progressContainer = document.createElement("div");
+    progressContainer.className =
+      "progress-container fixed top-0 z-10 h-1 w-full bg-background";
+
+    const progressBar = document.createElement("div");
+    progressBar.className = "progress-bar h-1 w-0 bg-accent";
+    progressBar.id = "myBar";
+
+    progressContainer.appendChild(progressBar);
+    document.body.appendChild(progressContainer);
+  }
+  createProgressBar();
+
+  function updateScrollProgress() {
+    document.addEventListener("scroll", () => {
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      if (document) {
+        const myBar = document.getElementById("myBar");
+        if (myBar) {
+          myBar.style.width = scrolled + "%";
+        }
+      }
+    });
+  }
+  updateScrollProgress();
+
+  function addHeadingLinks() {
+    const headings = Array.from(
+      document.querySelectorAll("h2, h3, h4, h5, h6")
+    );
+    for (const heading of headings) {
+      heading.classList.add("group");
+      const link = document.createElement("a");
+      link.className =
+        "heading-link ms-2 no-underline opacity-75 md:opacity-0 md:group-hover:opacity-100 md:focus:opacity-100";
+      link.href = "#" + heading.id;
+
+      const span = document.createElement("span");
+      span.ariaHidden = "true";
+      span.innerText = "#";
+      link.appendChild(span);
+      heading.appendChild(link);
+    }
+  }
+  addHeadingLinks();
+
+  function attachCopyButtons() {
+    const copyButtonLabel = "Copy";
+    const codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+    for (const codeBlock of codeBlocks) {
+      const wrapper = document.createElement("div");
+      wrapper.style.position = "relative";
+
+      const computedStyle = getComputedStyle(codeBlock);
+      const hasFileNameOffset =
+        computedStyle.getPropertyValue("--file-name-offset").trim() !== "";
+
+      const topClass = hasFileNameOffset
+        ? "top-(--file-name-offset)"
+        : "-top-3";
+
+      const copyButton = document.createElement("button");
+      copyButton.className = `copy-code absolute end-3 ${topClass} rounded bg-muted border border-muted px-2 py-1 text-xs leading-4 text-foreground font-medium`;
+      copyButton.innerHTML = copyButtonLabel;
+      codeBlock.setAttribute("tabindex", "0");
+      codeBlock.appendChild(copyButton);
+
+      codeBlock?.parentNode?.insertBefore(wrapper, codeBlock);
+      wrapper.appendChild(codeBlock);
+
+      copyButton.addEventListener("click", async () => {
+        await copyCode(codeBlock, copyButton);
+      });
+    }
+
+    async function copyCode(block, button) {
+      const code = block.querySelector("code");
+      const text = code?.innerText;
+
+      await navigator.clipboard.writeText(text ?? "");
+
+      button.innerText = "Copied";
+
+      setTimeout(() => {
+        button.innerText = copyButtonLabel;
+      }, 700);
+    }
+  }
+  attachCopyButtons();
+
+  /** Accessible image lightbox for article images. */
+  function initLightbox() {
+    const article = document.getElementById("article");
+    if (!article) return;
+
+    const prefersReducedMotion = () =>
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let overlay = null;
+    let lastFocused = null;
+
+    // Defer attribute mutations so they don't push the LCP timestamp.
+    // Event listeners below use delegation and don't need the attributes to exist yet.
+    requestAnimationFrame(() => {
+      const images = Array.from(article.querySelectorAll("img"));
+      for (const image of images) {
+        if (image.closest("a")) continue;
+        image.setAttribute("role", "button");
+        image.setAttribute("tabindex", "0");
+        image.setAttribute("aria-haspopup", "dialog");
+        image.setAttribute(
+          "aria-label",
+          image.alt ? `Zoom image: ${image.alt}` : "Zoom image"
+        );
+      }
+    });
+
+    function open(src, alt, trigger) {
+      if (overlay) return;
+      lastFocused = trigger ?? document.activeElement;
+
+      overlay = document.createElement("div");
+      overlay.setAttribute("role", "dialog");
+      overlay.setAttribute("aria-modal", "true");
+      overlay.setAttribute(
+        "aria-label",
+        alt ? `Image preview: ${alt}` : "Image preview"
+      );
+      overlay.className =
+        "fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 transition-opacity duration-200 motion-reduce:transition-none";
+
+      const closeButton = document.createElement("button");
+      closeButton.type = "button";
+      closeButton.setAttribute("aria-label", "Close image preview");
+      closeButton.className =
+        "absolute end-4 top-4 rounded p-2 text-3xl leading-none text-white";
+      closeButton.innerHTML = "&#10005;";
+      closeButton.addEventListener("click", close);
+
+      const image = document.createElement("img");
+      image.src = src;
+      image.alt = "";
+      image.className =
+        "max-h-[90dvh] max-w-[90dvw] cursor-default object-contain";
+
+      overlay.append(closeButton, image);
+      overlay.addEventListener("click", e => {
+        if (e.target === overlay && currentScale <= 1) close();
+      });
+
+      let currentScale = 1;
+      let translateX = 0;
+      let translateY = 0;
+      let initialDist = 0;
+      let initialScale = 1;
+      let panStartX = 0;
+      let panStartY = 0;
+      let panStartTranslateX = 0;
+      let panStartTranslateY = 0;
+      let lastTapTime = 0;
+
+      function applyTransform() {
+        image.style.transform = `scale(${currentScale}) translate(${translateX}px, ${translateY}px)`;
+      }
+
+      function resetTransform() {
+        currentScale = 1;
+        translateX = 0;
+        translateY = 0;
+        image.style.transform = "";
+      }
+
+      overlay.addEventListener(
+        "touchstart",
+        e => {
+          const t = e.touches;
+          if (t.length === 2) {
+            initialDist = Math.hypot(
+              t[1].clientX - t[0].clientX,
+              t[1].clientY - t[0].clientY
+            );
+            initialScale = currentScale;
+          } else if (t.length === 1) {
+            const now = Date.now();
+            if (now - lastTapTime < 300) {
+              e.preventDefault();
+              if (currentScale > 1) {
+                resetTransform();
+              } else {
+                currentScale = 2;
+                translateX = 0;
+                translateY = 0;
+                applyTransform();
+              }
+              lastTapTime = 0;
+              panStartX = t[0].clientX;
+              panStartY = t[0].clientY;
+              panStartTranslateX = translateX;
+              panStartTranslateY = translateY;
+            } else {
+              lastTapTime = now;
+              if (currentScale > 1) {
+                panStartX = t[0].clientX;
+                panStartY = t[0].clientY;
+                panStartTranslateX = translateX;
+                panStartTranslateY = translateY;
+              }
+            }
+          }
+        },
+        { passive: false }
+      );
+
+      overlay.addEventListener(
+        "touchmove",
+        e => {
+          const t = e.touches;
+          if (t.length === 2) {
+            e.preventDefault();
+            const dist = Math.hypot(
+              t[1].clientX - t[0].clientX,
+              t[1].clientY - t[0].clientY
+            );
+            currentScale = Math.min(
+              4,
+              Math.max(1, initialScale * (dist / initialDist))
+            );
+            applyTransform();
+          } else if (t.length === 1) {
+            if (currentScale > 1) {
+              e.preventDefault();
+              translateX =
+                panStartTranslateX + (t[0].clientX - panStartX) / currentScale;
+              translateY =
+                panStartTranslateY + (t[0].clientY - panStartY) / currentScale;
+              const maxX = Math.max(
+                0,
+                (image.clientWidth - overlay.clientWidth / currentScale) / 2
+              );
+              const maxY = Math.max(
+                0,
+                (image.clientHeight - overlay.clientHeight / currentScale) / 2
+              );
+              translateX = Math.min(maxX, Math.max(-maxX, translateX));
+              translateY = Math.min(maxY, Math.max(-maxY, translateY));
+              applyTransform();
+            } else {
+              e.preventDefault();
+            }
+          }
+        },
+        { passive: false }
+      );
+
+      overlay.addEventListener("touchend", e => {
+        if (e.touches.length === 0 && currentScale <= 1.05) {
+          resetTransform();
+        }
+      });
+
+      overlay.addEventListener("touchcancel", e => {
+        if (e.touches.length === 0 && currentScale <= 1.05) {
+          resetTransform();
+        }
+      });
+
+      document.body.appendChild(overlay);
+      document.body.style.overflow = "hidden";
+      document.addEventListener("keydown", onKeyDown);
+      window.__closeLightbox = close;
+
+      requestAnimationFrame(() => overlay?.classList.add("opacity-100"));
+      closeButton.focus();
+    }
+
+    function close() {
+      if (!overlay) return;
+      const el = overlay;
+      overlay = null;
+      window.__closeLightbox = null;
+
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+      lastFocused?.focus();
+      lastFocused = null;
+
+      if (prefersReducedMotion()) {
+        el.remove();
+        return;
+      }
+      const remove = () => el.remove();
+      el.addEventListener("transitionend", remove, { once: true });
+      setTimeout(remove, 250); // fallback in case transitionend never fires
+      el.classList.remove("opacity-100");
+    }
+
+    function onKeyDown(e) {
+      if (e.key === "Escape") {
+        close();
+      } else if (e.key === "Tab") {
+        trapFocus(e);
+      }
+    }
+
+    // Keep keyboard focus inside the open dialog.
+    function trapFocus(e) {
+      if (!overlay) return;
+      const focusables = overlay.querySelectorAll(
+        'a[href], button, [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+
+    function triggerFromEvent(e) {
+      const image = e.target.closest("img");
+      if (!image || !article.contains(image) || image.closest("a")) return null;
+      return image;
+    }
+
+    function activate(image) {
+      open(image.currentSrc || image.src, image.alt, image);
+    }
+
+    article.addEventListener("click", e => {
+      const image = triggerFromEvent(e);
+      if (!image) return;
+      e.preventDefault();
+      activate(image);
+    });
+
+    article.addEventListener("keydown", e => {
+      if (e.key !== "Enter" && e.key !== " " && e.key !== "Spacebar") return;
+      const image = triggerFromEvent(e);
+      if (!image) return;
+      e.preventDefault();
+      activate(image);
+    });
+  }
+  initLightbox();
+
+  if (!window.__lightboxSwapBound) {
+    window.__lightboxSwapBound = true;
+    document.addEventListener("astro:before-swap", () =>
+      window.__closeLightbox?.()
+    );
+  }
+
+  document.addEventListener("astro:after-swap", () =>
+    window.scrollTo({ left: 0, top: 0, behavior: "instant" })
+  );
+</script>

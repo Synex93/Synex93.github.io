@@ -1,0 +1,898 @@
+<!DOCTYPE html><html dir="ltr" lang="en" class="overflow-y-scroll scroll-smooth"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.png"><link rel="icon" href="/favicon.png"><link rel="canonical" href="https://synex.space/posts/kubernetes-service%E8%AF%A6%E8%A7%A3/"><meta name="generator" content="Astro v7.0.3"><!-- Font --><style>@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/02154cca78ac33f2.woff") format("woff"), url("/_astro/fonts/478e42e4694872ef.ttf") format("truetype");font-display:swap;font-weight:300;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/3a32a7a7a67f4f58.woff") format("woff"), url("/_astro/fonts/0863f4f6964aa89c.ttf") format("truetype");font-display:swap;font-weight:400;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/a5c5808c25effec9.woff") format("woff"), url("/_astro/fonts/792eded6cb3f0350.ttf") format("truetype");font-display:swap;font-weight:500;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/14314705006234cb.woff") format("woff"), url("/_astro/fonts/87d8fc1072d4917b.ttf") format("truetype");font-display:swap;font-weight:600;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/c33265ba093eb291.woff") format("woff"), url("/_astro/fonts/ec883ed4db81a7d9.ttf") format("truetype");font-display:swap;font-weight:700;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/c26ad40d3b1d9169.woff") format("woff"), url("/_astro/fonts/7a5ee0cfcde31b81.ttf") format("truetype");font-display:swap;font-weight:300;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/87ca066ba5b2c7cf.woff") format("woff"), url("/_astro/fonts/f4e25dfe9d6152ec.ttf") format("truetype");font-display:swap;font-weight:400;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/a9a0e80c053be3d5.woff") format("woff"), url("/_astro/fonts/a9df48ecd03749e4.ttf") format("truetype");font-display:swap;font-weight:500;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/da468df88542c99b.woff") format("woff"), url("/_astro/fonts/90f9809471092714.ttf") format("truetype");font-display:swap;font-weight:600;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/f914de358bc554f6.woff") format("woff"), url("/_astro/fonts/dbc9996f99c63e07.ttf") format("truetype");font-display:swap;font-weight:700;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:300;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:400;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:500;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:600;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:700;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:300;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:400;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:500;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:600;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:700;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}:root{--font-google-sans-code:"Google Sans Code-1a30c214885cb404","Google Sans Code-1a30c214885cb404 fallback: Courier New",monospace;}</style><!-- Primary meta --><title>Kubernetes-Service详解 | Syn3x&#39;s Blog</title><meta name="title" content="Kubernetes-Service详解 | Syn3x's Blog"><meta name="description" content="Kubernetes Service 原理与实践，比较 userspace、iptables、IPVS 模式，并演示 ClusterIP、NodePort 等类型。"><meta name="author" content="Syn3x"><link rel="sitemap" href="/sitemap-index.xml"><!-- Open Graph --><meta property="og:type" content="website"><meta property="og:site_name" content="Syn3x's Blog"><meta property="og:title" content="Kubernetes-Service详解 | Syn3x's Blog"><meta property="og:description" content="Kubernetes Service 原理与实践，比较 userspace、iptables、IPVS 模式，并演示 ClusterIP、NodePort 等类型。"><meta property="og:url" content="https://synex.space/posts/kubernetes-service%E8%AF%A6%E8%A7%A3/"><meta property="og:image" content="https://synex.space/posts/kubernetes-service%E8%AF%A6%E8%A7%A3/index.png"><!-- Twitter / X --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://synex.space/posts/kubernetes-service%E8%AF%A6%E8%A7%A3/"><meta property="twitter:title" content="Kubernetes-Service详解 | Syn3x's Blog"><meta property="twitter:description" content="Kubernetes Service 原理与实践，比较 userspace、iptables、IPVS 模式，并演示 ClusterIP、NodePort 等类型。"><meta property="twitter:image" content="https://synex.space/posts/kubernetes-service%E8%AF%A6%E8%A7%A3/index.png"><!-- RSS autodiscovery --><link rel="alternate" type="application/rss+xml" title="Syn3x's Blog" href="https://synex.space/rss.xml/"><!-- Filled at runtime by theme.ts to match the current background colour --><meta name="theme-color" content=""><!-- Extra head content injected by child layouts (e.g. JSON-LD, article meta) --><meta property="og:type" content="article"><meta property="article:published_time" content="2022-09-05T05:32:00.000Z"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Kubernetes-Service详解 | Syn3x's Blog","image":"https://synex.space/posts/kubernetes-service%E8%AF%A6%E8%A7%A3/index.png","datePublished":"2022-09-05T05:32:00.000Z","author":[{"@type":"Person","name":"Syn3x","url":"https://synex.space"}]}</script><!--
+      Inline FOUC-prevention script: sets data-theme on <html> before
+      the browser paints. Runs synchronously, no defer/async.
+    --><script>
+      (function () {
+        const stored = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const theme = stored ?? (prefersDark ? "dark" : "light");
+        const root = document.firstElementChild;
+        root?.setAttribute("data-theme", theme);
+        root?.classList.toggle("dark", theme === "dark");
+        // Expose value so theme.ts can skip re-detection.
+        window.__theme = { value: theme };
+      })();
+    </script><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.2i1RQzKf.js"></script><link rel="stylesheet" href="/_astro/Footer.ChjHkc0Z.css"><style>@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media (prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*),[data-astro-transition-scope]{animation:none!important}}
+</style><style>[data-astro-transition-scope="astro-bztu2lml-1"] { view-transition-name: \5F00\6E90\5DE5\5177; }@layer astro { ::view-transition-old(\5F00\6E90\5DE5\5177) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(\5F00\6E90\5DE5\5177) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(\5F00\6E90\5DE5\5177) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(\5F00\6E90\5DE5\5177) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-bztu2lml-2"] { view-transition-name: kubernetes; }@layer astro { ::view-transition-old(kubernetes) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(kubernetes) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(kubernetes) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(kubernetes) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-2"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-2"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-bztu2lml-3"] { view-transition-name: service; }@layer astro { ::view-transition-old(service) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(service) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(service) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(service) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-3"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-3"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head><body class="bg-background font-app text-foreground selection:bg-accent/75 selection:text-accent-foreground flex min-h-svh flex-col"><a id="skip-to-content" href="#main-content" class="bg-background text-accent absolute inset-s-16 -top-full z-50 px-3 py-2 backdrop-blur-lg transition-all focus:top-4">Skip to content</a><header class="app-layout flex flex-col items-center justify-between sm:flex-row"><div class="border-border bg-background relative flex w-full items-baseline justify-between border-b py-4 sm:items-center sm:py-6"><a href="/" class="absolute py-1 text-xl leading-8 font-semibold whitespace-nowrap sm:static sm:my-auto sm:text-2xl sm:leading-none">Syn3x&#39;s Blog</a><nav id="nav-menu" class="flex w-full flex-col items-center sm:ms-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0"><button id="menu-btn" class="focus-outline self-end p-2 sm:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="menu-items" data-label-open="Open menu" data-label-close="Close menu"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="hidden" viewBox="0 0 24 24" id="close-icon"><path stroke="none" d="M0 0h24v24H0z" /><path d="M18 6 6 18M6 6l12 12" /></svg><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep" viewBox="0 0 24 24" id="menu-icon"><path stroke="none" d="M0 0h24v24H0z" /><path d="M4 6h16M7 12h13M10 18h10" /></svg></button><ul id="menu-items" class="[&amp;&gt;li&gt;a]:hover:text-accent mt-4 hidden w-44 grid-cols-2 place-content-center gap-2 sm:mt-0 sm:flex sm:w-auto sm:gap-x-5 sm:gap-y-0 sm:[&amp;&gt;li]:h-8 [&amp;&gt;li&gt;a]:block [&amp;&gt;li&gt;a]:px-4 [&amp;&gt;li&gt;a]:py-3 [&amp;&gt;li&gt;a]:text-center [&amp;&gt;li&gt;a]:font-medium sm:[&amp;&gt;li&gt;a]:px-2 sm:[&amp;&gt;li&gt;a]:py-1"><li class="col-span-2"><a href="/posts/" class="active-nav">Posts</a></li><li class="col-span-2"><a href="/tags/">Tags</a></li><li class="col-span-2"><a href="/friends/">Friends</a></li><li class="col-span-2"><a href="/about/">About</a></li><li class="col-span-2"><a href="/archives/" title="Archives" aria-label="Archives" class="group inline-flex items-center gap-1 hover:text-accent focus-outline flex size-full justify-center p-3 sm:relative sm:size-8 sm:p-0"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="hidden sm:absolute sm:top-1/2 sm:left-1/2 sm:block sm:size-6 sm:-translate-x-1/2 sm:-translate-y-1/2" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8M10 12h4" /></svg><span class="sm:sr-only">Archives</span></a></li><li class="col-span-1 flex items-center justify-center"><a href="/search/" title="Search" aria-label="Search" class="group inline-flex items-center gap-1 hover:text-accent focus-outline relative size-8"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-1/2 left-1/2 size-6 -translate-x-1/2 -translate-y-1/2" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 10a7 7 0 1 0 14 0 7 7 0 1 0-14 0M21 21l-6-6" /></svg><span class="sr-only">Search</span></a></li><li class="col-span-1 flex items-center justify-center"><button id="theme-btn" class="focus-outline hover:[&amp;&gt;svg]:stroke-accent relative size-12 p-4 sm:size-8" title="Toggle theme" aria-label="auto" aria-live="polite"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-[50%] left-[50%] translate-[-50%] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M12 3h.393a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 2.992z" /></svg><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-[50%] left-[50%] translate-[-50%] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M14.828 14.828a4 4 0 1 0-5.656-5.656 4 4 0 0 0 5.656 5.656M6.343 17.657l-1.414 1.414M6.343 6.343 4.929 4.929M17.657 6.343l1.414-1.414M17.657 17.657l1.414 1.414M4 12H2M12 4V2M20 12h2M12 20v2" /></svg></button></li></ul></nav></div></header><script type="module">function e(){let e=document.querySelector(`#menu-btn`),t=document.querySelector(`#menu-items`),n=document.querySelector(`#menu-icon`),r=document.querySelector(`#close-icon`);if(!e||!t||!n||!r)return;let i=e.dataset.labelOpen??`Open menu`,a=e.dataset.labelClose??`Close menu`;e.addEventListener(`click`,()=>{let o=e.getAttribute(`aria-expanded`)===`true`;e.setAttribute(`aria-expanded`,o?`false`:`true`),e.setAttribute(`aria-label`,o?i:a),t.classList.toggle(`hidden`),t.classList.toggle(`grid`),n.classList.toggle(`hidden`),r.classList.toggle(`hidden`)})}e(),document.addEventListener(`astro:after-swap`,e);</script><div class="app-layout flex items-center justify-start"><a id="back-button" href="/" class="group inline-flex items-center gap-1 hover:text-accent focus-outline hover:text-foreground/75 -ms-2 mt-8 mb-2"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 rtl:rotate-180" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m15 6-6 6 6 6" /></svg><span>Go back</span></a></div><script type="module">function e(){let e=document.querySelector(`#back-button`),t=sessionStorage.getItem(`backUrl`);t&&e&&(e.href=t)}document.addEventListener(`astro:page-load`,e),e();</script><main id="main-content" class="app-layout" data-pagefind-body><div class="xl:grid xl:grid-cols-[minmax(0,1fr)_13rem] xl:gap-x-10"><div><h1 style="view-transition-name:kubernetes-serviceu008be6u0089e3" class="text-accent inline-block text-2xl font-bold sm:text-3xl">Kubernetes-Service详解</h1><div class="my-2 flex items-center gap-2"><div class="text-muted-foreground flex items-center gap-x-2"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 min-w-5.5" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zM16 3v4M8 3v4M4 11h16M7 14h.013M10.01 14h.005M13.01 14h.005M16.015 14h.005M13.015 17h.005M7.01 17h.005M10.01 17h.005" /></svg><time class="text-sm sm:text-base" datetime="2022-09-05T05:32:00.000Z">5 Sep, 2022</time></div><span aria-hidden="true" class="text-muted-foreground max-sm:hidden hidden">|</span></div><article id="article" class="app-prose max-w-app prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg) mt-8 w-full"><h1 id="service概述">Service概述</h1>
+<p>在kubernetes中，pod是应用程序的载体，可以通过pod的ip来访问应用程序，但是pod的ip地址不是固定的，这也就意味着不方便直接采用pod的ip对服务进行访问。为了解决这个问题，kubernetes提供了Service资源，Service会对提供同一个服务的多个pod进行聚合，并且提供一个统一的入口地址。通过访问Service的入口地址就能访问到后面的pod服务。</p>
+<p><img src="https://static.synex.space/article/Kubernetes_pod_11.png" alt="Service"></p>
+<p>Service在很多情况下只是一个概念，真正起作用的其实是kube-proxy服务进程，每个Node节点上都运行着一个kube-proxy服务进程。当创建Service的时候会通过api-server向etcd写入创建的service的信息，而kube-proxy会基于监听的机制发现这种Service的变动，然后<strong>它会将最新的Service信息转换成对应的访问规则</strong>。</p>
+<p><img src="https://static.synex.space/article/Kubernetes_pod_12.png" alt="Service"></p>
+<h1 id="工作模式">工作模式</h1>
+<h2 id="userspace-模式">userspace 模式</h2>
+<p>userspace模式下，kube-proxy会为每一个Service创建一个监听端口，发向Cluster IP的请求被Iptables规则重定向到kube-proxy监听的端口上，kube-proxy根据LB算法选择一个提供服务的Pod并和其建立链接，以将请求转发到Pod上。该模式下，kube-proxy充当了一个四层负责均衡器的角色。由于kube-proxy运行在userspace中，在进行转发处理时会增加内核和用户空间之间的数据拷贝，虽然比较稳定，但是效率比较低。</p>
+<p><img src="https://static.synex.space/article/Kubernetes_pod_13.png" alt="Service"></p>
+<h2 id="iptables模式">iptables模式</h2>
+<p>iptables模式下，kube-proxy为service后端的每个Pod创建对应的iptables规则，直接将发向Cluster IP的请求重定向到一个Pod IP。该模式下kube-proxy不承担四层负责均衡器的角色，只负责创建iptables规则。该模式的优点是较userspace模式效率更高，但不能提供灵活的LB策略，当后端Pod不可用时也无法进行重试。</p>
+<p><img src="https://static.synex.space/article/Kubernetes_pod_14.png" alt="Service"></p>
+<h2 id="ipvs模式">ipvs模式</h2>
+<p>ipvs模式和iptables类似，kube-proxy监控Pod的变化并创建相应的ipvs规则。ipvs相对iptables转发效率更高。除此以外，ipvs支持更多的LB算法。</p>
+<p><img src="https://static.synex.space/article/Kubernetes_pod_15.png" alt="Service"></p>
+<h2 id="设置工作模式">设置工作模式</h2>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 以ipvs为例，使用之前请安装ipvs模块(安装集群时已经安装)</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 编辑kube-proxy cm修改mode为"ipvs"</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># kubectl edit cm kube-proxy -n kube-system</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">configmap/kube-proxy</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> edited</span></span>
+<span class="line"><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:italic">......</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">    mode:</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">ipvs</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span></span>
+<span class="line"><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:italic">......</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 删除kube-proxy使其自动重启更新配置</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># kubectl delete pod -l </span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">k8s-app</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">kube-proxy</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> -n</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> kube-system</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">pod</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">kube-proxy-5r4xw</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> deleted</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">pod</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">kube-proxy-qww6b</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> deleted</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">pod</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">kube-proxy-th7hm</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> deleted</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 查看ipvs规则</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 发现配置已生效</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># ipvsadm -Ln</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">IP</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> Virtual</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> Server</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> version</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 1.2.1</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> (size=4096)</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">Prot</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> LocalAddress:Port</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> Scheduler</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> Flags</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">  -</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">> </span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">RemoteAddress:Port</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">           Forward</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> Weight</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> ActiveConn</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> InActConn</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">TCP</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">  10.96.0.1:443</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> rr</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">  -</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">> </span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">192.16.1.10:6443</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">             Masq</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">    1</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">      0</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">          0</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">TCP</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">  10.96.0.10:53</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> rr</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">  -</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">> </span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">10.244.52.213:53</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">             Masq</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">    1</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">      0</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">          0</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">  -</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">> </span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">10.244.52.218:53</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">             Masq</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">    1</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">      0</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">          0</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">TCP</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">  10.96.0.10:9153</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> rr</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">  -</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">> </span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">10.244.52.213:9153</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">           Masq</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">    1</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">      0</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">          0</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">  -</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">> </span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">10.244.52.218:9153</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">           Masq</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">    1</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">      0</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">          0</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">UDP</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">  10.96.0.10:53</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> rr</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">  -</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">> </span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">10.244.52.213:53</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">             Masq</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">    1</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">      0</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">          0</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">  -</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">> </span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">10.244.52.218:53</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">             Masq</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">    1</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">      0</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">          0</span></span></code></pre>
+<h1 id="service资源清单">Service资源清单</h1>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="yaml"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">kind</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> Service</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">  # 资源类型</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">apiVersion</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> v1</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">  # 资源版本</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">metadata</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"> # 元数据</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  name</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> service</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"> # 资源名称</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  namespace</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> &#x3C;命名空间></span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">spec</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"> # 描述</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  selector</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"> # 标签选择器，用于确定当前service代理哪些pod</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  type</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> &#x3C;Service类型></span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  clusterIP</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> &#x3C;虚拟服务的ip地址></span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  sessionAffinity</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"> # session亲和性，支持ClientIP、None两个选项</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  ports</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"> # 端口信息</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">    -</span><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA"> protocol</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> &#x3C;协议></span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> </span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">      port</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> &#x3C;service端口></span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">      targetPort</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> &#x3C;pod端口></span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">      nodePort</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> &#x3C;主机端口></span></span></code></pre>
+<p>Service类型如下:</p>
+<ul>
+<li>ClusterIP：默认值，它是Kubernetes系统自动分配的虚拟IP，只能在集群内部访问</li>
+<li>NodePort：将Service通过指定的Node上的端口暴露给外部，通过此方法，就可以在集群外部访问服务</li>
+<li>LoadBalancer：使用外接负载均衡器完成到服务的负载分发，注意此模式需要外部云环境支持</li>
+<li>ExternalName： 把集群外部的服务引入集群内部，直接使用</li>
+</ul>
+<h1 id="service使用">Service使用</h1>
+<h2 id="实验环境">实验环境</h2>
+<p>在使用service之前，首先利用Deployment创建出3个pod，注意要为pod设置<code>app=nginx-pod</code>的标签。</p>
+<p>创建Service-Env.yaml，内容如下</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="yaml"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">apiVersion</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> apps/v1</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">kind</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> Deployment</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">      </span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">metadata</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  name</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> service-env</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  namespace</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> default</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">spec</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> </span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  replicas</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 3</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  selector</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">    matchLabels</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">      app</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> service-env</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  template</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">    metadata</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">      labels</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">        app</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> service-env</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">    spec</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">      containers</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">      -</span><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA"> name</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> nginx</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">        image</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> docker.io/library/nginx:1.23.1</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">        ports</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">        -</span><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA"> containerPort</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 80</span></span></code></pre>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 创建deploy</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># kubectl create -f Service-Env.yaml</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">deployment.apps/service-env</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> created</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 查看pod详情</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># kubectl get pods -n default -o wide --show-labels</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">NAME</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">                             READY</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">   STATUS</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">             RESTARTS</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">          AGE</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">     IP</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">              NODE</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">             NOMINATED</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> NODE</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">   READINESS</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> GATES</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">   LABELS</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">service-env-77bd9f74d4-7qntr</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">     1/1</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">     Running</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">            0</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">                 108s</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">    10.244.52.222</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">   work2.host.com</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">   &#x3C;</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">non</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">e</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">           &#x3C;</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">non</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">e</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">service-env-77bd9f74d4-9hs5k</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">     1/1</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">     Running</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">            0</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">                 108s</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">    10.244.67.84</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">    work1.host.com</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">   &#x3C;</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">non</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">e</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">           &#x3C;</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">non</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">e</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">service-env-77bd9f74d4-s5hh5</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">     1/1</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">     Running</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">            0</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">                 108s</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">    10.244.67.79</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">    work1.host.com</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">   &#x3C;</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">non</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">e</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">           &#x3C;</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">non</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">e</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 为了方便测试修改nginx的访问页面为podip</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 给容器依次修改</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># kubectl exec -it service-env-77bd9f74d4-7qntr -n default /bin/sh</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">kubectl</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> exec</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> [POD] </span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">COMMAND</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> is DEPRECATED and will be removed in a future version. Use kubectl exec </span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">POD</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> -- </span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">COMMAND</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> instead.</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># echo 10.244.52.222 > /usr/share/nginx/html/index.html</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># exit</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># kubectl exec -it service-env-77bd9f74d4-9hs5k -n default /bin/sh</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">kubectl</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> exec</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> [POD] </span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">COMMAND</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> is DEPRECATED and will be removed in a future version. Use kubectl exec </span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">POD</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> -- </span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">COMMAND</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> instead.</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># echo 10.244.67.84 > /usr/share/nginx/html/index.html</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># exit</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># kubectl exec -it service-env-77bd9f74d4-s5hh5 -n default /bin/sh</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">kubectl</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> exec</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> [POD] </span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">COMMAND</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> is DEPRECATED and will be removed in a future version. Use kubectl exec </span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">POD</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> -- </span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">COMMAND</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> instead.</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># echo 10.244.67.79 > /usr/share/nginx/html/index.html</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># exit</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 访问测试</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># curl 10.244.52.222</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">10.244.52.222</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># curl 10.244.67.84</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">10.244.67.84</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># curl 10.244.67.79</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">10.244.67.79</span></span></code></pre>
+<h2 id="clusterip">ClusterIP</h2>
+<p>创建Service-Clusterip.yaml，内容如下</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="yaml"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">apiVersion</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> v1</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">kind</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> Service</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">metadata</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  name</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> service-clusterip</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  namespace</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> default</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">spec</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  selector</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">    app</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> service-env</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  clusterIP</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 10.97.1.1</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"> # service的ip地址，如果不写，默认会生成一个</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  type</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> ClusterIP</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  ports</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">  -</span><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA"> port</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 80</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">  # Service端口       </span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">    targetPort</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 80</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"> # pod端口</span></span></code></pre>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="yaml"><code><span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 创建service</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># </span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">kubectl create -f Service-Clusterip.yaml</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">service/service-clusterip created</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 查看service</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># </span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">kubectl get svc -n default -o wide</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">NAME                TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE     SELECTOR</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">kubernetes          ClusterIP   10.96.0.1    &#x3C;none>        443/TCP   2d18h   &#x3C;none></span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">service-clusterip   ClusterIP   10.97.1.1    &#x3C;none>        80/TCP    4m42s   app=service-env</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 查看service详情</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 里面有一个Endpoints,里面就是pod入口</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># </span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">kubectl describe svc service-clusterip -n default</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">Name</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">              service-clusterip</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">Namespace</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">         default</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">Labels</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">            &#x3C;none></span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">Annotations</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">       &#x3C;none></span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">Selector</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">          app=service-env</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">Type</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">              ClusterIP</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">IP Family Policy</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">  SingleStack</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">IP Families</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">       IPv4</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">IP</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">                10.97.1.1</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">IPs</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">               10.97.1.1</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">Port</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">              &#x3C;unset>  80/TCP</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">TargetPort</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">        80/TCP</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">Endpoints</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">         10.244.52.222:80,10.244.67.79:80,10.244.67.84:80</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">Session Affinity</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">  None</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">Events</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">            &#x3C;none></span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 查看ipvs的映射规则</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># </span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">ipvsadm -Ln</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">...</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">...</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">TCP  10.97.1.1:80 rr</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">  -> 10.244.52.222:80             Masq    1      0          0</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">  -> 10.244.67.79:80              Masq    1      0          0</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">  -> 10.244.67.84:80              Masq    1      0          0</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">...</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">...</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 访问测试</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># http://10.97.1.1:80</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># </span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">curl http://10.97.1.1:80</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">10.244.67.84</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># </span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">curl http://10.97.1.1:80</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">10.244.67.79</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># </span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">curl http://10.97.1.1:80</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">10.244.52.222</span></span></code></pre>
+<h2 id="headliness">HeadLiness</h2>
+<p>Endpoint是kubernetes中的一个资源对象，存储在etcd中，用来记录一个service对应的所有pod的访问地址，它是根据service配置文件中selector描述产生的。一个Service由一组Pod组成，这些Pod通过Endpoints暴露出来，<strong>Endpoints是实现实际服务的端点集合</strong>。换句话说，service和pod之间的联系是通过endpoints实现的。</p>
+<p>创建Service-Headliness.yaml，内容如下</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="yaml"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">apiVersion</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> v1</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">kind</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> Service</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">metadata</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  name</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> service-headliness</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  namespace</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> default</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">spec</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  selector</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">    app</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> service-env</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  clusterIP</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> None</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"> # 将clusterIP设置为None，即可创建headliness Service</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  type</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> ClusterIP</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  ports</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">  -</span><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA"> port</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 80</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">    </span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">    targetPort</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 80</span></span></code></pre>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="yaml"><code><span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 创建service</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># </span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">kubectl create -f Service-Headliness.yaml</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">service/service-headliness created</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 查看service</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 发现CLUSTER-IP未分配IP</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># </span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">kubectl get svc service-headliness -n default -o wide</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE   SELECTOR</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">service-headliness   ClusterIP   None         &#x3C;none>        80/TCP    43s   app=service-env</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 查看service详情</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># </span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">kubectl describe svc service-headliness  -n default</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">Name</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">              service-headliness</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">Namespace</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">         default</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">Labels</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">            &#x3C;none></span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">Annotations</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">       &#x3C;none></span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">Selector</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">          app=service-env</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">Type</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">              ClusterIP</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">IP Family Policy</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">  SingleStack</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">IP Families</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">       IPv4</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">IP</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">                None</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">IPs</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">               None</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">Port</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">              &#x3C;unset>  80/TCP</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">TargetPort</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">        80/TCP</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">Endpoints</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">         10.244.52.222:80,10.244.67.79:80,10.244.67.84:80</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">Session Affinity</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">  None</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">Events</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">            &#x3C;none></span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 查看域名的解析情况</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># </span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">kubectl exec -it pc-deployment-6895856946-9b24j -n default /bin/sh</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl exec [POD] -- [COMMAND] instead.</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># cat /etc/resolv.conf</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">search default.svc.cluster.local svc.cluster.local cluster.local host.com</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">nameserver 10.96.0.10</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">options ndots:5</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># exit</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 查看域名解析记录</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># </span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">dig @10.96.0.10 service-headliness.default.svc.cluster.local +short</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">10.244.67.84</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">10.244.52.222</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">10.244.67.79</span></span></code></pre>
+<h2 id="nodeport">NodePort</h2>
+<p>如果希望将Service暴露给集群外部使用，那么就要使用到另外一种类型的Service，称为NodePort类型。NodePort的工作原理其实就是<strong>将service的端口映射到Node的一个端口上</strong>，然后就可以通过<code>NodeIp:NodePort</code>来访问service了。</p>
+<p><img src="https://static.synex.space/article/Kubernetes_pod_16.png" alt="NodePort"></p>
+<p>创建Service-Nodeport.yaml,内容如下</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="yaml"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">apiVersion</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> v1</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">kind</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> Service</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">metadata</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  name</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> service-nodeport</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  namespace</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> default</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">spec</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  selector</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">    app</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> service-env</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  type</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> NodePort</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"> # service类型</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  ports</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">  -</span><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA"> port</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 80</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">    nodePort</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 30002</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"> # 指定绑定的node的端口(默认的取值范围是：30000-32767), 如果不指定，会默认分配</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">    targetPort</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 80</span></span></code></pre>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 创建service</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># kubectl create -f  Service-Nodeport.yaml</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">service/service-nodeport</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> created</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 查看service</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># kubectl get svc -n default -o wide</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">NAME</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">                 TYPE</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">        CLUSTER-IP</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">     EXTERNAL-IP</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">   PORT</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">S</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">        AGE</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">     SELECTOR</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">service-nodeport</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">     NodePort</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">    10.101.89.79</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">   &#x3C;</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">non</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">e</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">></span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">        80:30002/TCP</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">   20s</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">     app=service-env</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 访问测试</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 访问每个节点的30002端口</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># curl http://master.host.com:30002</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">10.244.67.84</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># curl http://work1.host.com:30002</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">10.244.67.79</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># curl http://work2.host.com:30002</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">10.244.67.84</span></span></code></pre>
+<h2 id="loadbalancer">LoadBalancer</h2>
+<p>LoadBalancer和NodePort很相似，目的都是向外部暴露一个端口，区别在于LoadBalancer会在集群的外部再来做一个负载均衡设备，而这个设备需要外部环境支持的，外部服务发送到这个设备上的请求，会被设备负载之后转发到集群中。实现LoadBalancer需要外部设备，这里不做演示。</p>
+<p><img src="https://static.synex.space/article/Kubernetes_pod_17.png" alt="LoadBalancer"></p>
+<h2 id="externalname">ExternalName</h2>
+<p>ExternalName类型的Service用于引入集群外部的服务，它通过<code>externalName</code>属性指定外部一个服务的地址，然后在集群内部访问此service就可以访问到外部的服务了。</p>
+<p><img src="https://static.synex.space/article/Kubernetes_pod_18.png" alt="ExternalName"></p>
+<p>创建Service-Externalname.yaml，内容如下</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="yaml"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">apiVersion</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> v1</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">kind</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> Service</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">metadata</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  name</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> service-externalname</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  namespace</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> default</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">spec</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  type</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> ExternalName</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"> # service类型</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#7FDBCA">  externalName</span><span style="--shiki-light:#179299;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> www.baidu.com</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">  #改成ip地址也可以</span></span></code></pre>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 创建service</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># kubectl create -f Service-Externalname.yaml</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">service/service-externalname</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> created</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"># 查看域名解析记录</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">root@master yaml</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"># dig @10.96.0.10 service-externalname.default.svc.cluster.local +short</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">www.baidu.com.</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">39.156.66.14</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">39.156.66.18</span></span></code></pre>
+<h2 id="注意">注意</h2>
+<p>service域名解析记录的域名组成如下</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="markdown"><code><span class="line"><span style="--shiki-light:#7287FD;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#7287FD;--shiki-dark:#D6DEEB">资源名称</span><span style="--shiki-light:#7287FD;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#7287FD;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#7287FD;--shiki-dark:#D6DEEB">命名空间</span><span style="--shiki-light:#7287FD;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">.svc.cluster.local</span></span></code></pre></article></div><aside class="border-border sticky top-8 hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-l pl-5 xl:block" aria-label="文章目录" data-pagefind-ignore><nav class="pb-4"><p class="text-foreground mb-3 text-base font-semibold tracking-wide">Catalogue</p><ol class="space-y-1 text-sm"><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#userspace-模式" data-toc-link data-toc-slug="userspace-模式">userspace 模式</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#iptables模式" data-toc-link data-toc-slug="iptables模式">iptables模式</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#ipvs模式" data-toc-link data-toc-slug="ipvs模式">ipvs模式</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#设置工作模式" data-toc-link data-toc-slug="设置工作模式">设置工作模式</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#实验环境" data-toc-link data-toc-slug="实验环境">实验环境</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#clusterip" data-toc-link data-toc-slug="clusterip">ClusterIP</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#headliness" data-toc-link data-toc-slug="headliness">HeadLiness</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#nodeport" data-toc-link data-toc-slug="nodeport">NodePort</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#loadbalancer" data-toc-link data-toc-slug="loadbalancer">LoadBalancer</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#externalname" data-toc-link data-toc-slug="externalname">ExternalName</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#注意" data-toc-link data-toc-slug="注意">注意</a></li></ol></nav></aside><script data-astro-rerun>
+  function initTableOfContents() {
+    const toc = document.querySelector("[aria-label='文章目录']");
+    const article = document.getElementById("article");
+    if (!toc || !article) return;
+
+    const links = Array.from(toc.querySelectorAll("[data-toc-link]"));
+    const headingElements = links
+      .map(link => document.getElementById(link.dataset.tocSlug ?? ""))
+      .filter(Boolean);
+
+    if (headingElements.length === 0) return;
+
+    function updateActiveLink() {
+      let activeHeading = headingElements[0];
+
+      for (const heading of headingElements) {
+        if (heading.getBoundingClientRect().top <= 128) {
+          activeHeading = heading;
+        } else {
+          break;
+        }
+      }
+
+      for (const link of links) {
+        const isActive = link.dataset.tocSlug === activeHeading.id;
+        link.classList.toggle("border-accent", isActive);
+        link.classList.toggle("text-accent", isActive);
+        link.classList.toggle("font-medium", isActive);
+        link.classList.toggle("text-muted-foreground", !isActive);
+        link.toggleAttribute("aria-current", isActive);
+      }
+    }
+
+    updateActiveLink();
+    window.addEventListener("scroll", updateActiveLink, { passive: true });
+    window.addEventListener("resize", updateActiveLink);
+
+    document.addEventListener(
+      "astro:before-swap",
+      () => {
+        window.removeEventListener("scroll", updateActiveLink);
+        window.removeEventListener("resize", updateActiveLink);
+      },
+      { once: true }
+    );
+  }
+
+  initTableOfContents();
+</script></div><hr class="my-8 border-dashed"><div id="btt-btn-container" class="fixed inset-e-4 bottom-8 z-50 md:sticky md:inset-e-auto md:float-end md:me-1 translate-y-14 opacity-0 transition duration-500"><button data-button="back-to-top" class="group bg-background relative px-2 py-1 size-14 rounded-full shadow-xl md:h-8 md:w-fit md:rounded-md md:shadow-none md:focus-visible:rounded-none md:bg-background/35 md:bg-clip-padding md:backdrop-blur-lg"><span id="progress-indicator" class="absolute inset-0 -z-10 block size-14 scale-110 rounded-full bg-transparent md:hidden md:h-8 md:rounded-md"></span><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block rotate-90 md:hidden" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 12h14M5 12l6 6M5 12l6-6" /></svg><span class="group-hover:text-accent sr-only text-sm md:not-sr-only"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M12 5v14M16 9l-4-4M8 9l4-4" /></svg>Back to top</span></button></div><script data-astro-rerun>
+  function backToTop() {
+    const rootElement = document.documentElement;
+    const btnContainer = document.querySelector("#btt-btn-container");
+    const backToTopBtn = document.querySelector("[data-button='back-to-top']");
+    const progressIndicator = document.querySelector("#progress-indicator");
+
+    if (!rootElement || !btnContainer || !backToTopBtn || !progressIndicator)
+      return;
+
+    backToTopBtn.addEventListener("click", () => {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    });
+
+    let lastVisible = null;
+    function handleScroll() {
+      const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+      const scrollTop = rootElement.scrollTop;
+      const scrollPercent = Math.floor((scrollTop / scrollTotal) * 100);
+
+      progressIndicator.style.setProperty(
+        "background-image",
+        `conic-gradient(var(--accent), var(--accent) ${scrollPercent}%, transparent ${scrollPercent}%)`
+      );
+
+      const isVisible = scrollTop / scrollTotal > 0.3;
+
+      if (isVisible !== lastVisible) {
+        btnContainer.classList.toggle("opacity-100", isVisible);
+        btnContainer.classList.toggle("translate-y-0", isVisible);
+        btnContainer.classList.toggle("opacity-0", !isVisible);
+        btnContainer.classList.toggle("translate-y-14", !isVisible);
+        lastVisible = isVisible;
+      }
+    }
+
+    let ticking = false;
+    document.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  }
+  backToTop();
+</script><ul class="mt-4 mb-8 flex flex-wrap gap-4 sm:my-8"><li><a data-astro-transition-scope="astro-bztu2lml-1" href="/tags/开源工具/" class="flex items-center gap-0.5 border-foreground border-b-2 border-dashed hover:border-accent hover:text-accent hover:-mt-0.5 focus-visible:text-accent focus-visible:border-none text-sm"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="opacity-80 size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 9h14M5 15h14M11 4 7 20M17 4l-4 16" /></svg>开源工具</a></li><li><a data-astro-transition-scope="astro-bztu2lml-2" href="/tags/kubernetes/" class="flex items-center gap-0.5 border-foreground border-b-2 border-dashed hover:border-accent hover:text-accent hover:-mt-0.5 focus-visible:text-accent focus-visible:border-none text-sm"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="opacity-80 size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 9h14M5 15h14M11 4 7 20M17 4l-4 16" /></svg>Kubernetes</a></li><li><a data-astro-transition-scope="astro-bztu2lml-3" href="/tags/service/" class="flex items-center gap-0.5 border-foreground border-b-2 border-dashed hover:border-accent hover:text-accent hover:-mt-0.5 focus-visible:text-accent focus-visible:border-none text-sm"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="opacity-80 size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 9h14M5 15h14M11 4 7 20M17 4l-4 16" /></svg>Service</a></li></ul><div class="flex flex-none flex-col items-center justify-center gap-1 md:items-start"><span class="italic">Share this post:</span><div class="text-center"><a href="https://wa.me/?text=https://synex.space/posts/kubernetes-service%E8%AF%A6%E8%A7%A3/" title="Share this post on Whatsapp" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m3 21 1.65-3.8a9 9 0 1 1 3.4 2.9z" /><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0za5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" /></svg><span class="sr-only">Share this post on Whatsapp</span></a><a href="https://www.facebook.com/sharer.php?u=https://synex.space/posts/kubernetes-service%E8%AF%A6%E8%A7%A3/" title="Share this post on Facebook" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3V3h-3a5 5 0 0 0-5 5v2z" /></svg><span class="sr-only">Share this post on Facebook</span></a><a href="https://x.com/intent/post?url=https://synex.space/posts/kubernetes-service%E8%AF%A6%E8%A7%A3/" title="Share this post on X" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m4 4 11.733 16H20L8.267 4zM4 20l6.768-6.768m2.46-2.46L20 4" /></svg><span class="sr-only">Share this post on X</span></a><a href="https://t.me/share/url?url=https://synex.space/posts/kubernetes-service%E8%AF%A6%E8%A7%A3/" title="Share this post on Telegram" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m15 10-4 4 6 6 4-16-18 7 4 2 2 6 3-4" /></svg><span class="sr-only">Share this post on Telegram</span></a><a href="https://pinterest.com/pin/create/button/?url=https://synex.space/posts/kubernetes-service%E8%AF%A6%E8%A7%A3/" title="Share this post on Pinterest" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m8 20 4-9M10.7 14c.437 1.263 1.43 2 2.55 2 2.071 0 3.75-1.554 3.75-4a5 5 0 1 0-9.7 1.7" /><path d="M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0" /></svg><span class="sr-only">Share this post on Pinterest</span></a><a href="mailto:?subject=See%20this%20post&amp;body=https://synex.space/posts/kubernetes-service%E8%AF%A6%E8%A7%A3/" title="Share this post via email" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><path d="m3 7 9 6 9-6" /></svg><span class="sr-only">Share this post via email</span></a></div></div><hr class="my-8 border-dashed"><div data-pagefind-ignore class="my-8 grid grid-cols-1 gap-6 sm:grid-cols-2"><a href="/posts/kubernetes-数据存储/" class="flex w-full gap-1 hover:opacity-75"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block flex-none rtl:rotate-180" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 12h14M5 12l6 6M5 12l6-6" /></svg><div><span>Previous Post</span><div class="text-accent/85 text-sm">Kubernetes-数据存储</div></div></a><a href="/posts/kubernetes-pod控制器详解/" class="flex w-full justify-end gap-1 text-end hover:opacity-75 sm:col-start-2"><div><span>Next Post</span><div class="text-accent/85 text-sm">Kubernetes-Pod控制器详解</div></div><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block flex-none rtl:rotate-180" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 12h14M13 18l6-6M13 6l6 6" /></svg></a></div></main><footer class="app-layout mt-auto"><div class="border-border flex flex-col items-center justify-between border-t py-6 sm:flex-row-reverse sm:py-4"><div class="flex flex-wrap items-center gap-1"><a href="https://github.com/Synex93" title="Syn3x's Blog on Github" class="group inline-flex items-center gap-1 hover:text-accent p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" /></svg><span class="sr-only">Syn3x&#39;s Blog on Github</span></a><a href="mailto:me@synex.space" title="Send an email to Syn3x's Blog" class="group inline-flex items-center gap-1 hover:text-accent p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><path d="m3 7 9 6 9-6" /></svg><span class="sr-only">Send an email to Syn3x&#39;s Blog</span></a></div><div class="my-2 whitespace-nowrap"><span>Copyright &#169; 2026 Syn3x. All rights reserved.</span></div></div></footer><script type="module">var e=`theme`,t=`light`,n=`dark`;function r(){return localStorage.getItem(e)||(window.matchMedia(`(prefers-color-scheme: dark)`).matches?n:t)}var i=window.__theme?.value??r();function a(){localStorage.setItem(e,i),o()}function o(){let e=document.firstElementChild;e?.setAttribute(`data-theme`,i),e?.classList.toggle(`dark`,i===n),document.querySelector(`#theme-btn`)?.setAttribute(`aria-label`,i);let t=window.getComputedStyle(document.body).backgroundColor;document.querySelector(`meta[name='theme-color']`)?.setAttribute(`content`,t)}function s(){o(),document.querySelector(`#theme-btn`)?.addEventListener(`click`,()=>{i=i===t?n:t,a()})}s(),document.addEventListener(`astro:after-swap`,s),document.addEventListener(`astro:before-swap`,e=>{let t=document.querySelector(`meta[name='theme-color']`)?.getAttribute(`content`);t&&e.newDocument.querySelector(`meta[name='theme-color']`)?.setAttribute(`content`,t)}),window.matchMedia(`(prefers-color-scheme: dark)`).addEventListener(`change`,({matches:e})=>{i=e?n:t,a()});</script></body></html><script data-astro-rerun>
+  function createProgressBar() {
+    const progressContainer = document.createElement("div");
+    progressContainer.className =
+      "progress-container fixed top-0 z-10 h-1 w-full bg-background";
+
+    const progressBar = document.createElement("div");
+    progressBar.className = "progress-bar h-1 w-0 bg-accent";
+    progressBar.id = "myBar";
+
+    progressContainer.appendChild(progressBar);
+    document.body.appendChild(progressContainer);
+  }
+  createProgressBar();
+
+  function updateScrollProgress() {
+    document.addEventListener("scroll", () => {
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      if (document) {
+        const myBar = document.getElementById("myBar");
+        if (myBar) {
+          myBar.style.width = scrolled + "%";
+        }
+      }
+    });
+  }
+  updateScrollProgress();
+
+  function addHeadingLinks() {
+    const headings = Array.from(
+      document.querySelectorAll("h2, h3, h4, h5, h6")
+    );
+    for (const heading of headings) {
+      heading.classList.add("group");
+      const link = document.createElement("a");
+      link.className =
+        "heading-link ms-2 no-underline opacity-75 md:opacity-0 md:group-hover:opacity-100 md:focus:opacity-100";
+      link.href = "#" + heading.id;
+
+      const span = document.createElement("span");
+      span.ariaHidden = "true";
+      span.innerText = "#";
+      link.appendChild(span);
+      heading.appendChild(link);
+    }
+  }
+  addHeadingLinks();
+
+  function attachCopyButtons() {
+    const copyButtonLabel = "Copy";
+    const codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+    for (const codeBlock of codeBlocks) {
+      const wrapper = document.createElement("div");
+      wrapper.style.position = "relative";
+
+      const computedStyle = getComputedStyle(codeBlock);
+      const hasFileNameOffset =
+        computedStyle.getPropertyValue("--file-name-offset").trim() !== "";
+
+      const topClass = hasFileNameOffset
+        ? "top-(--file-name-offset)"
+        : "-top-3";
+
+      const copyButton = document.createElement("button");
+      copyButton.className = `copy-code absolute end-3 ${topClass} rounded bg-muted border border-muted px-2 py-1 text-xs leading-4 text-foreground font-medium`;
+      copyButton.innerHTML = copyButtonLabel;
+      codeBlock.setAttribute("tabindex", "0");
+      codeBlock.appendChild(copyButton);
+
+      codeBlock?.parentNode?.insertBefore(wrapper, codeBlock);
+      wrapper.appendChild(codeBlock);
+
+      copyButton.addEventListener("click", async () => {
+        await copyCode(codeBlock, copyButton);
+      });
+    }
+
+    async function copyCode(block, button) {
+      const code = block.querySelector("code");
+      const text = code?.innerText;
+
+      await navigator.clipboard.writeText(text ?? "");
+
+      button.innerText = "Copied";
+
+      setTimeout(() => {
+        button.innerText = copyButtonLabel;
+      }, 700);
+    }
+  }
+  attachCopyButtons();
+
+  /** Accessible image lightbox for article images. */
+  function initLightbox() {
+    const article = document.getElementById("article");
+    if (!article) return;
+
+    const prefersReducedMotion = () =>
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let overlay = null;
+    let lastFocused = null;
+
+    // Defer attribute mutations so they don't push the LCP timestamp.
+    // Event listeners below use delegation and don't need the attributes to exist yet.
+    requestAnimationFrame(() => {
+      const images = Array.from(article.querySelectorAll("img"));
+      for (const image of images) {
+        if (image.closest("a")) continue;
+        image.setAttribute("role", "button");
+        image.setAttribute("tabindex", "0");
+        image.setAttribute("aria-haspopup", "dialog");
+        image.setAttribute(
+          "aria-label",
+          image.alt ? `Zoom image: ${image.alt}` : "Zoom image"
+        );
+      }
+    });
+
+    function open(src, alt, trigger) {
+      if (overlay) return;
+      lastFocused = trigger ?? document.activeElement;
+
+      overlay = document.createElement("div");
+      overlay.setAttribute("role", "dialog");
+      overlay.setAttribute("aria-modal", "true");
+      overlay.setAttribute(
+        "aria-label",
+        alt ? `Image preview: ${alt}` : "Image preview"
+      );
+      overlay.className =
+        "fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 transition-opacity duration-200 motion-reduce:transition-none";
+
+      const closeButton = document.createElement("button");
+      closeButton.type = "button";
+      closeButton.setAttribute("aria-label", "Close image preview");
+      closeButton.className =
+        "absolute end-4 top-4 rounded p-2 text-3xl leading-none text-white";
+      closeButton.innerHTML = "&#10005;";
+      closeButton.addEventListener("click", close);
+
+      const image = document.createElement("img");
+      image.src = src;
+      image.alt = "";
+      image.className =
+        "max-h-[90dvh] max-w-[90dvw] cursor-default object-contain";
+
+      overlay.append(closeButton, image);
+      overlay.addEventListener("click", e => {
+        if (e.target === overlay && currentScale <= 1) close();
+      });
+
+      let currentScale = 1;
+      let translateX = 0;
+      let translateY = 0;
+      let initialDist = 0;
+      let initialScale = 1;
+      let panStartX = 0;
+      let panStartY = 0;
+      let panStartTranslateX = 0;
+      let panStartTranslateY = 0;
+      let lastTapTime = 0;
+
+      function applyTransform() {
+        image.style.transform = `scale(${currentScale}) translate(${translateX}px, ${translateY}px)`;
+      }
+
+      function resetTransform() {
+        currentScale = 1;
+        translateX = 0;
+        translateY = 0;
+        image.style.transform = "";
+      }
+
+      overlay.addEventListener(
+        "touchstart",
+        e => {
+          const t = e.touches;
+          if (t.length === 2) {
+            initialDist = Math.hypot(
+              t[1].clientX - t[0].clientX,
+              t[1].clientY - t[0].clientY
+            );
+            initialScale = currentScale;
+          } else if (t.length === 1) {
+            const now = Date.now();
+            if (now - lastTapTime < 300) {
+              e.preventDefault();
+              if (currentScale > 1) {
+                resetTransform();
+              } else {
+                currentScale = 2;
+                translateX = 0;
+                translateY = 0;
+                applyTransform();
+              }
+              lastTapTime = 0;
+              panStartX = t[0].clientX;
+              panStartY = t[0].clientY;
+              panStartTranslateX = translateX;
+              panStartTranslateY = translateY;
+            } else {
+              lastTapTime = now;
+              if (currentScale > 1) {
+                panStartX = t[0].clientX;
+                panStartY = t[0].clientY;
+                panStartTranslateX = translateX;
+                panStartTranslateY = translateY;
+              }
+            }
+          }
+        },
+        { passive: false }
+      );
+
+      overlay.addEventListener(
+        "touchmove",
+        e => {
+          const t = e.touches;
+          if (t.length === 2) {
+            e.preventDefault();
+            const dist = Math.hypot(
+              t[1].clientX - t[0].clientX,
+              t[1].clientY - t[0].clientY
+            );
+            currentScale = Math.min(
+              4,
+              Math.max(1, initialScale * (dist / initialDist))
+            );
+            applyTransform();
+          } else if (t.length === 1) {
+            if (currentScale > 1) {
+              e.preventDefault();
+              translateX =
+                panStartTranslateX + (t[0].clientX - panStartX) / currentScale;
+              translateY =
+                panStartTranslateY + (t[0].clientY - panStartY) / currentScale;
+              const maxX = Math.max(
+                0,
+                (image.clientWidth - overlay.clientWidth / currentScale) / 2
+              );
+              const maxY = Math.max(
+                0,
+                (image.clientHeight - overlay.clientHeight / currentScale) / 2
+              );
+              translateX = Math.min(maxX, Math.max(-maxX, translateX));
+              translateY = Math.min(maxY, Math.max(-maxY, translateY));
+              applyTransform();
+            } else {
+              e.preventDefault();
+            }
+          }
+        },
+        { passive: false }
+      );
+
+      overlay.addEventListener("touchend", e => {
+        if (e.touches.length === 0 && currentScale <= 1.05) {
+          resetTransform();
+        }
+      });
+
+      overlay.addEventListener("touchcancel", e => {
+        if (e.touches.length === 0 && currentScale <= 1.05) {
+          resetTransform();
+        }
+      });
+
+      document.body.appendChild(overlay);
+      document.body.style.overflow = "hidden";
+      document.addEventListener("keydown", onKeyDown);
+      window.__closeLightbox = close;
+
+      requestAnimationFrame(() => overlay?.classList.add("opacity-100"));
+      closeButton.focus();
+    }
+
+    function close() {
+      if (!overlay) return;
+      const el = overlay;
+      overlay = null;
+      window.__closeLightbox = null;
+
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+      lastFocused?.focus();
+      lastFocused = null;
+
+      if (prefersReducedMotion()) {
+        el.remove();
+        return;
+      }
+      const remove = () => el.remove();
+      el.addEventListener("transitionend", remove, { once: true });
+      setTimeout(remove, 250); // fallback in case transitionend never fires
+      el.classList.remove("opacity-100");
+    }
+
+    function onKeyDown(e) {
+      if (e.key === "Escape") {
+        close();
+      } else if (e.key === "Tab") {
+        trapFocus(e);
+      }
+    }
+
+    // Keep keyboard focus inside the open dialog.
+    function trapFocus(e) {
+      if (!overlay) return;
+      const focusables = overlay.querySelectorAll(
+        'a[href], button, [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+
+    function triggerFromEvent(e) {
+      const image = e.target.closest("img");
+      if (!image || !article.contains(image) || image.closest("a")) return null;
+      return image;
+    }
+
+    function activate(image) {
+      open(image.currentSrc || image.src, image.alt, image);
+    }
+
+    article.addEventListener("click", e => {
+      const image = triggerFromEvent(e);
+      if (!image) return;
+      e.preventDefault();
+      activate(image);
+    });
+
+    article.addEventListener("keydown", e => {
+      if (e.key !== "Enter" && e.key !== " " && e.key !== "Spacebar") return;
+      const image = triggerFromEvent(e);
+      if (!image) return;
+      e.preventDefault();
+      activate(image);
+    });
+  }
+  initLightbox();
+
+  if (!window.__lightboxSwapBound) {
+    window.__lightboxSwapBound = true;
+    document.addEventListener("astro:before-swap", () =>
+      window.__closeLightbox?.()
+    );
+  }
+
+  document.addEventListener("astro:after-swap", () =>
+    window.scrollTo({ left: 0, top: 0, behavior: "instant" })
+  );
+</script>

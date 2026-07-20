@@ -1,0 +1,985 @@
+<!DOCTYPE html><html dir="ltr" lang="en" class="overflow-y-scroll scroll-smooth"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.png"><link rel="icon" href="/favicon.png"><link rel="canonical" href="https://synex.space/posts/%E7%AC%AC%E4%BA%8C%E5%B1%8Aparlooctf%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E6%8C%91%E6%88%98%E8%B5%9B-%E5%BA%94%E6%80%A5%E7%9B%B8%E5%BA%94%E6%96%B9%E5%90%91-writeup/"><meta name="generator" content="Astro v7.0.3"><!-- Font --><style>@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/02154cca78ac33f2.woff") format("woff"), url("/_astro/fonts/478e42e4694872ef.ttf") format("truetype");font-display:swap;font-weight:300;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/3a32a7a7a67f4f58.woff") format("woff"), url("/_astro/fonts/0863f4f6964aa89c.ttf") format("truetype");font-display:swap;font-weight:400;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/a5c5808c25effec9.woff") format("woff"), url("/_astro/fonts/792eded6cb3f0350.ttf") format("truetype");font-display:swap;font-weight:500;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/14314705006234cb.woff") format("woff"), url("/_astro/fonts/87d8fc1072d4917b.ttf") format("truetype");font-display:swap;font-weight:600;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/c33265ba093eb291.woff") format("woff"), url("/_astro/fonts/ec883ed4db81a7d9.ttf") format("truetype");font-display:swap;font-weight:700;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/c26ad40d3b1d9169.woff") format("woff"), url("/_astro/fonts/7a5ee0cfcde31b81.ttf") format("truetype");font-display:swap;font-weight:300;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/87ca066ba5b2c7cf.woff") format("woff"), url("/_astro/fonts/f4e25dfe9d6152ec.ttf") format("truetype");font-display:swap;font-weight:400;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/a9a0e80c053be3d5.woff") format("woff"), url("/_astro/fonts/a9df48ecd03749e4.ttf") format("truetype");font-display:swap;font-weight:500;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/da468df88542c99b.woff") format("woff"), url("/_astro/fonts/90f9809471092714.ttf") format("truetype");font-display:swap;font-weight:600;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/f914de358bc554f6.woff") format("woff"), url("/_astro/fonts/dbc9996f99c63e07.ttf") format("truetype");font-display:swap;font-weight:700;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:300;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:400;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:500;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:600;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:700;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:300;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:400;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:500;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:600;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:700;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}:root{--font-google-sans-code:"Google Sans Code-1a30c214885cb404","Google Sans Code-1a30c214885cb404 fallback: Courier New",monospace;}</style><!-- Primary meta --><title>第二届“Parloo”CTF应急响应挑战赛-应急相应方向-WriteUp | Syn3x&#39;s Blog</title><meta name="title" content="第二届“Parloo”CTF应急响应挑战赛-应急相应方向-WriteUp | Syn3x's Blog"><meta name="description" content="第二届 Parloo CTF 应急响应 WriteUp，记录 Web、Linux、流量和溯源场景中的证据分析与 flag 获取过程。"><meta name="author" content="Syn3x"><link rel="sitemap" href="/sitemap-index.xml"><!-- Open Graph --><meta property="og:type" content="website"><meta property="og:site_name" content="Syn3x's Blog"><meta property="og:title" content="第二届“Parloo”CTF应急响应挑战赛-应急相应方向-WriteUp | Syn3x's Blog"><meta property="og:description" content="第二届 Parloo CTF 应急响应 WriteUp，记录 Web、Linux、流量和溯源场景中的证据分析与 flag 获取过程。"><meta property="og:url" content="https://synex.space/posts/%E7%AC%AC%E4%BA%8C%E5%B1%8Aparlooctf%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E6%8C%91%E6%88%98%E8%B5%9B-%E5%BA%94%E6%80%A5%E7%9B%B8%E5%BA%94%E6%96%B9%E5%90%91-writeup/"><meta property="og:image" content="https://synex.space/posts/%E7%AC%AC%E4%BA%8C%E5%B1%8Aparlooctf%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E6%8C%91%E6%88%98%E8%B5%9B-%E5%BA%94%E6%80%A5%E7%9B%B8%E5%BA%94%E6%96%B9%E5%90%91-writeup/index.png"><!-- Twitter / X --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://synex.space/posts/%E7%AC%AC%E4%BA%8C%E5%B1%8Aparlooctf%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E6%8C%91%E6%88%98%E8%B5%9B-%E5%BA%94%E6%80%A5%E7%9B%B8%E5%BA%94%E6%96%B9%E5%90%91-writeup/"><meta property="twitter:title" content="第二届“Parloo”CTF应急响应挑战赛-应急相应方向-WriteUp | Syn3x's Blog"><meta property="twitter:description" content="第二届 Parloo CTF 应急响应 WriteUp，记录 Web、Linux、流量和溯源场景中的证据分析与 flag 获取过程。"><meta property="twitter:image" content="https://synex.space/posts/%E7%AC%AC%E4%BA%8C%E5%B1%8Aparlooctf%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E6%8C%91%E6%88%98%E8%B5%9B-%E5%BA%94%E6%80%A5%E7%9B%B8%E5%BA%94%E6%96%B9%E5%90%91-writeup/index.png"><!-- RSS autodiscovery --><link rel="alternate" type="application/rss+xml" title="Syn3x's Blog" href="https://synex.space/rss.xml/"><!-- Filled at runtime by theme.ts to match the current background colour --><meta name="theme-color" content=""><!-- Extra head content injected by child layouts (e.g. JSON-LD, article meta) --><meta property="og:type" content="article"><meta property="article:published_time" content="2025-05-20T13:34:00.000Z"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"第二届“Parloo”CTF应急响应挑战赛-应急相应方向-WriteUp | Syn3x's Blog","image":"https://synex.space/posts/%E7%AC%AC%E4%BA%8C%E5%B1%8Aparlooctf%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E6%8C%91%E6%88%98%E8%B5%9B-%E5%BA%94%E6%80%A5%E7%9B%B8%E5%BA%94%E6%96%B9%E5%90%91-writeup/index.png","datePublished":"2025-05-20T13:34:00.000Z","author":[{"@type":"Person","name":"Syn3x","url":"https://synex.space"}]}</script><!--
+      Inline FOUC-prevention script: sets data-theme on <html> before
+      the browser paints. Runs synchronously, no defer/async.
+    --><script>
+      (function () {
+        const stored = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const theme = stored ?? (prefersDark ? "dark" : "light");
+        const root = document.firstElementChild;
+        root?.setAttribute("data-theme", theme);
+        root?.classList.toggle("dark", theme === "dark");
+        // Expose value so theme.ts can skip re-detection.
+        window.__theme = { value: theme };
+      })();
+    </script><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.2i1RQzKf.js"></script><link rel="stylesheet" href="/_astro/Footer.ChjHkc0Z.css"><style>@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media (prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*),[data-astro-transition-scope]{animation:none!important}}
+</style><style>[data-astro-transition-scope="astro-bztu2lml-1"] { view-transition-name: ctf; }@layer astro { ::view-transition-old(ctf) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(ctf) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(ctf) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(ctf) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-bztu2lml-2"] { view-transition-name: writeup; }@layer astro { ::view-transition-old(writeup) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(writeup) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(writeup) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(writeup) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-2"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-2"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-bztu2lml-3"] { view-transition-name: forensics; }@layer astro { ::view-transition-old(forensics) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(forensics) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(forensics) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(forensics) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-3"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-3"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head><body class="bg-background font-app text-foreground selection:bg-accent/75 selection:text-accent-foreground flex min-h-svh flex-col"><a id="skip-to-content" href="#main-content" class="bg-background text-accent absolute inset-s-16 -top-full z-50 px-3 py-2 backdrop-blur-lg transition-all focus:top-4">Skip to content</a><header class="app-layout flex flex-col items-center justify-between sm:flex-row"><div class="border-border bg-background relative flex w-full items-baseline justify-between border-b py-4 sm:items-center sm:py-6"><a href="/" class="absolute py-1 text-xl leading-8 font-semibold whitespace-nowrap sm:static sm:my-auto sm:text-2xl sm:leading-none">Syn3x&#39;s Blog</a><nav id="nav-menu" class="flex w-full flex-col items-center sm:ms-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0"><button id="menu-btn" class="focus-outline self-end p-2 sm:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="menu-items" data-label-open="Open menu" data-label-close="Close menu"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="hidden" viewBox="0 0 24 24" id="close-icon"><path stroke="none" d="M0 0h24v24H0z" /><path d="M18 6 6 18M6 6l12 12" /></svg><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep" viewBox="0 0 24 24" id="menu-icon"><path stroke="none" d="M0 0h24v24H0z" /><path d="M4 6h16M7 12h13M10 18h10" /></svg></button><ul id="menu-items" class="[&amp;&gt;li&gt;a]:hover:text-accent mt-4 hidden w-44 grid-cols-2 place-content-center gap-2 sm:mt-0 sm:flex sm:w-auto sm:gap-x-5 sm:gap-y-0 sm:[&amp;&gt;li]:h-8 [&amp;&gt;li&gt;a]:block [&amp;&gt;li&gt;a]:px-4 [&amp;&gt;li&gt;a]:py-3 [&amp;&gt;li&gt;a]:text-center [&amp;&gt;li&gt;a]:font-medium sm:[&amp;&gt;li&gt;a]:px-2 sm:[&amp;&gt;li&gt;a]:py-1"><li class="col-span-2"><a href="/posts/" class="active-nav">Posts</a></li><li class="col-span-2"><a href="/tags/">Tags</a></li><li class="col-span-2"><a href="/friends/">Friends</a></li><li class="col-span-2"><a href="/about/">About</a></li><li class="col-span-2"><a href="/archives/" title="Archives" aria-label="Archives" class="group inline-flex items-center gap-1 hover:text-accent focus-outline flex size-full justify-center p-3 sm:relative sm:size-8 sm:p-0"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="hidden sm:absolute sm:top-1/2 sm:left-1/2 sm:block sm:size-6 sm:-translate-x-1/2 sm:-translate-y-1/2" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8M10 12h4" /></svg><span class="sm:sr-only">Archives</span></a></li><li class="col-span-1 flex items-center justify-center"><a href="/search/" title="Search" aria-label="Search" class="group inline-flex items-center gap-1 hover:text-accent focus-outline relative size-8"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-1/2 left-1/2 size-6 -translate-x-1/2 -translate-y-1/2" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 10a7 7 0 1 0 14 0 7 7 0 1 0-14 0M21 21l-6-6" /></svg><span class="sr-only">Search</span></a></li><li class="col-span-1 flex items-center justify-center"><button id="theme-btn" class="focus-outline hover:[&amp;&gt;svg]:stroke-accent relative size-12 p-4 sm:size-8" title="Toggle theme" aria-label="auto" aria-live="polite"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-[50%] left-[50%] translate-[-50%] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M12 3h.393a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 2.992z" /></svg><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-[50%] left-[50%] translate-[-50%] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M14.828 14.828a4 4 0 1 0-5.656-5.656 4 4 0 0 0 5.656 5.656M6.343 17.657l-1.414 1.414M6.343 6.343 4.929 4.929M17.657 6.343l1.414-1.414M17.657 17.657l1.414 1.414M4 12H2M12 4V2M20 12h2M12 20v2" /></svg></button></li></ul></nav></div></header><script type="module">function e(){let e=document.querySelector(`#menu-btn`),t=document.querySelector(`#menu-items`),n=document.querySelector(`#menu-icon`),r=document.querySelector(`#close-icon`);if(!e||!t||!n||!r)return;let i=e.dataset.labelOpen??`Open menu`,a=e.dataset.labelClose??`Close menu`;e.addEventListener(`click`,()=>{let o=e.getAttribute(`aria-expanded`)===`true`;e.setAttribute(`aria-expanded`,o?`false`:`true`),e.setAttribute(`aria-label`,o?i:a),t.classList.toggle(`hidden`),t.classList.toggle(`grid`),n.classList.toggle(`hidden`),r.classList.toggle(`hidden`)})}e(),document.addEventListener(`astro:after-swap`,e);</script><div class="app-layout flex items-center justify-start"><a id="back-button" href="/" class="group inline-flex items-center gap-1 hover:text-accent focus-outline hover:text-foreground/75 -ms-2 mt-8 mb-2"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 rtl:rotate-180" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m15 6-6 6 6 6" /></svg><span>Go back</span></a></div><script type="module">function e(){let e=document.querySelector(`#back-button`),t=sessionStorage.getItem(`backUrl`);t&&e&&(e.href=t)}document.addEventListener(`astro:page-load`,e),e();</script><main id="main-content" class="app-layout" data-pagefind-body><div class="xl:grid xl:grid-cols-[minmax(0,1fr)_13rem] xl:gap-x-10"><div><h1 style="view-transition-name:u007b2cu004e8cu005c4a-parloo-ctfu005e94u006025u0054cdu005e94u006311u006218u008d5b-u005e94u006025u0076f8u005e94u0065b9u005411-write-up" class="text-accent inline-block text-2xl font-bold sm:text-3xl">第二届“Parloo”CTF应急响应挑战赛-应急相应方向-WriteUp</h1><div class="my-2 flex items-center gap-2"><div class="text-muted-foreground flex items-center gap-x-2"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 min-w-5.5" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zM16 3v4M8 3v4M4 11h16M7 14h.013M10.01 14h.005M13.01 14h.005M16.015 14h.005M13.015 17h.005M7.01 17h.005M10.01 17h.005" /></svg><time class="text-sm sm:text-base" datetime="2025-05-20T13:34:00.000Z">20 May, 2025</time></div><span aria-hidden="true" class="text-muted-foreground max-sm:hidden hidden">|</span></div><article id="article" class="app-prose max-w-app prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg) mt-8 w-full"><h1 id="畸形的爱">畸形的爱</h1>
+<h2 id="攻击者ip地址1">攻击者ip地址1</h2>
+<p>nginx日志 31网段之外的基本都是内网ip，所以不考虑
+palu{192.168.31.240}
+<img src="https://static.synex.space/article/Pasted%20image%2020250517134104.png" alt=""></p>
+<h2 id="攻击者ip地址2">攻击者ip地址2</h2>
+<p>这道题目没做出来，主要原因是光做主线了，这个简单过了一下，没有在意到docker容器，在webserver中有一个webdata容器，开启会报错，原因是在题目创建时绑定了一个当时主机的ip，复现的虚拟机因为环境问题无法从挂起状态恢复导致虚拟机的ip被本地的dhcp更换了，所以开启不了，具体报错如下</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">root@ubuntu:/var/www/html#</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> docker</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> start</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> WebData</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">Error</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> response</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> from</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> daemon:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> driver</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> failed</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> programming</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> external</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> connectivity</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> on</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> endpoint</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> WebData</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> (d139b4f26019de0d9e2dc495f1917ce3e47443f38d283802da47eb972ded07cb): Error starting userland proxy: listen tcp 192.168.87.101:8061: bind: cannot assign requested address</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">Error:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> failed</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> to</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> start</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> containers:</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> WebData</span></span></code></pre>
+<p>通过下面命令可以临时加一条对应的ip让其临时开启容器进入里面查看数据</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">sudo</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> ip</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> addr</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> add</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> 192.168.87.101/24</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> dev</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> ens33</span></span></code></pre>
+<p>进入机器后发现反弹的后门ip
+<img src="https://static.synex.space/article/Pasted%20image%2020250519192053.png" alt="">
+palu{192.168.31.11}</p>
+<h2 id="暴力破解开始时间">暴力破解开始时间</h2>
+<p>这道题目也没做出来没注意到容器,这个日志是通过</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">docker</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> logs</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> phpmyadmin</span></span></code></pre>
+<p>获取到的，在这个容器中存在大量爆破日志
+<img src="https://static.synex.space/article/Pasted%20image%2020250519192508.png" alt="">
+palu{2025:03:05:58}</p>
+<h2 id="flag1">flag1</h2>
+<p>win10直接搜索
+palu{pc3_zgsfqwerlkssaw}
+<img src="https://static.synex.space/article/Pasted%20image%2020250517140305.png" alt=""></p>
+<h2 id="flag2">flag2</h2>
+<p>win10的最近使用里
+palu{nizhidaowoyouduoainima}
+<img src="https://static.synex.space/article/Pasted%20image%2020250517140137.png" alt=""></p>
+<h2 id="flag3">flag3</h2>
+<p>这个也没做出来，具体原因似乎是没怎么在乎数据库的内容，光去看webserver了，从webserver的网页代码中获取到数据库的账号密码
+<img src="https://static.synex.space/article/Pasted%20image%2020250519192840.png" alt="">
+通过账号密码连接数据库查看数据库数据，发现很多base64
+<img src="https://static.synex.space/article/Pasted%20image%2020250519193012.png" alt="">
+挨个解码后发现第三个内容如下</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="text"><code><span class="line"><span>[{"item_id":1,"item_name":"flag3palu{sqlaabbccsbwindows}","quantity":2,"price":199.99},{"item_id":3,"item_name":"英国复印","quantity":1,"price":59.99}]</span></span></code></pre>
+<p>palu{sqlaabbccsbwindows}</p>
+<h2 id="提交钓鱼文件的哈希32位大写">提交钓鱼文件的哈希32位大写</h2>
+<p>在回收站中有一个奇怪的zip恢复后
+<img src="https://static.synex.space/article/Pasted%20image%2020250517141817.png" alt="">
+沙箱分析
+<img src="https://static.synex.space/article/Pasted%20image%2020250517141834.png" alt="">
+palu{2977CDAB8F3EE5EFDDAE61AD9F6CF203}</p>
+<h2 id="webshell密码1">webshell密码1</h2>
+<p>没做出来，没看容器，在容器中直接就能看到webshell密码
+<img src="https://static.synex.space/article/Pasted%20image%2020250519193217.png" alt="">
+palu{hack}</p>
+<h2 id="攻击者开放3个端口">攻击者开放3个端口</h2>
+<p>没接出来，这个本来是想法查网络端口，但是没有思路，好多端口都开放。首先是第一个在攻击者ip2中，在清理脚本中就发现了一个反弹shell的脚本，上面就有端口
+<img src="https://static.synex.space/article/Pasted%20image%2020250519193521.png" alt="">
+1133，其他目前没找到，然后据群友说有一个是在<code>/tmp/r.sh</code>位置，在第一次开机的时候存在
+<img src="https://static.synex.space/article/Pasted%20image%2020250519210245.png" alt="">
+好像是1144，等官方题解吧。</p>
+<h2 id="webshell密码2">webshell密码2</h2>
+<p>网站目录下
+palu{00232}
+<img src="https://static.synex.space/article/Pasted%20image%2020250517134531.png" alt=""></p>
+<h2 id="隐藏账户的密码">隐藏账户的密码</h2>
+<p>没解出来，没发现隐藏账户。。赛后才发现
+在win10中通过工具发现额外的账户
+<img src="https://static.synex.space/article/Pasted%20image%2020250519201145.png" alt="">
+通过LaZagne获取出他的hash
+<img src="https://static.synex.space/article/Pasted%20image%2020250519203814.png" alt="">
+然后通过kali跑一下字典，这个在cmd5中是可以查询到的，但是是付费的，直接通过万能群友直接出了
+<img src="https://static.synex.space/article/Pasted%20image%2020250519205016.png" alt="">
+palu{wmx_love}
+还有就是john就不要试了，我跑了15分钟都没出…
+<img src="https://static.synex.space/article/Pasted%20image%2020250519205247.png" alt=""></p>
+<h2 id="溯源攻击者的邮箱">[溯源]攻击者的邮箱</h2>
+<p>没有解出来，没想到是这种方法。。。根据病毒侵害的主机得知王美欣的名字，去github搜索拿到githubid
+<img src="https://static.synex.space/article/Pasted%20image%2020250519195451.png" alt="">
+并且同通过id可以去github用户反查api中得知他的邮箱为
+<img src="https://static.synex.space/article/Pasted%20image%2020250519195737.png" alt="">
+palu{<a href="mailto:n0k4u@outlook.com">n0k4u@outlook.com</a>}</p>
+<h2 id="溯源flag4">[溯源]flag4</h2>
+<p>没解出来，上面搜索仓库拿到一个密语
+<img src="https://static.synex.space/article/Pasted%20image%2020250519195925.png" alt="">
+这是一个qq号直接去添加拿到flag4
+<img src="https://static.synex.space/article/Pasted%20image%2020250519200004.png" alt="">
+palu{loveyouibiejv}</p>
+<h1 id="solar_linux后门排查">solar_Linux后门排查</h1>
+<p>通过命令<code>ss -tulnpa</code>查看连接发现后门
+<img src="https://static.synex.space/article/Pasted%20image%2020250518194618.png" alt="">
+通过pid直接拿到文件
+<img src="https://static.synex.space/article/Pasted%20image%2020250518194720.png" alt="">
+直接连接过去这台机器
+<img src="https://static.synex.space/article/Pasted%20image%2020250518194800.png" alt="">
+直接就出flag了</p>
+<h1 id="取证主线">取证主线</h1>
+<h2 id="1提交堡垒机中留下的flag">1.提交堡垒机中留下的flag</h2>
+<p>flag:palu{2025_qiandao_flag}
+<img src="https://static.synex.space/article/Pasted%20image%2020250517180703.png" alt=""></p>
+<h2 id="2提交waf中隐藏的flag">2.提交WAF中隐藏的flag</h2>
+<p>palu{2025_waf}
+<img src="https://static.synex.space/article/Pasted%20image%2020250518175939.png" alt=""></p>
+<h2 id="3提交mysql中留下的flag">3.提交Mysql中留下的flag</h2>
+<p><img src="https://static.synex.space/article/Pasted%20image%2020250517182521.png" alt="">
+<code>palu{Mysql_@2025}</code></p>
+<h2 id="4提交攻击者的攻击ip">4.提交攻击者的攻击IP</h2>
+<p><img src="https://static.synex.space/article/Pasted%20image%2020250518135200.png" alt=""></p>
+<h2 id="5提交攻攻击者最早攻击时间">5.提交攻攻击者最早攻击时间</h2>
+<p>提交攻攻击者最早攻击时间flag格式为palu{xxxx-xx-xx-xx-xx-xx}，这个时间格式是错误的。。。一直没交上，最后半小时才说格式不对。。
+<img src="https://static.synex.space/article/Pasted%20image%2020250520153106.png" alt="">
+palu{2025-05-05-00:04:40}</p>
+<h2 id="6提交web服务泄露的关键文件名">6.提交web服务泄露的关键文件名</h2>
+<p>在waf的静态网站文件中有一个key.txt
+palu{key.txt}
+<img src="https://static.synex.space/article/Pasted%20image%2020250518134358.png" alt=""></p>
+<h2 id="7题解泄露的邮箱地址">7.题解泄露的邮箱地址</h2>
+<p>在key.txt中最后面有邮箱
+palu{<a href="mailto:parloo@parloo.com">parloo@parloo.com</a>}
+<img src="https://static.synex.space/article/Pasted%20image%2020250518134504.png" alt=""></p>
+<h2 id="8提交立足点服务器ip地址">8.提交立足点服务器ip地址</h2>
+<p>palu{192.168.20.108}
+服务端的爆破流量
+<img src="https://static.synex.space/article/Pasted%20image%2020250517201246.png" alt="">
+堡垒机中的ssh爆破流量也来自108<code>lastb</code>
+<img src="https://static.synex.space/article/Pasted%20image%2020250517204751.png" alt=""></p>
+<h2 id="9提交攻击者使用的提权的用户和密码">9.提交攻击者使用的提权的用户和密码</h2>
+<p>在sshserver中的passwd中发现parloo用户，通过john直接爆破出flag
+<img src="https://static.synex.space/article/Pasted%20image%2020250518183742.png" alt="">
+palu{parloo/parlook}</p>
+<h2 id="10提交攻击者留下的的文件内容作为flag提交">10.提交攻击者留下的的文件内容作为flag提交</h2>
+<p>在sshserver中，在parloo用户的家目录中发现flag
+<img src="https://static.synex.space/article/Pasted%20image%2020250517202040.png" alt=""></p>
+<h2 id="11提交权限维持方法的名称">11.提交权限维持方法的名称</h2>
+<p>没做出来，具体原因是没有思路。。。题目太多了就做别的题目了。。在sshserver中通过命令</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">systemctl</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> list-units</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --type=service</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --state=running</span></span></code></pre>
+<p>列出了所有已经在运行的服务，发现有两个奇怪的服务
+<img src="https://static.synex.space/article/Pasted%20image%2020250520170031.png" alt="">
+仔细看一下这个服务发现问题
+<img src="https://static.synex.space/article/Pasted%20image%2020250520170128.png" alt="">
+运行的b4b40c44ws，这个在受感染的机器中可以找到，放入沙箱之后可以发现这是一个木马。
+palu{rootset}</p>
+<h2 id="12提交攻击者攻击恶意服务器连接地址作为flag提交">12.提交攻击者攻击恶意服务器连接地址作为flag提交</h2>
+<p>在Server01中发现后门用户的家目录中发现aa程序
+<img src="https://static.synex.space/article/Pasted%20image%2020250517210611.png" alt="">
+ida分析
+<img src="https://static.synex.space/article/Pasted%20image%2020250517210619.png" alt="">
+palu{47.101.213.153}</p>
+<h2 id="13找到系统中被劫持的程序程序名作为flag提交">13.找到系统中被劫持的程序程序名作为flag提交</h2>
+<p>没解出来，在sshserver中，通过下面命令</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">find</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> ./</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -ytpe</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> f</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -newermt</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">2025-05-6</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> !</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -newermt</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">2025-05-010</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span></span></code></pre>
+<p>搜索近期5月份被修改的文件可以找到
+<img src="https://static.synex.space/article/Pasted%20image%2020250520170919.png" alt="">
+题目说是被劫持的，所以是
+palu{id}</p>
+<h2 id="14找到系统中存在信息泄露的服务运行端口作为flag提交">14.找到系统中存在信息泄露的服务运行端口作为flag提交</h2>
+<p>在面板中或者服务器使用<code>ss -tnl</code>都可以发现额外的端口，直接访问
+palu{8081}
+<img src="https://static.synex.space/article/Pasted%20image%2020250518141326.png" alt=""></p>
+<h2 id="15提交parloo公司项目经理的身份证号作为flag提交">15.提交Parloo公司项目经理的身份证号作为flag提交</h2>
+<p>在server01主机的8081端口中可以直接发现，可以直接编辑
+<img src="https://static.synex.space/article/Pasted%20image%2020250517210902.png" alt="">
+palu{310105198512123456}</p>
+<h2 id="16提交存在危险功能的操作系统路径作为flag提交">16.提交存在危险功能的操作系统路径作为flag提交</h2>
+<p>没做出来…在waf中发现有一个应用路由如下
+<img src="https://static.synex.space/article/Pasted%20image%2020250520192707.png" alt=""></p>
+<p><img src="https://static.synex.space/article/Pasted%20image%2020250520192742.png" alt="">
+发现可以执行命令
+palu{/admin/parloo}</p>
+<h2 id="17提交进源机器中恶意程序的md5作为flag进行提交">17.提交进源机器中恶意程序的MD5作为flag进行提交。</h2>
+<p>没做出来，火绒剑中可以看到启动项中存在一个奇怪的内容
+<img src="https://static.synex.space/article/Pasted%20image%2020250520193754.png" alt="">
+文件拖入到沙箱中发现是恶意程序
+<img src="https://static.synex.space/article/Pasted%20image%2020250520193931.png" alt="">
+palu{8cc6fc843882735e1c1152b383e35e3b}</p>
+<h2 id="18提交攻击者留下的恶意账户名称md5后作为flag进行提交">18.提交攻击者留下的恶意账户名称md5后作为flag进行提交</h2>
+<p>在登录的时候就有hack 在用户目录下也发现了
+<img src="https://static.synex.space/article/Pasted%20image%2020250518142202.png" alt="">
+palu{d78b6f30225cdc811adfe8d4e7c9fd34}</p>
+<h2 id="19提交内部群中留下的flag并提交">19.提交内部群中留下的flag并提交</h2>
+<p><img src="https://static.synex.space/article/Pasted%20image%2020250518141814.png" alt="">
+palu{nbq_nbq_parloo}</p>
+<h2 id="20请提交攻击者使用维护页面获取到的敏感内容作为flag进行提交">20.请提交攻击者使用维护页面获取到的敏感内容作为flag进行提交</h2>
+<p>没出 在17题中，发现了软件的被代理端是server服务器上的，通过查看端口(waf中其实写好了是8080)->通过端口查pid-》id拿到文件位置-》拿到位置发现有日志
+<img src="https://static.synex.space/article/Pasted%20image%2020250520194240.png" alt="">
+查看日志发现是空的，又通过用户记录发现了一个相同文件名字，查看拿到flag
+<img src="https://static.synex.space/article/Pasted%20image%2020250520194552.png" alt="">
+日志很乱直接过滤flag就可以出了
+<img src="https://static.synex.space/article/Pasted%20image%2020250520194635.png" alt="">
+palu{Server_Parloo_2025}</p>
+<h2 id="21提交获取敏感内容ip的第一次执行命令时间作为flag进行提交">21.提交获取敏感内容IP的第一次执行命令时间作为flag进行提交</h2>
+<p>没出
+<img src="https://static.synex.space/article/Pasted%20image%2020250520194746.png" alt="">
+对应20，日志第一条就是flag
+palu{192.168.20.1}</p>
+<h2 id="22提交攻击者使用的恶意ip和端口">22.提交攻击者使用的恶意ip和端口</h2>
+<p>没做出，通过下面命令拿到反弹shell地址</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">cat</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /var/log/parloo/command.log</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> |</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">grep</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -e</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">^\[</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> |</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">awk</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -F</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">|</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> '</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">{print $2}</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span></span></code></pre>
+<p><img src="https://static.synex.space/article/Pasted%20image%2020250520195037.png" alt="">
+palu{10.12.12.13:9999}</p>
+<h2 id="23提交重要数据的内容作为flag提交">23.提交重要数据的内容作为flag提交</h2>
+<p>没做出，在PC3机器发现重要数据，直接提交没用
+<img src="https://static.synex.space/article/Pasted%20image%2020250520195235.png" alt="">
+具体的解密脚本在gitea的hack仓库中具体的进入私人仓库的方法可以在39问中找到，当时想到了可能是这个加密的，但是做其他的题目给忘了。。。具体的加密逻辑如下
+<img src="https://static.synex.space/article/Pasted%20image%2020250520201158.png" alt=""></p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="python"><code><span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA">def</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> custom_encrypt</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">(</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#7FDBCA;--shiki-dark-font-style:inherit">text</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#7FDBCA;--shiki-dark-font-style:inherit"> key</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">)</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">    encrypted </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD"> []</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">    key_bytes </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD"> [</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">ord</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">c</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> for</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> c </span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">in</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> key</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    for</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> i</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> char </span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">in</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> enumerate</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">text</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">):</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        shifted </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> ord</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">char</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> +</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">i </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">%</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 5</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> +</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 1</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        xor_key </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#D6DEEB;--shiki-dark-font-style:inherit"> key_bytes</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#D6DEEB;--shiki-dark-font-style:inherit">i </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">%</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> len</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:inherit">key_bytes</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)]</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        xored </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> shifted </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">^</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> xor_key</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        substituted </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> ((</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">xored </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">&#x26;</span><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA"> 0x</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">0F</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> &#x3C;&#x3C;</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 4</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> |</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> ((</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">xored </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">&#x26;</span><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA"> 0x</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">F0</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> >></span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 4</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        encrypted</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">append</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#40A02B;--shiki-light-font-style:italic;--shiki-dark:#C792EA;--shiki-dark-font-style:inherit">f</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">"</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">{</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">substituted</span><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA">:02x</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">}</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    return</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> ""</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">join</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">encrypted</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span></code></pre>
+<p>这里只是加密脚本需要自己推回来解密脚本，我这里直接通过ai出
+<img src="https://static.synex.space/article/Pasted%20image%2020250520201930.png" alt=""></p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="python"><code><span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA">def</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> custom_decrypt</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">(</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#7FDBCA;--shiki-dark-font-style:inherit">encrypted_text</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#7FDBCA;--shiki-dark-font-style:inherit"> key</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">)</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">    decrypted </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD"> []</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">    key_bytes </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD"> [</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">ord</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">c</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> for</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> c </span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">in</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> key</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">]</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">    </span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">    # Process the encrypted text two characters at a time (hex pairs)</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    for</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> i </span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">in</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> range</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">0</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">,</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> len</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">encrypted_text</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">,</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 2</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">):</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">        # Convert hex pair to integer</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        substituted </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#8839EF;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> int</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:inherit">encrypted_text</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:inherit">i</span><span style="--shiki-light:#7C7F93;--shiki-dark:#82AAFF">:</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:inherit">i</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">+</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#F78C6C;--shiki-dark-font-style:inherit">2</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">,</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 16</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        </span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">        # Reverse nibble swap</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        xored </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> ((</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">substituted </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">&#x26;</span><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA"> 0x</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">0F</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> &#x3C;&#x3C;</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 4</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> |</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> ((</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">substituted </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">&#x26;</span><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA"> 0x</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">F0</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> >></span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 4</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        </span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">        # Reverse XOR with key</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        xor_key </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#D6DEEB;--shiki-dark-font-style:inherit"> key_bytes</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#D6DEEB;--shiki-dark-font-style:inherit">i </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">//</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#F78C6C;--shiki-dark-font-style:inherit"> 2</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> %</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> len</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:inherit">key_bytes</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)]</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        shifted </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> xored </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">^</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> xor_key</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        </span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">        # Reverse the position-based shift</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        char_code </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> shifted </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">-</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> ((</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">i </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">//</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 2</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> %</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 5</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> +</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 1</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        </span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">        # Convert back to character</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        decrypted</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">append</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">chr</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">char_code</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">))</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">    </span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    return</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> ""</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">join</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">decrypted</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span></code></pre>
+<p>现在还缺少一个密钥，因为flag的格式是<code>palu{</code>他这里的几秒也是按位进行的，直接把条件给ai让他去推
+<img src="https://static.synex.space/article/Pasted%20image%2020250520202234.png" alt="">
+前缀是MySec，最后面是一个k，我就不多加ai的截图了线索就是
+<code>MySec*k</code>
+这大概率是单词，后面可以菜是key中间大概率是秘密慢慢试就出了
+<code>MySecretKey</code>
+完整脚本如下</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="python"><code><span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA">def</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> custom_encrypt</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">(</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#7FDBCA;--shiki-dark-font-style:inherit">text</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#7FDBCA;--shiki-dark-font-style:inherit"> key</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">)</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">    encrypted </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD"> []</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">    key_bytes </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD"> [</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">ord</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">c</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> for</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> c </span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">in</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> key</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    for</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> i</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> char </span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">in</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> enumerate</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">text</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">):</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        shifted </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> ord</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">char</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> +</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> (</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">i </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">%</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 5</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> +</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 1</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        xor_key </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#D6DEEB;--shiki-dark-font-style:inherit"> key_bytes</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#D6DEEB;--shiki-dark-font-style:inherit">i </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">%</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> len</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:inherit">key_bytes</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)]</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        xored </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> shifted </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">^</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> xor_key</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        substituted </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> ((</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">xored </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">&#x26;</span><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA"> 0x</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">0F</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> &#x3C;&#x3C;</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 4</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> |</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> ((</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">xored </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">&#x26;</span><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA"> 0x</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">F0</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> >></span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 4</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        encrypted</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">append</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#40A02B;--shiki-light-font-style:italic;--shiki-dark:#C792EA;--shiki-dark-font-style:inherit">f</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">"</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">{</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">substituted</span><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA">:02x</span><span style="--shiki-light:#EA76CB;--shiki-dark:#82AAFF">}</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    return</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> ""</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">join</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">encrypted</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA">def</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> custom_decrypt</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">(</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#7FDBCA;--shiki-dark-font-style:inherit">encrypted_text</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#7FDBCA;--shiki-dark-font-style:inherit"> key</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">)</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">    decrypted </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD"> []</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">    key_bytes </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD"> [</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">ord</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">c</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> for</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> c </span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">in</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> key</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">    # Process the encrypted text two characters at a time (hex pairs)</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    for</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> i </span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">in</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> range</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">0</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">,</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> len</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">encrypted_text</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">,</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 2</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">):</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">        # Convert hex pair to integer</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        substituted </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#8839EF;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> int</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:inherit">encrypted_text</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:inherit">i </span><span style="--shiki-light:#7C7F93;--shiki-dark:#82AAFF">:</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:inherit"> i </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">+</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#F78C6C;--shiki-dark-font-style:inherit"> 2</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">,</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 16</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">        # Reverse nibble swap</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        xored </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> ((</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">substituted </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">&#x26;</span><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA"> 0x</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">0F</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> &#x3C;&#x3C;</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 4</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> |</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> ((</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">substituted </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">&#x26;</span><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA"> 0x</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C">F0</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> >></span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 4</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">        # Reverse XOR with key</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        xor_key </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#D6DEEB;--shiki-dark-font-style:inherit"> key_bytes</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">[</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#D6DEEB;--shiki-dark-font-style:inherit">i </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">//</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#F78C6C;--shiki-dark-font-style:inherit"> 2</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> %</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit"> len</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:inherit">key_bytes</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)]</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        shifted </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> xored </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">^</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> xor_key</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">        # Reverse the position-based shift</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        char_code </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> shifted </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">-</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> ((</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">i </span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">//</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 2</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> %</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 5</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> +</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 1</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">        # Convert back to character</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">        decrypted</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">append</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">chr</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">char_code</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">))</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    return</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> ""</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">.</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">join</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#82AAFF">decrypted</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:inherit">print</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#1E66F5;--shiki-dark:#B2CCD6">custom_decrypt</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">c3a1c3c13e326020c3919093e1260525045e</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D9F5DD">,</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">MySecretKey</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">))</span></span></code></pre>
+<p>palu{Password-000}</p>
+<h2 id="24提交恶意维权软件的名称作为flag进行提交">24.提交恶意维权软件的名称作为flag进行提交</h2>
+<p>没做出，同17问
+palu{svhost}</p>
+<h2 id="25提交恶意程序的外联地址">25.提交恶意程序的外联地址</h2>
+<p>在palu3中家目录里有一个ipconfig
+<img src="https://static.synex.space/article/Pasted%20image%2020250518144727.png" alt="">
+反编译后拿到原代码
+<img src="https://static.synex.space/article/Pasted%20image%2020250518144742.png" alt="">
+敏感信息
+palu{88.173.90.103}</p>
+<h2 id="26提交攻击这使用的恶意dnslog域名作为flag进行提交">26.提交攻击这使用的恶意dnslog域名作为flag进行提交</h2>
+<p>没做出，在22问的命令中，可以发现下面命令
+<img src="https://static.synex.space/article/Pasted%20image%2020250520202914.png" alt="">
+肯定是他们其中一个，palu{np85qqde.requestrepo.com}</p>
+<h2 id="27提交寻找反序列化漏洞的端口作为flag进行提交">27.提交寻找反序列化漏洞的端口作为flag进行提交</h2>
+<p>没做出，可以在waf的反序列化攻击类型中找到相应的日志，然后日志不多就两页，挨个排查，出现404的基本不能存在反序列化漏洞了，嫌疑最大的就是9999
+<img src="https://static.synex.space/article/Pasted%20image%2020250520203446.png" alt=""></p>
+<p>palu{9999}</p>
+<h2 id="28提交web服务泄露的密钥作为flag进行提交">28.提交web服务泄露的密钥作为flag进行提交</h2>
+<p>在server里有一个adminaf.jar,jadx反编译后拿到flag
+<img src="https://static.synex.space/article/Pasted%20image%2020250520203947.png" alt="">
+<code>palu{QZYysgMYhG6/CzIJlVpR2g==}</code></p>
+<h2 id="29提交攻击者开始攻击的时间作为flag进行提交">29.提交攻击者开始攻击的时间作为flag进行提交</h2>
+<p>这个没出，到现在也没出，看其他师傅的wp也都没出。。。</p>
+<h2 id="30提交攻击者在server中留下的账户密码作为flag进行提交">30.提交攻击者在server中留下的账户密码作为flag进行提交</h2>
+<p>在server主机的passwd中发现
+<img src="https://static.synex.space/article/Pasted%20image%2020250518120530.png" alt="">
+通过 john拿到密码
+<img src="https://static.synex.space/article/Pasted%20image%2020250518120610.png" alt="">
+palu{parloohack/123456}</p>
+<h2 id="31提交攻击者维权方法的名称作为flag进行提交">31.提交攻击者维权方法的名称作为flag进行提交</h2>
+<p>在server主机中parloohack用户的bash_history中发现下面内容
+<img src="https://static.synex.space/article/Pasted%20image%2020250518121448.png" alt="">
+采用服务的方式
+palu{parloohack_script.service}</p>
+<h2 id="32提交攻击者留下的木马md5后作为flag进行提交">32.提交攻击者留下的木马md5后作为flag进行提交</h2>
+<p>在server主机中parloohack用户家目录中发现奇怪文件
+<img src="https://static.synex.space/article/Pasted%20image%2020250518121038.png" alt="">
+通过沙箱发现是木马
+<img src="https://static.synex.space/article/Pasted%20image%2020250518121051.png" alt="">
+palu{4123940b3911556d4bf79196cc008bf4}</p>
+<h2 id="33提交攻击者留下的溯源信息作为flag进行提交">33.提交攻击者留下的溯源信息作为flag进行提交</h2>
+<p>palu{X5E1yklz1oAdyHBZ}
+<img src="https://static.synex.space/article/Pasted%20image%2020250518170804.png" alt=""></p>
+<h2 id="34提交攻击者的githubid作为flag进行提交">34.提交攻击者的githubID作为flag进行提交</h2>
+<p>没出，在33题中的用户名是一个qq号，查看qq空间内容如下
+<img src="https://static.synex.space/article/Pasted%20image%2020250520205827.png" alt="">
+palu{ParlooSEc}</p>
+<h2 id="35提交攻击者在github下留下的的内容作为flag进行提交">35.提交攻击者在github下留下的的内容作为flag进行提交</h2>
+<p>没出，在34题中拿到id进入他的仓库拿到flag
+<img src="https://static.synex.space/article/Pasted%20image%2020250520205917.png" alt="">
+palu{s5o3WkX33hptyJjk}</p>
+<h2 id="36提交恶意用户的数量作为flag进行提交">36.提交恶意用户的数量作为flag进行提交</h2>
+<p>palu{99}
+<img src="https://static.synex.space/article/Pasted%20image%2020250518150446.png" alt=""></p>
+<h2 id="37提交恶意用户的默认密码作为flag进行提交">37.提交恶意用户的默认密码作为flag进行提交</h2>
+<p>似乎不对，因为我是在java后门中找到的在server1主机中发现了一adminAF.jar反编译发现默认用户名是admin密码是123456
+<img src="https://static.synex.space/article/Pasted%20image%2020250518132526.png" alt="">
+palu{123456}
+这道题目是意外出的，按理说这个程序似乎是人家公司自己的，不是恶意用户。。。意外的。。。</p>
+<h2 id="38提交业务数据中攻击者留下的信息作为flag进行提交">38.提交业务数据中攻击者留下的信息作为flag进行提交</h2>
+<p>mysql主机的gitea的用户表中
+palu{crP1ZIVfqrkfdhGy}
+<img src="https://static.synex.space/article/Pasted%20image%2020250518125411.png" alt=""></p>
+<h2 id="39提交私人git仓库中留下的内容作为flag进行提交">39.提交私人git仓库中留下的内容作为flag进行提交</h2>
+<p>重置admin密码</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">224d7f8df25c:/$</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> gitea</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> admin</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> user</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> change-password</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --username</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">admin</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> --password</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">Qwer1234</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span></span></code></pre>
+<p>登录发现flag(base64解码)
+<img src="https://static.synex.space/article/Pasted%20image%2020250518130723.png" alt="">
+palu{FO65SruuTukdpBS5}</p>
+<h2 id="40提交存在在mysql服务器中的恶意程序的md5作为flag进行提交">40.提交存在在mysql服务器中的恶意程序的MD5作为flag进行提交</h2>
+<p>没出，这个没仔细看…炒
+在mysql的root目录下，存在下面内容
+<img src="https://static.synex.space/article/Pasted%20image%2020250520210535.png" alt="">
+.a很可疑，ida反编译出下面内容
+<img src="https://static.synex.space/article/Pasted%20image%2020250520210810.png" alt="">
+数据输出就是创建隐藏文件。。
+palu{ba7c9fc1ff58b48d0df5c88d2fcc5cd1}</p>
+<h2 id="41提交恶意程序中模拟c2通信的函数名称作为flag进行提交">41.提交恶意程序中模拟c2通信的函数名称作为flag进行提交</h2>
+<p>没出，同40题目程序
+<img src="https://static.synex.space/article/Pasted%20image%2020250520210936.png" alt="">
+palu{simulate_network_communication}</p>
+<h2 id="42提交恶意程序创建隐藏文件的名称作为flag提交">42.提交恶意程序创建隐藏文件的名称作为flag提交</h2>
+<p>没出，同40题目程序
+<img src="https://static.synex.space/article/Pasted%20image%2020250520211028.png" alt="">
+palu{.malware_log.txt}</p>
+<h2 id="43提交恶意程序中模拟权限提升的函数作为flag进行提交">43.提交恶意程序中模拟权限提升的函数作为flag进行提交</h2>
+<p>没出，同40题目程序
+<img src="https://static.synex.space/article/Pasted%20image%2020250520211237.png" alt="">
+palu{simulate_privilege_escalation}</p>
+<h2 id="44提交被钓鱼上线的用户名作为flag进行提交">44.提交被钓鱼上线的用户名作为flag进行提交</h2>
+<p>只有在子怡的PC(PC2)中发现了浏览器的记录并且存在访问记录
+<img src="https://static.synex.space/article/Pasted%20image%2020250518150923.png" alt="">
+palu{Parloo-子怡}</p>
+<h2 id="45提交恶意程序的所在路径作为flag进行提交">45.提交恶意程序的所在路径作为flag进行提交</h2>
+<p>没出，在PC2的聊天记录中发现
+<img src="https://static.synex.space/article/Pasted%20image%2020250520211715.png" alt="">
+程序拖入沙箱是个木马
+<img src="https://static.synex.space/article/Pasted%20image%2020250520212154.png" alt="">
+palu{C:\Users\Public\Nwt\cache\recv\Parloo-沉沉}</p>
+<h2 id="46分析恶意程序的反连地址作为flag进行提交">46.分析恶意程序的反连地址作为flag进行提交</h2>
+<p>没出，很奇怪这道题我怎么没出。。都找到了。。。依旧是在浏览器的账号管理中，44题的截图
+<img src="https://static.synex.space/article/Pasted%20image%2020250520212226.png" alt="">
+palu{47.101.213.153}</p>
+<h2 id="47提交恶意c2的服务器登录的账号密码作为flag进行提交">47.提交恶意c2的服务器登录的账号密码作为flag进行提交。</h2>
+<p>palu2 谷歌浏览器中直接获取
+palu{admin/admin@qwer}
+<img src="https://static.synex.space/article/Pasted%20image%2020250518145621.png" alt=""></p>
+<h1 id="写在后面">写在后面</h1>
+<p>除了应急响应方向的<code>应急1的攻击者开放3个端口</code>和<code>应急2的29</code>基本在赛后都出了，应急响应的比赛打得太少了，赛后复现感觉好多题目都能出，还得好好练练…
+<img src="https://static.synex.space/article/Pasted%20image%2020250519092214.png" alt="">
+<img src="https://static.synex.space/article/Pasted%20image%2020250519092301.png" alt="">
+<img src="https://static.synex.space/article/palu_2025_certificate.png" alt=""></p></article></div><aside class="border-border sticky top-8 hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-l pl-5 xl:block" aria-label="文章目录" data-pagefind-ignore><nav class="pb-4"><p class="text-foreground mb-3 text-base font-semibold tracking-wide">Catalogue</p><ol class="space-y-1 text-sm"><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#攻击者ip地址1" data-toc-link data-toc-slug="攻击者ip地址1">攻击者ip地址1</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#攻击者ip地址2" data-toc-link data-toc-slug="攻击者ip地址2">攻击者ip地址2</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#暴力破解开始时间" data-toc-link data-toc-slug="暴力破解开始时间">暴力破解开始时间</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#flag1" data-toc-link data-toc-slug="flag1">flag1</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#flag2" data-toc-link data-toc-slug="flag2">flag2</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#flag3" data-toc-link data-toc-slug="flag3">flag3</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#提交钓鱼文件的哈希32位大写" data-toc-link data-toc-slug="提交钓鱼文件的哈希32位大写">提交钓鱼文件的哈希32位大写</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#webshell密码1" data-toc-link data-toc-slug="webshell密码1">webshell密码1</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#攻击者开放3个端口" data-toc-link data-toc-slug="攻击者开放3个端口">攻击者开放3个端口</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#webshell密码2" data-toc-link data-toc-slug="webshell密码2">webshell密码2</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#隐藏账户的密码" data-toc-link data-toc-slug="隐藏账户的密码">隐藏账户的密码</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#溯源攻击者的邮箱" data-toc-link data-toc-slug="溯源攻击者的邮箱">[溯源]攻击者的邮箱</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#溯源flag4" data-toc-link data-toc-slug="溯源flag4">[溯源]flag4</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#1提交堡垒机中留下的flag" data-toc-link data-toc-slug="1提交堡垒机中留下的flag">1.提交堡垒机中留下的flag</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#2提交waf中隐藏的flag" data-toc-link data-toc-slug="2提交waf中隐藏的flag">2.提交WAF中隐藏的flag</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#3提交mysql中留下的flag" data-toc-link data-toc-slug="3提交mysql中留下的flag">3.提交Mysql中留下的flag</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#4提交攻击者的攻击ip" data-toc-link data-toc-slug="4提交攻击者的攻击ip">4.提交攻击者的攻击IP</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#5提交攻攻击者最早攻击时间" data-toc-link data-toc-slug="5提交攻攻击者最早攻击时间">5.提交攻攻击者最早攻击时间</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#6提交web服务泄露的关键文件名" data-toc-link data-toc-slug="6提交web服务泄露的关键文件名">6.提交web服务泄露的关键文件名</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#7题解泄露的邮箱地址" data-toc-link data-toc-slug="7题解泄露的邮箱地址">7.题解泄露的邮箱地址</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#8提交立足点服务器ip地址" data-toc-link data-toc-slug="8提交立足点服务器ip地址">8.提交立足点服务器ip地址</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#9提交攻击者使用的提权的用户和密码" data-toc-link data-toc-slug="9提交攻击者使用的提权的用户和密码">9.提交攻击者使用的提权的用户和密码</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#10提交攻击者留下的的文件内容作为flag提交" data-toc-link data-toc-slug="10提交攻击者留下的的文件内容作为flag提交">10.提交攻击者留下的的文件内容作为flag提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#11提交权限维持方法的名称" data-toc-link data-toc-slug="11提交权限维持方法的名称">11.提交权限维持方法的名称</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#12提交攻击者攻击恶意服务器连接地址作为flag提交" data-toc-link data-toc-slug="12提交攻击者攻击恶意服务器连接地址作为flag提交">12.提交攻击者攻击恶意服务器连接地址作为flag提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#13找到系统中被劫持的程序程序名作为flag提交" data-toc-link data-toc-slug="13找到系统中被劫持的程序程序名作为flag提交">13.找到系统中被劫持的程序程序名作为flag提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#14找到系统中存在信息泄露的服务运行端口作为flag提交" data-toc-link data-toc-slug="14找到系统中存在信息泄露的服务运行端口作为flag提交">14.找到系统中存在信息泄露的服务运行端口作为flag提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#15提交parloo公司项目经理的身份证号作为flag提交" data-toc-link data-toc-slug="15提交parloo公司项目经理的身份证号作为flag提交">15.提交Parloo公司项目经理的身份证号作为flag提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#16提交存在危险功能的操作系统路径作为flag提交" data-toc-link data-toc-slug="16提交存在危险功能的操作系统路径作为flag提交">16.提交存在危险功能的操作系统路径作为flag提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#17提交进源机器中恶意程序的md5作为flag进行提交" data-toc-link data-toc-slug="17提交进源机器中恶意程序的md5作为flag进行提交">17.提交进源机器中恶意程序的MD5作为flag进行提交。</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#18提交攻击者留下的恶意账户名称md5后作为flag进行提交" data-toc-link data-toc-slug="18提交攻击者留下的恶意账户名称md5后作为flag进行提交">18.提交攻击者留下的恶意账户名称md5后作为flag进行提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#19提交内部群中留下的flag并提交" data-toc-link data-toc-slug="19提交内部群中留下的flag并提交">19.提交内部群中留下的flag并提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#20请提交攻击者使用维护页面获取到的敏感内容作为flag进行提交" data-toc-link data-toc-slug="20请提交攻击者使用维护页面获取到的敏感内容作为flag进行提交">20.请提交攻击者使用维护页面获取到的敏感内容作为flag进行提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#21提交获取敏感内容ip的第一次执行命令时间作为flag进行提交" data-toc-link data-toc-slug="21提交获取敏感内容ip的第一次执行命令时间作为flag进行提交">21.提交获取敏感内容IP的第一次执行命令时间作为flag进行提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#22提交攻击者使用的恶意ip和端口" data-toc-link data-toc-slug="22提交攻击者使用的恶意ip和端口">22.提交攻击者使用的恶意ip和端口</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#23提交重要数据的内容作为flag提交" data-toc-link data-toc-slug="23提交重要数据的内容作为flag提交">23.提交重要数据的内容作为flag提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#24提交恶意维权软件的名称作为flag进行提交" data-toc-link data-toc-slug="24提交恶意维权软件的名称作为flag进行提交">24.提交恶意维权软件的名称作为flag进行提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#25提交恶意程序的外联地址" data-toc-link data-toc-slug="25提交恶意程序的外联地址">25.提交恶意程序的外联地址</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#26提交攻击这使用的恶意dnslog域名作为flag进行提交" data-toc-link data-toc-slug="26提交攻击这使用的恶意dnslog域名作为flag进行提交">26.提交攻击这使用的恶意dnslog域名作为flag进行提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#27提交寻找反序列化漏洞的端口作为flag进行提交" data-toc-link data-toc-slug="27提交寻找反序列化漏洞的端口作为flag进行提交">27.提交寻找反序列化漏洞的端口作为flag进行提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#28提交web服务泄露的密钥作为flag进行提交" data-toc-link data-toc-slug="28提交web服务泄露的密钥作为flag进行提交">28.提交web服务泄露的密钥作为flag进行提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#29提交攻击者开始攻击的时间作为flag进行提交" data-toc-link data-toc-slug="29提交攻击者开始攻击的时间作为flag进行提交">29.提交攻击者开始攻击的时间作为flag进行提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#30提交攻击者在server中留下的账户密码作为flag进行提交" data-toc-link data-toc-slug="30提交攻击者在server中留下的账户密码作为flag进行提交">30.提交攻击者在server中留下的账户密码作为flag进行提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#31提交攻击者维权方法的名称作为flag进行提交" data-toc-link data-toc-slug="31提交攻击者维权方法的名称作为flag进行提交">31.提交攻击者维权方法的名称作为flag进行提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#32提交攻击者留下的木马md5后作为flag进行提交" data-toc-link data-toc-slug="32提交攻击者留下的木马md5后作为flag进行提交">32.提交攻击者留下的木马md5后作为flag进行提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#33提交攻击者留下的溯源信息作为flag进行提交" data-toc-link data-toc-slug="33提交攻击者留下的溯源信息作为flag进行提交">33.提交攻击者留下的溯源信息作为flag进行提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#34提交攻击者的githubid作为flag进行提交" data-toc-link data-toc-slug="34提交攻击者的githubid作为flag进行提交">34.提交攻击者的githubID作为flag进行提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#35提交攻击者在github下留下的的内容作为flag进行提交" data-toc-link data-toc-slug="35提交攻击者在github下留下的的内容作为flag进行提交">35.提交攻击者在github下留下的的内容作为flag进行提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#36提交恶意用户的数量作为flag进行提交" data-toc-link data-toc-slug="36提交恶意用户的数量作为flag进行提交">36.提交恶意用户的数量作为flag进行提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#37提交恶意用户的默认密码作为flag进行提交" data-toc-link data-toc-slug="37提交恶意用户的默认密码作为flag进行提交">37.提交恶意用户的默认密码作为flag进行提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#38提交业务数据中攻击者留下的信息作为flag进行提交" data-toc-link data-toc-slug="38提交业务数据中攻击者留下的信息作为flag进行提交">38.提交业务数据中攻击者留下的信息作为flag进行提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#39提交私人git仓库中留下的内容作为flag进行提交" data-toc-link data-toc-slug="39提交私人git仓库中留下的内容作为flag进行提交">39.提交私人git仓库中留下的内容作为flag进行提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#40提交存在在mysql服务器中的恶意程序的md5作为flag进行提交" data-toc-link data-toc-slug="40提交存在在mysql服务器中的恶意程序的md5作为flag进行提交">40.提交存在在mysql服务器中的恶意程序的MD5作为flag进行提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#41提交恶意程序中模拟c2通信的函数名称作为flag进行提交" data-toc-link data-toc-slug="41提交恶意程序中模拟c2通信的函数名称作为flag进行提交">41.提交恶意程序中模拟c2通信的函数名称作为flag进行提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#42提交恶意程序创建隐藏文件的名称作为flag提交" data-toc-link data-toc-slug="42提交恶意程序创建隐藏文件的名称作为flag提交">42.提交恶意程序创建隐藏文件的名称作为flag提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#43提交恶意程序中模拟权限提升的函数作为flag进行提交" data-toc-link data-toc-slug="43提交恶意程序中模拟权限提升的函数作为flag进行提交">43.提交恶意程序中模拟权限提升的函数作为flag进行提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#44提交被钓鱼上线的用户名作为flag进行提交" data-toc-link data-toc-slug="44提交被钓鱼上线的用户名作为flag进行提交">44.提交被钓鱼上线的用户名作为flag进行提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#45提交恶意程序的所在路径作为flag进行提交" data-toc-link data-toc-slug="45提交恶意程序的所在路径作为flag进行提交">45.提交恶意程序的所在路径作为flag进行提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#46分析恶意程序的反连地址作为flag进行提交" data-toc-link data-toc-slug="46分析恶意程序的反连地址作为flag进行提交">46.分析恶意程序的反连地址作为flag进行提交</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#47提交恶意c2的服务器登录的账号密码作为flag进行提交" data-toc-link data-toc-slug="47提交恶意c2的服务器登录的账号密码作为flag进行提交">47.提交恶意c2的服务器登录的账号密码作为flag进行提交。</a></li></ol></nav></aside><script data-astro-rerun>
+  function initTableOfContents() {
+    const toc = document.querySelector("[aria-label='文章目录']");
+    const article = document.getElementById("article");
+    if (!toc || !article) return;
+
+    const links = Array.from(toc.querySelectorAll("[data-toc-link]"));
+    const headingElements = links
+      .map(link => document.getElementById(link.dataset.tocSlug ?? ""))
+      .filter(Boolean);
+
+    if (headingElements.length === 0) return;
+
+    function updateActiveLink() {
+      let activeHeading = headingElements[0];
+
+      for (const heading of headingElements) {
+        if (heading.getBoundingClientRect().top <= 128) {
+          activeHeading = heading;
+        } else {
+          break;
+        }
+      }
+
+      for (const link of links) {
+        const isActive = link.dataset.tocSlug === activeHeading.id;
+        link.classList.toggle("border-accent", isActive);
+        link.classList.toggle("text-accent", isActive);
+        link.classList.toggle("font-medium", isActive);
+        link.classList.toggle("text-muted-foreground", !isActive);
+        link.toggleAttribute("aria-current", isActive);
+      }
+    }
+
+    updateActiveLink();
+    window.addEventListener("scroll", updateActiveLink, { passive: true });
+    window.addEventListener("resize", updateActiveLink);
+
+    document.addEventListener(
+      "astro:before-swap",
+      () => {
+        window.removeEventListener("scroll", updateActiveLink);
+        window.removeEventListener("resize", updateActiveLink);
+      },
+      { once: true }
+    );
+  }
+
+  initTableOfContents();
+</script></div><hr class="my-8 border-dashed"><div id="btt-btn-container" class="fixed inset-e-4 bottom-8 z-50 md:sticky md:inset-e-auto md:float-end md:me-1 translate-y-14 opacity-0 transition duration-500"><button data-button="back-to-top" class="group bg-background relative px-2 py-1 size-14 rounded-full shadow-xl md:h-8 md:w-fit md:rounded-md md:shadow-none md:focus-visible:rounded-none md:bg-background/35 md:bg-clip-padding md:backdrop-blur-lg"><span id="progress-indicator" class="absolute inset-0 -z-10 block size-14 scale-110 rounded-full bg-transparent md:hidden md:h-8 md:rounded-md"></span><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block rotate-90 md:hidden" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 12h14M5 12l6 6M5 12l6-6" /></svg><span class="group-hover:text-accent sr-only text-sm md:not-sr-only"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M12 5v14M16 9l-4-4M8 9l4-4" /></svg>Back to top</span></button></div><script data-astro-rerun>
+  function backToTop() {
+    const rootElement = document.documentElement;
+    const btnContainer = document.querySelector("#btt-btn-container");
+    const backToTopBtn = document.querySelector("[data-button='back-to-top']");
+    const progressIndicator = document.querySelector("#progress-indicator");
+
+    if (!rootElement || !btnContainer || !backToTopBtn || !progressIndicator)
+      return;
+
+    backToTopBtn.addEventListener("click", () => {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    });
+
+    let lastVisible = null;
+    function handleScroll() {
+      const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+      const scrollTop = rootElement.scrollTop;
+      const scrollPercent = Math.floor((scrollTop / scrollTotal) * 100);
+
+      progressIndicator.style.setProperty(
+        "background-image",
+        `conic-gradient(var(--accent), var(--accent) ${scrollPercent}%, transparent ${scrollPercent}%)`
+      );
+
+      const isVisible = scrollTop / scrollTotal > 0.3;
+
+      if (isVisible !== lastVisible) {
+        btnContainer.classList.toggle("opacity-100", isVisible);
+        btnContainer.classList.toggle("translate-y-0", isVisible);
+        btnContainer.classList.toggle("opacity-0", !isVisible);
+        btnContainer.classList.toggle("translate-y-14", !isVisible);
+        lastVisible = isVisible;
+      }
+    }
+
+    let ticking = false;
+    document.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  }
+  backToTop();
+</script><ul class="mt-4 mb-8 flex flex-wrap gap-4 sm:my-8"><li><a data-astro-transition-scope="astro-bztu2lml-1" href="/tags/ctf/" class="flex items-center gap-0.5 border-foreground border-b-2 border-dashed hover:border-accent hover:text-accent hover:-mt-0.5 focus-visible:text-accent focus-visible:border-none text-sm"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="opacity-80 size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 9h14M5 15h14M11 4 7 20M17 4l-4 16" /></svg>CTF</a></li><li><a data-astro-transition-scope="astro-bztu2lml-2" href="/tags/writeup/" class="flex items-center gap-0.5 border-foreground border-b-2 border-dashed hover:border-accent hover:text-accent hover:-mt-0.5 focus-visible:text-accent focus-visible:border-none text-sm"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="opacity-80 size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 9h14M5 15h14M11 4 7 20M17 4l-4 16" /></svg>WriteUp</a></li><li><a data-astro-transition-scope="astro-bztu2lml-3" href="/tags/forensics/" class="flex items-center gap-0.5 border-foreground border-b-2 border-dashed hover:border-accent hover:text-accent hover:-mt-0.5 focus-visible:text-accent focus-visible:border-none text-sm"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="opacity-80 size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 9h14M5 15h14M11 4 7 20M17 4l-4 16" /></svg>Forensics</a></li></ul><div class="flex flex-none flex-col items-center justify-center gap-1 md:items-start"><span class="italic">Share this post:</span><div class="text-center"><a href="https://wa.me/?text=https://synex.space/posts/%E7%AC%AC%E4%BA%8C%E5%B1%8Aparlooctf%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E6%8C%91%E6%88%98%E8%B5%9B-%E5%BA%94%E6%80%A5%E7%9B%B8%E5%BA%94%E6%96%B9%E5%90%91-writeup/" title="Share this post on Whatsapp" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m3 21 1.65-3.8a9 9 0 1 1 3.4 2.9z" /><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0za5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" /></svg><span class="sr-only">Share this post on Whatsapp</span></a><a href="https://www.facebook.com/sharer.php?u=https://synex.space/posts/%E7%AC%AC%E4%BA%8C%E5%B1%8Aparlooctf%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E6%8C%91%E6%88%98%E8%B5%9B-%E5%BA%94%E6%80%A5%E7%9B%B8%E5%BA%94%E6%96%B9%E5%90%91-writeup/" title="Share this post on Facebook" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3V3h-3a5 5 0 0 0-5 5v2z" /></svg><span class="sr-only">Share this post on Facebook</span></a><a href="https://x.com/intent/post?url=https://synex.space/posts/%E7%AC%AC%E4%BA%8C%E5%B1%8Aparlooctf%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E6%8C%91%E6%88%98%E8%B5%9B-%E5%BA%94%E6%80%A5%E7%9B%B8%E5%BA%94%E6%96%B9%E5%90%91-writeup/" title="Share this post on X" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m4 4 11.733 16H20L8.267 4zM4 20l6.768-6.768m2.46-2.46L20 4" /></svg><span class="sr-only">Share this post on X</span></a><a href="https://t.me/share/url?url=https://synex.space/posts/%E7%AC%AC%E4%BA%8C%E5%B1%8Aparlooctf%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E6%8C%91%E6%88%98%E8%B5%9B-%E5%BA%94%E6%80%A5%E7%9B%B8%E5%BA%94%E6%96%B9%E5%90%91-writeup/" title="Share this post on Telegram" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m15 10-4 4 6 6 4-16-18 7 4 2 2 6 3-4" /></svg><span class="sr-only">Share this post on Telegram</span></a><a href="https://pinterest.com/pin/create/button/?url=https://synex.space/posts/%E7%AC%AC%E4%BA%8C%E5%B1%8Aparlooctf%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E6%8C%91%E6%88%98%E8%B5%9B-%E5%BA%94%E6%80%A5%E7%9B%B8%E5%BA%94%E6%96%B9%E5%90%91-writeup/" title="Share this post on Pinterest" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m8 20 4-9M10.7 14c.437 1.263 1.43 2 2.55 2 2.071 0 3.75-1.554 3.75-4a5 5 0 1 0-9.7 1.7" /><path d="M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0" /></svg><span class="sr-only">Share this post on Pinterest</span></a><a href="mailto:?subject=See%20this%20post&amp;body=https://synex.space/posts/%E7%AC%AC%E4%BA%8C%E5%B1%8Aparlooctf%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E6%8C%91%E6%88%98%E8%B5%9B-%E5%BA%94%E6%80%A5%E7%9B%B8%E5%BA%94%E6%96%B9%E5%90%91-writeup/" title="Share this post via email" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><path d="m3 7 9 6 9-6" /></svg><span class="sr-only">Share this post via email</span></a></div></div><hr class="my-8 border-dashed"><div data-pagefind-ignore class="my-8 grid grid-cols-1 gap-6 sm:grid-cols-2"><a href="/posts/php命令执行总结/" class="flex w-full gap-1 hover:opacity-75"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block flex-none rtl:rotate-180" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 12h14M5 12l6 6M5 12l6-6" /></svg><div><span>Previous Post</span><div class="text-accent/85 text-sm">PHP命令执行总结</div></div></a><a href="/posts/pwn-栈系列总结/" class="flex w-full justify-end gap-1 text-end hover:opacity-75 sm:col-start-2"><div><span>Next Post</span><div class="text-accent/85 text-sm">PWN-栈系列总结</div></div><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block flex-none rtl:rotate-180" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 12h14M13 18l6-6M13 6l6 6" /></svg></a></div></main><footer class="app-layout mt-auto"><div class="border-border flex flex-col items-center justify-between border-t py-6 sm:flex-row-reverse sm:py-4"><div class="flex flex-wrap items-center gap-1"><a href="https://github.com/Synex93" title="Syn3x's Blog on Github" class="group inline-flex items-center gap-1 hover:text-accent p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" /></svg><span class="sr-only">Syn3x&#39;s Blog on Github</span></a><a href="mailto:me@synex.space" title="Send an email to Syn3x's Blog" class="group inline-flex items-center gap-1 hover:text-accent p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><path d="m3 7 9 6 9-6" /></svg><span class="sr-only">Send an email to Syn3x&#39;s Blog</span></a></div><div class="my-2 whitespace-nowrap"><span>Copyright &#169; 2026 Syn3x. All rights reserved.</span></div></div></footer><script type="module">var e=`theme`,t=`light`,n=`dark`;function r(){return localStorage.getItem(e)||(window.matchMedia(`(prefers-color-scheme: dark)`).matches?n:t)}var i=window.__theme?.value??r();function a(){localStorage.setItem(e,i),o()}function o(){let e=document.firstElementChild;e?.setAttribute(`data-theme`,i),e?.classList.toggle(`dark`,i===n),document.querySelector(`#theme-btn`)?.setAttribute(`aria-label`,i);let t=window.getComputedStyle(document.body).backgroundColor;document.querySelector(`meta[name='theme-color']`)?.setAttribute(`content`,t)}function s(){o(),document.querySelector(`#theme-btn`)?.addEventListener(`click`,()=>{i=i===t?n:t,a()})}s(),document.addEventListener(`astro:after-swap`,s),document.addEventListener(`astro:before-swap`,e=>{let t=document.querySelector(`meta[name='theme-color']`)?.getAttribute(`content`);t&&e.newDocument.querySelector(`meta[name='theme-color']`)?.setAttribute(`content`,t)}),window.matchMedia(`(prefers-color-scheme: dark)`).addEventListener(`change`,({matches:e})=>{i=e?n:t,a()});</script></body></html><script data-astro-rerun>
+  function createProgressBar() {
+    const progressContainer = document.createElement("div");
+    progressContainer.className =
+      "progress-container fixed top-0 z-10 h-1 w-full bg-background";
+
+    const progressBar = document.createElement("div");
+    progressBar.className = "progress-bar h-1 w-0 bg-accent";
+    progressBar.id = "myBar";
+
+    progressContainer.appendChild(progressBar);
+    document.body.appendChild(progressContainer);
+  }
+  createProgressBar();
+
+  function updateScrollProgress() {
+    document.addEventListener("scroll", () => {
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      if (document) {
+        const myBar = document.getElementById("myBar");
+        if (myBar) {
+          myBar.style.width = scrolled + "%";
+        }
+      }
+    });
+  }
+  updateScrollProgress();
+
+  function addHeadingLinks() {
+    const headings = Array.from(
+      document.querySelectorAll("h2, h3, h4, h5, h6")
+    );
+    for (const heading of headings) {
+      heading.classList.add("group");
+      const link = document.createElement("a");
+      link.className =
+        "heading-link ms-2 no-underline opacity-75 md:opacity-0 md:group-hover:opacity-100 md:focus:opacity-100";
+      link.href = "#" + heading.id;
+
+      const span = document.createElement("span");
+      span.ariaHidden = "true";
+      span.innerText = "#";
+      link.appendChild(span);
+      heading.appendChild(link);
+    }
+  }
+  addHeadingLinks();
+
+  function attachCopyButtons() {
+    const copyButtonLabel = "Copy";
+    const codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+    for (const codeBlock of codeBlocks) {
+      const wrapper = document.createElement("div");
+      wrapper.style.position = "relative";
+
+      const computedStyle = getComputedStyle(codeBlock);
+      const hasFileNameOffset =
+        computedStyle.getPropertyValue("--file-name-offset").trim() !== "";
+
+      const topClass = hasFileNameOffset
+        ? "top-(--file-name-offset)"
+        : "-top-3";
+
+      const copyButton = document.createElement("button");
+      copyButton.className = `copy-code absolute end-3 ${topClass} rounded bg-muted border border-muted px-2 py-1 text-xs leading-4 text-foreground font-medium`;
+      copyButton.innerHTML = copyButtonLabel;
+      codeBlock.setAttribute("tabindex", "0");
+      codeBlock.appendChild(copyButton);
+
+      codeBlock?.parentNode?.insertBefore(wrapper, codeBlock);
+      wrapper.appendChild(codeBlock);
+
+      copyButton.addEventListener("click", async () => {
+        await copyCode(codeBlock, copyButton);
+      });
+    }
+
+    async function copyCode(block, button) {
+      const code = block.querySelector("code");
+      const text = code?.innerText;
+
+      await navigator.clipboard.writeText(text ?? "");
+
+      button.innerText = "Copied";
+
+      setTimeout(() => {
+        button.innerText = copyButtonLabel;
+      }, 700);
+    }
+  }
+  attachCopyButtons();
+
+  /** Accessible image lightbox for article images. */
+  function initLightbox() {
+    const article = document.getElementById("article");
+    if (!article) return;
+
+    const prefersReducedMotion = () =>
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let overlay = null;
+    let lastFocused = null;
+
+    // Defer attribute mutations so they don't push the LCP timestamp.
+    // Event listeners below use delegation and don't need the attributes to exist yet.
+    requestAnimationFrame(() => {
+      const images = Array.from(article.querySelectorAll("img"));
+      for (const image of images) {
+        if (image.closest("a")) continue;
+        image.setAttribute("role", "button");
+        image.setAttribute("tabindex", "0");
+        image.setAttribute("aria-haspopup", "dialog");
+        image.setAttribute(
+          "aria-label",
+          image.alt ? `Zoom image: ${image.alt}` : "Zoom image"
+        );
+      }
+    });
+
+    function open(src, alt, trigger) {
+      if (overlay) return;
+      lastFocused = trigger ?? document.activeElement;
+
+      overlay = document.createElement("div");
+      overlay.setAttribute("role", "dialog");
+      overlay.setAttribute("aria-modal", "true");
+      overlay.setAttribute(
+        "aria-label",
+        alt ? `Image preview: ${alt}` : "Image preview"
+      );
+      overlay.className =
+        "fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 transition-opacity duration-200 motion-reduce:transition-none";
+
+      const closeButton = document.createElement("button");
+      closeButton.type = "button";
+      closeButton.setAttribute("aria-label", "Close image preview");
+      closeButton.className =
+        "absolute end-4 top-4 rounded p-2 text-3xl leading-none text-white";
+      closeButton.innerHTML = "&#10005;";
+      closeButton.addEventListener("click", close);
+
+      const image = document.createElement("img");
+      image.src = src;
+      image.alt = "";
+      image.className =
+        "max-h-[90dvh] max-w-[90dvw] cursor-default object-contain";
+
+      overlay.append(closeButton, image);
+      overlay.addEventListener("click", e => {
+        if (e.target === overlay && currentScale <= 1) close();
+      });
+
+      let currentScale = 1;
+      let translateX = 0;
+      let translateY = 0;
+      let initialDist = 0;
+      let initialScale = 1;
+      let panStartX = 0;
+      let panStartY = 0;
+      let panStartTranslateX = 0;
+      let panStartTranslateY = 0;
+      let lastTapTime = 0;
+
+      function applyTransform() {
+        image.style.transform = `scale(${currentScale}) translate(${translateX}px, ${translateY}px)`;
+      }
+
+      function resetTransform() {
+        currentScale = 1;
+        translateX = 0;
+        translateY = 0;
+        image.style.transform = "";
+      }
+
+      overlay.addEventListener(
+        "touchstart",
+        e => {
+          const t = e.touches;
+          if (t.length === 2) {
+            initialDist = Math.hypot(
+              t[1].clientX - t[0].clientX,
+              t[1].clientY - t[0].clientY
+            );
+            initialScale = currentScale;
+          } else if (t.length === 1) {
+            const now = Date.now();
+            if (now - lastTapTime < 300) {
+              e.preventDefault();
+              if (currentScale > 1) {
+                resetTransform();
+              } else {
+                currentScale = 2;
+                translateX = 0;
+                translateY = 0;
+                applyTransform();
+              }
+              lastTapTime = 0;
+              panStartX = t[0].clientX;
+              panStartY = t[0].clientY;
+              panStartTranslateX = translateX;
+              panStartTranslateY = translateY;
+            } else {
+              lastTapTime = now;
+              if (currentScale > 1) {
+                panStartX = t[0].clientX;
+                panStartY = t[0].clientY;
+                panStartTranslateX = translateX;
+                panStartTranslateY = translateY;
+              }
+            }
+          }
+        },
+        { passive: false }
+      );
+
+      overlay.addEventListener(
+        "touchmove",
+        e => {
+          const t = e.touches;
+          if (t.length === 2) {
+            e.preventDefault();
+            const dist = Math.hypot(
+              t[1].clientX - t[0].clientX,
+              t[1].clientY - t[0].clientY
+            );
+            currentScale = Math.min(
+              4,
+              Math.max(1, initialScale * (dist / initialDist))
+            );
+            applyTransform();
+          } else if (t.length === 1) {
+            if (currentScale > 1) {
+              e.preventDefault();
+              translateX =
+                panStartTranslateX + (t[0].clientX - panStartX) / currentScale;
+              translateY =
+                panStartTranslateY + (t[0].clientY - panStartY) / currentScale;
+              const maxX = Math.max(
+                0,
+                (image.clientWidth - overlay.clientWidth / currentScale) / 2
+              );
+              const maxY = Math.max(
+                0,
+                (image.clientHeight - overlay.clientHeight / currentScale) / 2
+              );
+              translateX = Math.min(maxX, Math.max(-maxX, translateX));
+              translateY = Math.min(maxY, Math.max(-maxY, translateY));
+              applyTransform();
+            } else {
+              e.preventDefault();
+            }
+          }
+        },
+        { passive: false }
+      );
+
+      overlay.addEventListener("touchend", e => {
+        if (e.touches.length === 0 && currentScale <= 1.05) {
+          resetTransform();
+        }
+      });
+
+      overlay.addEventListener("touchcancel", e => {
+        if (e.touches.length === 0 && currentScale <= 1.05) {
+          resetTransform();
+        }
+      });
+
+      document.body.appendChild(overlay);
+      document.body.style.overflow = "hidden";
+      document.addEventListener("keydown", onKeyDown);
+      window.__closeLightbox = close;
+
+      requestAnimationFrame(() => overlay?.classList.add("opacity-100"));
+      closeButton.focus();
+    }
+
+    function close() {
+      if (!overlay) return;
+      const el = overlay;
+      overlay = null;
+      window.__closeLightbox = null;
+
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+      lastFocused?.focus();
+      lastFocused = null;
+
+      if (prefersReducedMotion()) {
+        el.remove();
+        return;
+      }
+      const remove = () => el.remove();
+      el.addEventListener("transitionend", remove, { once: true });
+      setTimeout(remove, 250); // fallback in case transitionend never fires
+      el.classList.remove("opacity-100");
+    }
+
+    function onKeyDown(e) {
+      if (e.key === "Escape") {
+        close();
+      } else if (e.key === "Tab") {
+        trapFocus(e);
+      }
+    }
+
+    // Keep keyboard focus inside the open dialog.
+    function trapFocus(e) {
+      if (!overlay) return;
+      const focusables = overlay.querySelectorAll(
+        'a[href], button, [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+
+    function triggerFromEvent(e) {
+      const image = e.target.closest("img");
+      if (!image || !article.contains(image) || image.closest("a")) return null;
+      return image;
+    }
+
+    function activate(image) {
+      open(image.currentSrc || image.src, image.alt, image);
+    }
+
+    article.addEventListener("click", e => {
+      const image = triggerFromEvent(e);
+      if (!image) return;
+      e.preventDefault();
+      activate(image);
+    });
+
+    article.addEventListener("keydown", e => {
+      if (e.key !== "Enter" && e.key !== " " && e.key !== "Spacebar") return;
+      const image = triggerFromEvent(e);
+      if (!image) return;
+      e.preventDefault();
+      activate(image);
+    });
+  }
+  initLightbox();
+
+  if (!window.__lightboxSwapBound) {
+    window.__lightboxSwapBound = true;
+    document.addEventListener("astro:before-swap", () =>
+      window.__closeLightbox?.()
+    );
+  }
+
+  document.addEventListener("astro:after-swap", () =>
+    window.scrollTo({ left: 0, top: 0, behavior: "instant" })
+  );
+</script>
