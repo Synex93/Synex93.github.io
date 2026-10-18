@@ -1,4 +1,4 @@
-<!DOCTYPE html><html dir="ltr" lang="en" class="overflow-y-scroll scroll-smooth"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.png"><link rel="icon" href="/favicon.png"><link rel="canonical" href="https://synex.space/posts/kubernetes-%E5%AE%89%E8%A3%85-kubeadm-containerd-1240/"><meta name="generator" content="Astro v7.0.3"><!-- Font --><style>@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/2213c1e7fbe06cc7.woff") format("woff"), url("/_astro/fonts/b87f789471b4c602.ttf") format("truetype");font-display:swap;font-weight:300;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/c487dbd9c215141e.woff") format("woff"), url("/_astro/fonts/bb0c016d60298234.ttf") format("truetype");font-display:swap;font-weight:400;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/0976c79a1e97c08d.woff") format("woff"), url("/_astro/fonts/b3e69a4f03324880.ttf") format("truetype");font-display:swap;font-weight:500;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/3c46d5a1dde2929d.woff") format("woff"), url("/_astro/fonts/0ff1dfaf1dff21d0.ttf") format("truetype");font-display:swap;font-weight:600;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/e9aa617e80052f4b.woff") format("woff"), url("/_astro/fonts/d9a5ad8b8018e5de.ttf") format("truetype");font-display:swap;font-weight:700;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/5056f1a50e5e7744.woff") format("woff"), url("/_astro/fonts/3e4dac0d0220e48a.ttf") format("truetype");font-display:swap;font-weight:300;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/e734307f8c328338.woff") format("woff"), url("/_astro/fonts/ba3036786bf88603.ttf") format("truetype");font-display:swap;font-weight:400;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/dfa89044152f7da4.woff") format("woff"), url("/_astro/fonts/39aec4e7fc7cc077.ttf") format("truetype");font-display:swap;font-weight:500;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/8bbd58b325585200.woff") format("woff"), url("/_astro/fonts/b33609507afd910d.ttf") format("truetype");font-display:swap;font-weight:600;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/035035a9ddbd14aa.woff") format("woff"), url("/_astro/fonts/50fcf54bf575f53f.ttf") format("truetype");font-display:swap;font-weight:700;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:300;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:400;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:500;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:600;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:700;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:300;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:400;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:500;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:600;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:700;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}:root{--font-google-sans-code:"Google Sans Code-1a30c214885cb404","Google Sans Code-1a30c214885cb404 fallback: Courier New",monospace;}</style><!-- Primary meta --><title>Kubernetes-安装-Kubeadm-Containerd-1.24.0 | Syn3x&#39;s Blog</title><meta name="title" content="Kubernetes-安装-Kubeadm-Containerd-1.24.0 | Syn3x's Blog"><meta name="description" content="基于 kubeadm 和 Containerd 部署 Kubernetes 1.24 集群，记录主机初始化、IPVS、节点加入与 Calico 网络配置。"><meta name="author" content="Syn3x"><link rel="sitemap" href="/sitemap-index.xml"><!-- Open Graph --><meta property="og:type" content="website"><meta property="og:site_name" content="Syn3x's Blog"><meta property="og:title" content="Kubernetes-安装-Kubeadm-Containerd-1.24.0 | Syn3x's Blog"><meta property="og:description" content="基于 kubeadm 和 Containerd 部署 Kubernetes 1.24 集群，记录主机初始化、IPVS、节点加入与 Calico 网络配置。"><meta property="og:url" content="https://synex.space/posts/kubernetes-%E5%AE%89%E8%A3%85-kubeadm-containerd-1240/"><meta property="og:image" content="https://synex.space/posts/kubernetes-%E5%AE%89%E8%A3%85-kubeadm-containerd-1240/index.png"><!-- Twitter / X --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://synex.space/posts/kubernetes-%E5%AE%89%E8%A3%85-kubeadm-containerd-1240/"><meta property="twitter:title" content="Kubernetes-安装-Kubeadm-Containerd-1.24.0 | Syn3x's Blog"><meta property="twitter:description" content="基于 kubeadm 和 Containerd 部署 Kubernetes 1.24 集群，记录主机初始化、IPVS、节点加入与 Calico 网络配置。"><meta property="twitter:image" content="https://synex.space/posts/kubernetes-%E5%AE%89%E8%A3%85-kubeadm-containerd-1240/index.png"><!-- RSS autodiscovery --><link rel="alternate" type="application/rss+xml" title="Syn3x's Blog" href="https://synex.space/rss.xml/"><!-- Filled at runtime by theme.ts to match the current background colour --><meta name="theme-color" content=""><!-- Extra head content injected by child layouts (e.g. JSON-LD, article meta) --><meta property="og:type" content="article"><meta property="article:published_time" content="2022-07-31T00:32:00.000Z"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Kubernetes-安装-Kubeadm-Containerd-1.24.0 | Syn3x's Blog","image":"https://synex.space/posts/kubernetes-%E5%AE%89%E8%A3%85-kubeadm-containerd-1240/index.png","datePublished":"2022-07-31T00:32:00.000Z","author":[{"@type":"Person","name":"Syn3x","url":"https://synex.space"}]}</script><!--
+<!DOCTYPE html><html dir="ltr" lang="en" class="overflow-y-scroll scroll-smooth"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.png"><link rel="icon" href="/favicon.png"><link rel="canonical" href="https://synex.space/posts/kubernetes-%E5%AE%89%E8%A3%85-kubeadm-containerd-1240/"><meta name="generator" content="Astro v7.0.3"><!-- Font --><style>@font-face{font-family:"Google Sans Code-bf79ed4abff91d46";src:url("/_astro/fonts/e672a320519d5c84.woff2") format("woff2");font-display:swap;font-weight:300;font-style:normal;}@font-face{font-family:"Google Sans Code-bf79ed4abff91d46";src:url("/_astro/fonts/59aeeb19cf7e30bd.woff2") format("woff2"), url("/_astro/fonts/e3222bb36cc77f3c.ttf") format("truetype");font-display:swap;font-weight:400;font-style:normal;}@font-face{font-family:"Google Sans Code-bf79ed4abff91d46";src:url("/_astro/fonts/88bc1331d773fdff.woff2") format("woff2");font-display:swap;font-weight:500;font-style:normal;}@font-face{font-family:"Google Sans Code-bf79ed4abff91d46";src:url("/_astro/fonts/c380c6b2af5aa059.woff2") format("woff2");font-display:swap;font-weight:600;font-style:normal;}@font-face{font-family:"Google Sans Code-bf79ed4abff91d46";src:url("/_astro/fonts/cb5e708f3524509f.woff2") format("woff2"), url("/_astro/fonts/bd9d05ffca8e64ae.ttf") format("truetype");font-display:swap;font-weight:700;font-style:normal;}@font-face{font-family:"Google Sans Code-bf79ed4abff91d46 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:300;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-bf79ed4abff91d46 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:400;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-bf79ed4abff91d46 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:500;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-bf79ed4abff91d46 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:600;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-bf79ed4abff91d46 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:700;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}:root{--font-google-sans-code:"Google Sans Code-bf79ed4abff91d46","Google Sans Code-bf79ed4abff91d46 fallback: Courier New",monospace;}</style><link rel="preload" href="/_astro/fonts/59aeeb19cf7e30bd.woff2" as="font" type="font/woff2" crossorigin><!-- Primary meta --><title>Kubernetes-安装-Kubeadm-Containerd-1.24.0 | Syn3x&#39;s Blog</title><meta name="title" content="Kubernetes-安装-Kubeadm-Containerd-1.24.0 | Syn3x's Blog"><meta name="description" content="基于 kubeadm 和 Containerd 部署 Kubernetes 1.24 集群，记录主机初始化、IPVS、节点加入与 Calico 网络配置。"><meta name="author" content="Syn3x"><link rel="sitemap" href="/sitemap-index.xml"><!-- Open Graph --><meta property="og:type" content="website"><meta property="og:site_name" content="Syn3x's Blog"><meta property="og:title" content="Kubernetes-安装-Kubeadm-Containerd-1.24.0 | Syn3x's Blog"><meta property="og:description" content="基于 kubeadm 和 Containerd 部署 Kubernetes 1.24 集群，记录主机初始化、IPVS、节点加入与 Calico 网络配置。"><meta property="og:url" content="https://synex.space/posts/kubernetes-%E5%AE%89%E8%A3%85-kubeadm-containerd-1240/"><meta property="og:image" content="https://synex.space/posts/kubernetes-%E5%AE%89%E8%A3%85-kubeadm-containerd-1240/index.png"><!-- Twitter / X --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://synex.space/posts/kubernetes-%E5%AE%89%E8%A3%85-kubeadm-containerd-1240/"><meta property="twitter:title" content="Kubernetes-安装-Kubeadm-Containerd-1.24.0 | Syn3x's Blog"><meta property="twitter:description" content="基于 kubeadm 和 Containerd 部署 Kubernetes 1.24 集群，记录主机初始化、IPVS、节点加入与 Calico 网络配置。"><meta property="twitter:image" content="https://synex.space/posts/kubernetes-%E5%AE%89%E8%A3%85-kubeadm-containerd-1240/index.png"><!-- RSS autodiscovery --><link rel="alternate" type="application/rss+xml" title="Syn3x's Blog" href="https://synex.space/rss.xml/"><!-- Filled at runtime by theme.ts to match the current background colour --><meta name="theme-color" content=""><!-- Extra head content injected by child layouts (e.g. JSON-LD, article meta) --><meta property="og:type" content="article"><meta property="article:published_time" content="2022-07-31T00:32:00.000Z"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Kubernetes-安装-Kubeadm-Containerd-1.24.0 | Syn3x's Blog","image":"https://synex.space/posts/kubernetes-%E5%AE%89%E8%A3%85-kubeadm-containerd-1240/index.png","datePublished":"2022-07-31T00:32:00.000Z","author":[{"@type":"Person","name":"Syn3x","url":"https://synex.space"}]}</script><!--
       Inline FOUC-prevention script: sets data-theme on <html> before
       the browser paints. Runs synchronously, no defer/async.
     --><script>
@@ -14,7 +14,7 @@
         // Expose value so theme.ts can skip re-detection.
         window.__theme = { value: theme };
       })();
-    </script><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.2i1RQzKf.js"></script><link rel="stylesheet" href="/_astro/Footer.ChjHkc0Z.css"><style>@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media (prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*),[data-astro-transition-scope]{animation:none!important}}
+    </script><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.2i1RQzKf.js"></script><link rel="stylesheet" href="/_astro/Footer.Cp7gIEl-.css"><style>@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media (prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*),[data-astro-transition-scope]{animation:none!important}}
 </style><style>[data-astro-transition-scope="astro-bztu2lml-1"] { view-transition-name: \5F00\6E90\5DE5\5177; }@layer astro { ::view-transition-old(\5F00\6E90\5DE5\5177) { 
 	animation-duration: 180ms;
 	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
@@ -203,16 +203,16 @@
 <h1 id="初始化主机">初始化主机</h1>
 <blockquote><p>一下操作所有主机都做</p></blockquote>
 <h2 id="安装配置containerd">安装配置Containerd</h2>
-<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>curl -o /etc/yum.repos.d/docker.repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span></span>
+<pre class="astro-code astro-code-themes catppuccin-latte vitesse-dark" style="--shiki-light:#4c4f69;--shiki-dark:#dbd7caee;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#121212; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>curl -o /etc/yum.repos.d/docker.repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span></span>
 <span class="line"><span>yum -y install containerd.io</span></span>
 <span class="line"><span>containerd config default | sudo tee /etc/containerd/config.toml</span></span>
 <span class="line"><span>sed -i 's/SystemdCgroup = false/SystemdCgroup = true/g' /etc/containerd/config.toml</span></span>
 <span class="line"><span>systemctl enable --now containerd</span></span></code></pre>
 <h2 id="关闭swap分区">关闭SWAP分区</h2>
-<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>sudo swapoff -a</span></span>
+<pre class="astro-code astro-code-themes catppuccin-latte vitesse-dark" style="--shiki-light:#4c4f69;--shiki-dark:#dbd7caee;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#121212; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>sudo swapoff -a</span></span>
 <span class="line"><span>sudo sed -ri 's/.*swap.*/#&#x26;/' /etc/fstab</span></span></code></pre>
 <h2 id="允许-iptables-检查桥接流量并配置内核转发">允许 iptables 检查桥接流量并配置内核转发</h2>
-<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>modprobe  br_netfilter</span></span>
+<pre class="astro-code astro-code-themes catppuccin-latte vitesse-dark" style="--shiki-light:#4c4f69;--shiki-dark:#dbd7caee;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#121212; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>modprobe  br_netfilter</span></span>
 <span class="line"><span>cat &#x3C;&#x3C;EOF | sudo tee /etc/modules-load.d/k8s.conf</span></span>
 <span class="line"><span>br_netfilter</span></span>
 <span class="line"><span>EOF</span></span>
@@ -225,7 +225,7 @@
 <span class="line"><span>sudo sysctl --system</span></span></code></pre>
 <h2 id="配置ipvs">配置IPVS</h2>
 <blockquote><p>service有基于iptables和基于ipvs两种代理模型。基于ipvs的性能要高一些。需要手动载入才能使用ipvs模块</p></blockquote>
-<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>yum install -y ipset ipvsadm</span></span>
+<pre class="astro-code astro-code-themes catppuccin-latte vitesse-dark" style="--shiki-light:#4c4f69;--shiki-dark:#dbd7caee;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#121212; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>yum install -y ipset ipvsadm</span></span>
 <span class="line"><span>cat > /etc/sysconfig/modules/ipvs.modules &#x3C;&#x3C;EOF</span></span>
 <span class="line"><span>#!/bin/bash</span></span>
 <span class="line"><span>modprobe -- ip_vs</span></span>
@@ -238,10 +238,10 @@
 <span class="line"><span>/bin/bash /etc/sysconfig/modules/ipvs.modules</span></span></code></pre>
 <blockquote><p>如果出现以下<strong>报错</strong>则执行下面内容
 <code>modprobe: FATAL: Module nf_conntrack_ipv4 not found in directory /lib/modules/4.18.0-348.el8.0.2.x86_64</code></p></blockquote>
-<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>sed -i 's/nf_conntrack_ipv4/nf_conntrack/g' /etc/sysconfig/modules/ipvs.modules</span></span>
+<pre class="astro-code astro-code-themes catppuccin-latte vitesse-dark" style="--shiki-light:#4c4f69;--shiki-dark:#dbd7caee;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#121212; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>sed -i 's/nf_conntrack_ipv4/nf_conntrack/g' /etc/sysconfig/modules/ipvs.modules</span></span>
 <span class="line"><span>/bin/bash /etc/sysconfig/modules/ipvs.modules</span></span></code></pre>
 <h2 id="安装kubernetes相关软件工具">安装Kubernetes相关软件工具</h2>
-<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>cat &#x3C;&#x3C;EOF > /etc/yum.repos.d/kubernetes.repo</span></span>
+<pre class="astro-code astro-code-themes catppuccin-latte vitesse-dark" style="--shiki-light:#4c4f69;--shiki-dark:#dbd7caee;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#121212; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>cat &#x3C;&#x3C;EOF > /etc/yum.repos.d/kubernetes.repo</span></span>
 <span class="line"><span>[kubernetes]</span></span>
 <span class="line"><span>name=Kubernetes</span></span>
 <span class="line"><span>baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/</span></span>
@@ -256,12 +256,12 @@
 <h2 id="master节点">MASTER节点</h2>
 <p><strong>生成kubeadm配置文件:</strong><code>sudo kubeadm config print init-defaults > kubeadm.yaml</code>
 编辑kubeadm.yaml并修改下面内容</p>
-<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>advertiseAddress: 改成自己的ip</span></span>
+<pre class="astro-code astro-code-themes catppuccin-latte vitesse-dark" style="--shiki-light:#4c4f69;--shiki-dark:#dbd7caee;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#121212; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>advertiseAddress: 改成自己的ip</span></span>
 <span class="line"><span>nodeRegistration下的name字段:改成自己的主机名</span></span>
 <span class="line"><span>imageRepository: registry.aliyuncs.com/google_containers</span></span></code></pre>
 <p><strong>在networking段添加pod的网段:</strong><code>podSubnet: 10.244.0.0/16</code>
 修改后内容如下:</p>
-<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>$ cat kubeadm.yaml</span></span>
+<pre class="astro-code astro-code-themes catppuccin-latte vitesse-dark" style="--shiki-light:#4c4f69;--shiki-dark:#dbd7caee;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#121212; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>$ cat kubeadm.yaml</span></span>
 <span class="line"><span>apiVersion: kubeadm.k8s.io/v1beta3</span></span>
 <span class="line"><span>bootstrapTokens:</span></span>
 <span class="line"><span>- groups:</span></span>
@@ -300,7 +300,7 @@
 <span class="line"><span>  podSubnet: 10.244.0.0/16</span></span>
 <span class="line"><span>scheduler: {}</span></span></code></pre>
 <p><strong>下载Kubernetes所需镜像:</strong></p>
-<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>$ kubeadm config --config kubeadm.yaml images pull</span></span>
+<pre class="astro-code astro-code-themes catppuccin-latte vitesse-dark" style="--shiki-light:#4c4f69;--shiki-dark:#dbd7caee;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#121212; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>$ kubeadm config --config kubeadm.yaml images pull</span></span>
 <span class="line"><span>[config/images] Pulled registry.aliyuncs.com/google_containers/kube-apiserver:v1.24.0</span></span>
 <span class="line"><span>[config/images] Pulled registry.aliyuncs.com/google_containers/kube-controller-manager:v1.24.0</span></span>
 <span class="line"><span>[config/images] Pulled registry.aliyuncs.com/google_containers/kube-scheduler:v1.24.0</span></span>
@@ -310,13 +310,13 @@
 <span class="line"><span>[config/images] Pulled registry.aliyuncs.com/google_containers/coredns:v1.8.6</span></span></code></pre>
 <p>在意一下pause镜像的的版本名称我这里是<code>registry.aliyuncs.com/google_containers/pause:3.7</code>
 修改containerd的配置文件/etc/containerd/config.toml,把里面的sandbox_image的值改为pause镜像的全称加版本</p>
-<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>$ cat /etc/containerd/config.toml |grep sandbox</span></span>
+<pre class="astro-code astro-code-themes catppuccin-latte vitesse-dark" style="--shiki-light:#4c4f69;--shiki-dark:#dbd7caee;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#121212; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>$ cat /etc/containerd/config.toml |grep sandbox</span></span>
 <span class="line"><span>sandbox_image = "registry.aliyuncs.com/google_containers/pause:3.7"</span></span></code></pre>
 <p><strong>重启Containerd:</strong><code>systemctl restart containerd</code>
 <strong>初始化master节点:</strong><code>kubeadm init --config kubeadm.yaml</code>
 **注意:**修改containerd的sandbox_image配置是全部的主机都要修改
 初始化成功之后会打印下面的内容</p>
-<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span></span></span>
+<pre class="astro-code astro-code-themes catppuccin-latte vitesse-dark" style="--shiki-light:#4c4f69;--shiki-dark:#dbd7caee;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#121212; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span></span></span>
 <span class="line"><span>Your Kubernetes control-plane has initialized successfully!</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>To start using your cluster, you need to run the following as a regular user:</span></span>
@@ -338,7 +338,7 @@
 <span class="line"><span>kubeadm join 192.168.0.4:6443 --token abcdef.0123456789abcdef \</span></span>
 <span class="line"><span>        --discovery-token-ca-cert-hash sha256:91b1d4502e8950ece37fbc591160007f5e2a3311ff0ebe05112d24851ca082a9</span></span></code></pre>
 <p>其中下面内容需要自己去执行</p>
-<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>o start using your cluster, you need to run the following as a regular user:</span></span>
+<pre class="astro-code astro-code-themes catppuccin-latte vitesse-dark" style="--shiki-light:#4c4f69;--shiki-dark:#dbd7caee;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#121212; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>o start using your cluster, you need to run the following as a regular user:</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>  mkdir -p $HOME/.kube</span></span>
 <span class="line"><span>  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config</span></span>
@@ -349,14 +349,14 @@
 <span class="line"><span>  export KUBECONFIG=/etc/kubernetes/admin.conf</span></span>
 <span class="line"><span></span></span></code></pre>
 <p>之后这段内容是加入集群的命令,work节点可以通过下面命令来加入集群</p>
-<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Then you can join any number of worker nodes by running the following on each as root:</span></span>
+<pre class="astro-code astro-code-themes catppuccin-latte vitesse-dark" style="--shiki-light:#4c4f69;--shiki-dark:#dbd7caee;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#121212; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Then you can join any number of worker nodes by running the following on each as root:</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>kubeadm join 192.168.0.4:6443 --token abcdef.0123456789abcdef \</span></span>
 <span class="line"><span>        --discovery-token-ca-cert-hash sha256:91b1d4502e8950ece37fbc591160007f5e2a3311ff0ebe05112d24851ca082a9</span></span>
 <span class="line"><span></span></span></code></pre>
 <h2 id="work节点">WORK节点</h2>
 <p>WORK节点执行master节点返回的加入集群命令加入集群,出现下面内容即加入成功</p>
-<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>kubeadm join 192.168.0.4:6443 --token abcdef.0123456789abcdef \</span></span>
+<pre class="astro-code astro-code-themes catppuccin-latte vitesse-dark" style="--shiki-light:#4c4f69;--shiki-dark:#dbd7caee;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#121212; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>kubeadm join 192.168.0.4:6443 --token abcdef.0123456789abcdef \</span></span>
 <span class="line"><span>        --discovery-token-ca-cert-hash sha256:91b1d4502e8950ece37fbc591160007f5e2a3311ff0ebe05112d24851ca082a9</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>This node has joined the cluster:</span></span>
@@ -370,13 +370,13 @@
 在master节点下载calico的yaml文件
 curl <a href="https://projectcalico.docs.tigera.io/archive/v3.22/manifests/calico.yaml">https://projectcalico.docs.tigera.io/archive/v3.22/manifests/calico.yaml</a> -O
 找到下面两行内容进行取消注释并修改value值</p>
-<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span># - name: CALICO_IPV4POOL_CIDR</span></span>
+<pre class="astro-code astro-code-themes catppuccin-latte vitesse-dark" style="--shiki-light:#4c4f69;--shiki-dark:#dbd7caee;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#121212; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span># - name: CALICO_IPV4POOL_CIDR</span></span>
 <span class="line"><span>#   value: "192.168.0.0/16"</span></span></code></pre>
 <p>value值应为开始创建master节点时的pod网络<code>10.244.0.0/16</code>,修改后为</p>
-<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>- name: CALICO_IPV4POOL_CIDR</span></span>
+<pre class="astro-code astro-code-themes catppuccin-latte vitesse-dark" style="--shiki-light:#4c4f69;--shiki-dark:#dbd7caee;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#121212; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>- name: CALICO_IPV4POOL_CIDR</span></span>
 <span class="line"><span>  value: "10.244.0.0/16"</span></span></code></pre>
 <p>之后进行创建，创建方法如下</p>
-<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>$ sudu kubectl apply -f calico.yaml</span></span>
+<pre class="astro-code astro-code-themes catppuccin-latte vitesse-dark" style="--shiki-light:#4c4f69;--shiki-dark:#dbd7caee;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#121212; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>$ sudu kubectl apply -f calico.yaml</span></span>
 <span class="line"><span>configmap/calico-config unchanged</span></span>
 <span class="line"><span>customresourcedefinition.apiextensions.k8s.io/bgpconfigurations.crd.projectcalico.org configured</span></span>
 <span class="line"><span>customresourcedefinition.apiextensions.k8s.io/bgppeers.crd.projectcalico.org configured</span></span>
@@ -406,13 +406,13 @@ curl <a href="https://projectcalico.docs.tigera.io/archive/v3.22/manifests/calic
 <span class="line"><span>Warning: policy/v1beta1 PodDisruptionBudget is deprecated in v1.21+, unavailable in v1.25+; use policy/v1 PodDisruptionBudget</span></span>
 <span class="line"><span>poddisruptionbudget.policy/calico-kube-controllers created</span></span></code></pre>
 <p>执行完成没有报错之后可以运行<code>kubectl get node</code>来查看节点的联通状态,当<code>STATUS</code>全都变成Ready即部署成功</p>
-<pre class="astro-code astro-code-themes catppuccin-latte night-owl" style="--shiki-light:#4c4f69;--shiki-dark:#d6deeb;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>$ kubectl get node</span></span>
+<pre class="astro-code astro-code-themes catppuccin-latte vitesse-dark" style="--shiki-light:#4c4f69;--shiki-dark:#dbd7caee;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#121212; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>$ kubectl get node</span></span>
 <span class="line"><span>NAME             STATUS   ROLES           AGE   VERSION</span></span>
 <span class="line"><span>master.host.com  Ready    control-plane   43m   v1.24.3</span></span>
 <span class="line"><span>work1.host.com   Ready    &#x3C;none>          39m   v1.24.3</span></span>
 <span class="line"><span>work2.host.com   Ready    &#x3C;none>          39m   v1.24.3</span></span></code></pre>
 <h1 id="问题">问题</h1>
-<blockquote><p>出现报错以及问题欢迎在评论区讨论</p></blockquote></article></div><aside class="border-border sticky top-8 hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-l pl-5 xl:block" aria-label="文章目录" data-pagefind-ignore><nav class="pb-4"><p class="text-foreground mb-3 text-base font-semibold tracking-wide">Catalogue</p><ol class="space-y-1 text-sm"><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#安装配置containerd" data-toc-link data-toc-slug="安装配置containerd">安装配置Containerd</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#关闭swap分区" data-toc-link data-toc-slug="关闭swap分区">关闭SWAP分区</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#允许-iptables-检查桥接流量并配置内核转发" data-toc-link data-toc-slug="允许-iptables-检查桥接流量并配置内核转发">允许 iptables 检查桥接流量并配置内核转发</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#配置ipvs" data-toc-link data-toc-slug="配置ipvs">配置IPVS</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#安装kubernetes相关软件工具" data-toc-link data-toc-slug="安装kubernetes相关软件工具">安装Kubernetes相关软件工具</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#master节点" data-toc-link data-toc-slug="master节点">MASTER节点</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#work节点" data-toc-link data-toc-slug="work节点">WORK节点</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#网络插件calico" data-toc-link data-toc-slug="网络插件calico">网络插件Calico</a></li></ol></nav></aside><script data-astro-rerun>
+<blockquote><p>出现报错以及问题欢迎在评论区讨论</p></blockquote></article></div><aside class="border-border sticky top-8 hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-l pl-5 xl:block" aria-label="文章目录" data-pagefind-ignore><nav class="pb-4"><p class="text-foreground mb-3 text-base font-semibold tracking-wide">Catalogue</p><ol class="space-y-1 text-sm"><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#准备开始" data-toc-link data-toc-slug="准备开始">准备开始</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#环境" data-toc-link data-toc-slug="环境">环境</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#初始化主机" data-toc-link data-toc-slug="初始化主机">初始化主机</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#安装配置containerd" data-toc-link data-toc-slug="安装配置containerd">安装配置Containerd</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#关闭swap分区" data-toc-link data-toc-slug="关闭swap分区">关闭SWAP分区</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#允许-iptables-检查桥接流量并配置内核转发" data-toc-link data-toc-slug="允许-iptables-检查桥接流量并配置内核转发">允许 iptables 检查桥接流量并配置内核转发</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#配置ipvs" data-toc-link data-toc-slug="配置ipvs">配置IPVS</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#安装kubernetes相关软件工具" data-toc-link data-toc-slug="安装kubernetes相关软件工具">安装Kubernetes相关软件工具</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#安装kubernetes" data-toc-link data-toc-slug="安装kubernetes">安装Kubernetes</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#master节点" data-toc-link data-toc-slug="master节点">MASTER节点</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#work节点" data-toc-link data-toc-slug="work节点">WORK节点</a></li><li class="pl-3"><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#网络插件calico" data-toc-link data-toc-slug="网络插件calico">网络插件Calico</a></li><li><a class="toc-link text-muted-foreground hover:border-accent hover:text-accent block border-l-2 border-transparent py-1 pr-1 leading-5 transition-colors" href="#问题" data-toc-link data-toc-slug="问题">问题</a></li></ol></nav></aside><script data-astro-rerun>
   function initTableOfContents() {
     const toc = document.querySelector("[aria-label='文章目录']");
     const article = document.getElementById("article");
@@ -613,6 +613,45 @@ curl <a href="https://projectcalico.docs.tigera.io/archive/v3.22/manifests/calic
     const article = document.getElementById("article");
     if (!article) return;
 
+    const fillThreshold = 0.82;
+
+    function articleImageRoot(image) {
+      if (image.classList.contains("article-image")) return image;
+      return image.closest("a.article-image");
+    }
+
+    function updateImageLayout(image) {
+      const root = articleImageRoot(image);
+      if (!root || !image.naturalWidth) return;
+
+      const availableWidth = article.getBoundingClientRect().width;
+      const shouldFill = image.naturalWidth >= availableWidth * fillThreshold;
+      root.classList.toggle("article-image-fill", shouldFill);
+    }
+
+    const articleImages = Array.from(
+      article.querySelectorAll("img.article-image, a.article-image > img")
+    );
+    for (const image of articleImages) {
+      if (image.complete && image.naturalWidth) {
+        updateImageLayout(image);
+      } else {
+        image.addEventListener("load", () => updateImageLayout(image), {
+          once: true,
+        });
+      }
+    }
+
+    window.__articleImageResizeObserver?.disconnect();
+    let observedArticleWidth = article.getBoundingClientRect().width;
+    window.__articleImageResizeObserver = new ResizeObserver(() => {
+      const nextWidth = article.getBoundingClientRect().width;
+      if (Math.abs(nextWidth - observedArticleWidth) < 1) return;
+      observedArticleWidth = nextWidth;
+      for (const image of articleImages) updateImageLayout(image);
+    });
+    window.__articleImageResizeObserver.observe(article);
+
     const prefersReducedMotion = () =>
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -624,6 +663,30 @@ curl <a href="https://projectcalico.docs.tigera.io/archive/v3.22/manifests/calic
     requestAnimationFrame(() => {
       const images = Array.from(article.querySelectorAll("img"));
       for (const image of images) {
+        const showImageError = () => {
+          if (!image.isConnected || image.dataset.errorHandled) return;
+          image.dataset.errorHandled = "true";
+
+          const imageLink = image.closest("a");
+          const fallback = document.createElement(imageLink ? "span" : "a");
+          fallback.className = "article-image-error";
+          if (fallback instanceof HTMLAnchorElement) {
+            fallback.href = image.currentSrc || image.src;
+            fallback.target = "_blank";
+            fallback.rel = "noreferrer";
+          }
+          fallback.textContent = image.alt
+            ? `图片加载失败：${image.alt}`
+            : "图片暂时无法加载，点击打开原图";
+          image.replaceWith(fallback);
+        };
+
+        if (image.complete) {
+          if (!image.naturalWidth) showImageError();
+        } else {
+          image.addEventListener("error", showImageError, { once: true });
+        }
+
         if (image.closest("a")) continue;
         image.setAttribute("role", "button");
         image.setAttribute("tabindex", "0");
